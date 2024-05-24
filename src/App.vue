@@ -3,8 +3,9 @@
     <Coverage />
     <Technology />
     <Aboutus />
+    <Tracking />
+    <Contactus />
     <Footer >
-  
     </Footer>
   </div>
 </template>
@@ -13,8 +14,10 @@
 import Coverage from './components/Coverage.vue';
 import Technology from './components/Technology.vue';
 import Aboutus from './components/Aboutus.vue';
+import Tracking from './components/Tracking.vue';
+import Contactus from './components/Contactus.vue'
 import Footer from './components/Footer.vue';
-
+ 
 
 export default {
   name: 'App',
@@ -22,8 +25,10 @@ export default {
     Coverage,
     Technology,
     Aboutus,
-    Footer
-  }
+    Tracking,
+    Contactus,
+    Footer   
+  },
 }
 </script>
 
