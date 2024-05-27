@@ -7,6 +7,7 @@
     <Contactus />
     <Footer >
     </Footer>
+    <Aboutuspage/>
   </div>
 </template>
 
@@ -17,7 +18,7 @@ import Aboutus from './components/Aboutus.vue';
 import Tracking from './components/Tracking.vue';
 import Contactus from './components/Contactus.vue'
 import Footer from './components/Footer.vue';
- 
+import Aboutuspage from './components/Aboutuspage.vue';
 
 export default {
   name: 'App',
@@ -27,7 +28,8 @@ export default {
     Aboutus,
     Tracking,
     Contactus,
-    Footer   
+    Footer,
+    Aboutuspage  
   },
 }
 </script>
