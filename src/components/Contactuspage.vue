@@ -1,43 +1,7 @@
 <template>
     <div class="container-fluid p-0">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">AFG Logo</a>
-                <button class="navbar-toggler mx-auto" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#">Services</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#">Tracking</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#">Contact Us</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#">Gallery</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#">Announcements</a>
-                        </li>
-                    </ul>
-                    <button class="btn btn-primary" type="button">Log In</button>
-                </div>
-            </div>
-        </nav>
         <div class="hero-section">
-            <img src="../assets/contactus.png" alt="Ship Image" class="img-fluid w-100 hero-image">
+            <img src="../assets/contactus.webp" alt="Ship Image" class="img-fluid w-100 hero-image">
             <div class="hero-text">
                 <h1 class="display-4">Contact Us</h1>
                 <p>HOME &gt; CONTACT US</p>
@@ -67,21 +31,21 @@
                     <div class="col-lg-6">
                         <div class="contact-info mt-5">
                             <div class="contact-item mt-4 d-flex align-items-start">
-                                <img src="../assets/address2.png" class="icon" alt="Address Icon">
+                                <img src="../assets/address2.webp" class="icon" alt="Address Icon">
                                 <div class="info">
                                     <h4>Address</h4>
                                     <p class="text1  ml-3">AFG Global Shipping 290 NYE AVE, Irvington, NJ 07111</p>
                                 </div>
                             </div>
                             <div class="contact-item mt-4 d-flex align-items-start">
-                                <img src="../assets/phone.png" class="icon" alt="Call Icon">
+                                <img src="../assets/phone.webp" class="icon" alt="Call Icon">
                                 <div class="info">
                                     <h4>Phone</h4>
                                     <p class="text1 ml-3">+1 862 237 7066</p>
                                 </div>
                             </div>
                             <div class="contact-item mt-4 d-flex align-items-start">
-                                <img src="../assets/email2.png" class="icon" alt="Email Icon">
+                                <img src="../assets/email2.webp" class="icon" alt="Email Icon">
                                 <div class="info">
                                     <h4>Email</h4>
                                     <p class="text1 ml-3">Csupport@afgglobalusa.com</p>
@@ -93,8 +57,8 @@
             </div>
             <div class="col-lg-6 d-flex justify-content-center justify-content-lg-end">
                 <div class="image">
-                    <img src="../assets/bluerect.png" style="width: 100%;">
-                    <img src="../assets/map.png" style="position: absolute; right: 20%; bottom: 10%; max-width: 80%;">
+                    <img src="../assets/bluerect.webp" style="width: 100%;">
+                    <img src="../assets/map.webp" style="position: absolute; right: 20%; bottom: 10%; max-width: 80%;">
                 </div>
             </div>
         </div>
