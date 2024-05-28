@@ -9,6 +9,7 @@
     <Footer >
     </Footer>
     <Aboutuspage/>
+    <Contactuspage/>
   </div>
 </template>
 
@@ -21,11 +22,13 @@ import Contactus from './components/Contactus.vue'
 import Footer from './components/Footer.vue';
 import Aboutuspage from './components/Aboutuspage.vue';
 import Home from './pages/Home.vue'
+import Contactuspage from './components/Contactuspage.vue';
 
 export default {
   name: 'App',
   components: {
-    Home
+    Home,
+    Contactuspage
   },
 }
 </script>
