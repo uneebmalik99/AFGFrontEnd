@@ -1,43 +1,7 @@
 <template>
     <div class="container-fluid p-0">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">AFG Logo</a>
-                <button class="navbar-toggler mx-auto" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#">Services</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#">Tracking</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#">Contact Us</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#">Gallery</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#">Announcements</a>
-                        </li>
-                    </ul>
-                    <button class="btn btn-primary" type="button">Log In</button>
-                </div>
-            </div>
-        </nav>
         <div class="hero-section">
-            <img src="../assets/Ship2.png" alt="Ship Image" class="img-fluid w-100 hero-image">
+            <img src="../assets/Ship2.webp" alt="Ship Image" class="img-fluid w-100 hero-image">
             <div class="hero-text">
                 <h1 class="display-4">About Us</h1>
                 <p>HOME &gt; ABOUT US</p>
@@ -78,7 +42,7 @@
                     </div>
                 </div>
                 <div class="col-md-3 p-0 d-flex">
-                    <img src="../assets/ship3.png" alt="Shipping Image"
+                    <img src="../assets/ship3.webp" alt="Shipping Image"
                         class="img-fluid w-100 h-100 align-self-stretch">
                 </div>
             </div>
@@ -103,7 +67,7 @@
             <div class="col">
                 <div class="card">
                     <div class="icon-container">
-                        <img src="../assets/1.png" class="icon-img" alt="Icon">
+                        <img src="../assets/1.webp" class="icon-img" alt="Icon">
                     </div>
                     <div class="card-body">
                         <h5 class="card-title">Innovative</h5>
@@ -114,7 +78,7 @@
             <div class="col">
                 <div class="card">
                     <div class="icon-container">
-                        <img src="../assets/2.png" class="icon-img" alt="Icon">
+                        <img src="../assets/2.webp" class="icon-img" alt="Icon">
                     </div>
                     <div class="card-body">
                         <h5 class="card-title">Continuous Improvement</h5>
@@ -125,7 +89,7 @@
             <div class="col">
                 <div class="card">
                     <div class="icon-container">
-                        <img src="../assets/3.png" class="icon-img" alt="Icon">
+                        <img src="../assets/3.webp" class="icon-img" alt="Icon">
                     </div>
                     <div class="card-body">
                         <h5 class="card-title">Respect</h5>
@@ -136,7 +100,7 @@
             <div class="col">
                 <div class="card mt-5 mb-5">
                     <div class="icon-container">
-                        <img src="../assets/4.png" class="icon-img" alt="Icon">
+                        <img src="../assets/4.webp" class="icon-img" alt="Icon">
                     </div>
                     <div class="card-body">
                         <h5 class="card-title">Loyalty</h5>
@@ -147,7 +111,7 @@
             <div class="col">
                 <div class="card mt-5 mb-5">
                     <div class="icon-container">
-                        <img src="../assets/5.png" class="icon-img" alt="Icon">
+                        <img src="../assets/5.webp" class="icon-img" alt="Icon">
                     </div>
                     <div class="card-body">
                         <h5 class="card-title">Reliability</h5>
@@ -158,7 +122,7 @@
             <div class="col">
                 <div class="card mt-5 mb-5">
                     <div class="icon-container">
-                        <img src="../assets/6.png" class="icon-img" alt="Icon">
+                        <img src="../assets/6.webp" class="icon-img" alt="Icon">
                     </div>
                     <div class="card-body">
                         <h5 class="card-title">Efficiency</h5>

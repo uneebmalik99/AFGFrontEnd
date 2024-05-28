@@ -1,37 +1,19 @@
 <template>
-<Navbar />
-<Coverage />
-<Tracking />
-<Technology />
-<Aboutus />
-<Contactus />
-<Footer > </Footer>
-</template>
+    <Contactuspage />
 
+    </template>
+    
+    <script>
+    import Contactuspage from './../components/Contactuspage.vue';
+  
+    export default {
+      name: "ContactUS",
+      components: {
+      Contactuspage
+      },
+    }
+    </script>
 
-
-<script>
-import Aboutus from './../components/Aboutus.vue'
-import Navbar from './../components/Navbar.vue'
-import footer from './../components/footer.vue'
-
-import Contactus from './../components/Contactus.vue'
-
-
-
-export default {
-  name: "Home",
-  components: {
-    Navbar,
-    Coverage,
-    Tracking,
-    Technology,
-    Aboutus,
-    Contactus,
-    Footer
-
-
-
-  },
-}
-</script>
+    <style>
+    
+    </style>
