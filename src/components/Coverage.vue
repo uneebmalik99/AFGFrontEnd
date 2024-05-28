@@ -9,13 +9,13 @@
         <div class="coverage-content">
           <div class="coverage-map position-relative">
             <div class="coverage-loc d-flex flex-column">
-              <img src="../assets/Vector.png" alt="Savvana GA" class="img-fluid" />
-              <img src="../assets/Vector (1).png" alt="California" class="img-fluid" />
-              <img src="../assets/Vector (2).png" alt="Baltimore" class="img-fluid" />
-              <img src="../assets/Vector (3).png" alt="Texas" class="img-fluid" />
-              <img src="../assets/Vector (4).png" alt="New Jersey" class="img-fluid" />
+              <img src="../assets/Vector.webp" alt="Savvana GA" class="img-fluid" />
+              <img src="../assets/Vector (1).webp" alt="California" class="img-fluid" />
+              <img src="../assets/Vector (2).webp" alt="Baltimore" class="img-fluid" />
+              <img src="../assets/Vector (3).webp" alt="Texas" class="img-fluid" />
+              <img src="../assets/Vector (4).webp" alt="New Jersey" class="img-fluid" />
             </div>
-            <img src="../assets/worldmap.png" alt="World Map" class="world-map img-fluid" />
+            <img src="../assets/worldmap.webp" alt="World Map" class="world-map img-fluid" />
           </div>
         </div>
       </div>
@@ -23,23 +23,23 @@
         <div class="map-marker">
           <div class="mark">
             <div class="image">
-              <img src="../assets/Vector.png" alt="Savvana GA" class="img-fluid" />
+              <img src="../assets/Vector.webp" alt="Savvana GA" class="img-fluid" />
               <span class="small">Savvana GA</span>
-              <img src="../assets/Vector (1).png" alt="California" class="img-fluid" />
+              <img src="../assets/Vector (1).webp" alt="California" class="img-fluid" />
               <span class="small">California</span>
             </div>
           </div>
           <div class="mark">
             <div class="image">
-              <img src="../assets/Vector (2).png" alt="Baltimore" class="img-fluid" />
+              <img src="../assets/Vector (2).webp" alt="Baltimore" class="img-fluid" />
               <span class="small">Baltimore</span>
-              <img src="../assets/Vector (3).png" alt="Texas" class="img-fluid" />
+              <img src="../assets/Vector (3).webp" alt="Texas" class="img-fluid" />
               <span class="small">Texas</span>
             </div>
           </div>
           <div class="mark">
             <div class="image">
-              <img src="../assets/Vector (4).png" alt="New Jersey" class="img-fluid" />
+              <img src="../assets/Vector (4).webp" alt="New Jersey" class="img-fluid" />
               <span class="small">New Jersey</span>
             </div>
           </div>

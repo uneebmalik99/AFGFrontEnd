@@ -12,15 +12,15 @@
         <div class="col-md-3">
           <h3 class="heading1">Get in Touch</h3>
           <div class="contact-item mt-4 d-flex align-items-start">
-            <img src="../assets/Address.png" class="icon" alt="Address Icon">
+            <img src="../assets/Address.webp" class="icon" alt="Address Icon">
             <p class="text1 ml-3">AFG Global Shipping 290 NYE AVE, Irvington, NJ 07111</p>
           </div>
           <div class="contact-item mt-4 d-flex align-items-start">
-            <img src="../assets/Email.png" class="icon" alt="Email Icon">
+            <img src="../assets/Email.webp" class="icon" alt="Email Icon">
             <p class="text1 ml-3">Csupport@afgglobalusa.com</p>
           </div>
           <div class="contact-item mt-4 d-flex align-items-start">
-            <img src="../assets/call.png" class="icon" alt="Call Icon">
+            <img src="../assets/call.webp" class="icon" alt="Call Icon">
             <p class="text1 ml-3">+1 862 237 7066</p>
           </div>
         </div>

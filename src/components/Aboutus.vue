@@ -19,9 +19,9 @@
         <button class="btn btn-primary view-more-button" @click="viewMore">View More <span>→</span></button>
       </div>
       <div class="col-md-6 info-images">
-        <img src="../assets/Ship.png" alt="Ship" class="image-medium img-fluid" />
-        <img src="../assets/car.png" alt="cars" class="image-large img-fluid" />
-        <img src="../assets/Parking.png" alt="Parking" class="image-small img-fluid" />
+        <img src="../assets/Ship.webp" alt="Ship" class="image-medium img-fluid" />
+        <img src="../assets/car.webp" alt="cars" class="image-large img-fluid" />
+        <img src="../assets/Parking.webp" alt="Parking" class="image-small img-fluid" />
       </div>
     </div>
   </div>
@@ -118,7 +118,7 @@ export default {
 .info-images {
   position: relative;
   height: 500px;
-  background: url('../assets/cubicshape.png') no-repeat center center;
+  background: url('../assets/cubicshape.webp') no-repeat center center;
   background-size: contain;
 }
 

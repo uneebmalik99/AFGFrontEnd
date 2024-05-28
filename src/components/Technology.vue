@@ -19,7 +19,7 @@
           <div class="col-md-6 text-center">
             <img
               class="img-fluid app-image"
-              src="../assets/iPhone 15.png"
+              src="../assets/iPhone 15.webp"
               alt="AFG Global Shipping App"
             />
           </div>
@@ -38,7 +38,7 @@
                 class="download-button"
               >
                 <img
-                  src="../assets/Googleplay.png"
+                  src="../assets/Googleplay.webp"
                   alt="Get it on Google Play"
                   class="img-fluid"
                 />
@@ -49,7 +49,7 @@
                 class="download-button"
               >
                 <img
-                  src="../assets/Appplay.png"
+                  src="../assets/Appplay.webp"
                   alt="Download on the App Store"
                   class="img-fluid"
                 />
@@ -157,7 +157,7 @@ export default {
   position: relative;
   width: 100%;
   height: 100%;
-  background: url("../assets/bg.png") no-repeat center center;
+  background: url("../assets/bg.webp") no-repeat center center;
   background-size: cover;
   opacity: 0.7;
   display: flex;

@@ -22,21 +22,21 @@
                     <div class="col-lg-6">
                         <div class="contact-info mt-5">
                             <div class="contact-item mt-4 d-flex align-items-start">
-                                <img src="../assets/address2.png" class="icon" alt="Address Icon">
+                                <img src="../assets/address2.webp" class="icon" alt="Address Icon">
                                 <div class="info">
                                     <h4>Address</h4>
                                     <p class="text1  ml-3">AFG Global Shipping 290 NYE AVE, Irvington, NJ 07111</p>
                                 </div>
                             </div>
                             <div class="contact-item mt-4 d-flex align-items-start">
-                                <img src="../assets/phone.png" class="icon" alt="Call Icon">
+                                <img src="../assets/phone.webp" class="icon" alt="Call Icon">
                                 <div class="info">
                                     <h4>Phone</h4>
                                     <p class="text1 ml-3">+1 862 237 7066</p>
                                 </div>
                             </div>
                             <div class="contact-item mt-4 d-flex align-items-start">
-                                <img src="../assets/email2.png" class="icon" alt="Email Icon">
+                                <img src="../assets/email2.webp" class="icon" alt="Email Icon">
                                 <div class="info">
                                     <h4>Email</h4>
                                     <p class="text1 ml-3">Csupport@afgglobalusa.com</p>
@@ -48,8 +48,8 @@
             </div>
             <div class="col-lg-6 d-flex justify-content-center justify-content-lg-end">
                 <div class="image">
-                    <img src="../assets/Navyshape.png" style="width: 100%;">
-                    <img src="../assets/Boat.png" style="position: absolute; right: 20%; bottom: 10%; max-width: 80%;">
+                    <img src="../assets/Navyshape.webp" style="width: 100%;">
+                    <img src="../assets/Boat.webp" style="position: absolute; right: 20%; bottom: 10%; max-width: 80%;">
                 </div>
             </div>
         </div>
