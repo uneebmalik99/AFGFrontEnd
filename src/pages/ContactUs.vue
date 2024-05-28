@@ -7,7 +7,7 @@
     import Contactuspage from './../components/Contactuspage.vue';
   
     export default {
-      name: "ContactUS",
+      name: "ContactUs",
       components: {
       Contactuspage
       },

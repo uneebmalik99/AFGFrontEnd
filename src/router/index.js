@@ -1,12 +1,12 @@
 // src/router/index.js
 import { createRouter, createWebHistory } from 'vue-router';
 import Home from '@/pages/Home.vue';
-import ContactUS from '@/pages/ContactUS.vue';
+import ContactUs from '@/pages/ContactUs.vue';
 
 
 const routes = [
   { path: '/', component: Home },
-  { path: '/contact-us', component: ContactUS },
+  { path: '/contact-us', component: ContactUs },
   
 ];
 
