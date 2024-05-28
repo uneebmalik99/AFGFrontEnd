@@ -13,7 +13,7 @@
 <script>
 import Aboutus from './../components/Aboutus.vue'
 import Navbar from './../components/Navbar.vue'
-import footer from './../components/footer.vue'
+import footer from './../components/Navbar.vue'
 
 import Contactus from './../components/Contactus.vue'
 
