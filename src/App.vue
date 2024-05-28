@@ -1,15 +1,9 @@
 <template>
   <div id="app">
+    <Navbar />
   <Home />
-    <Coverage />
-    <Technology />
-    <Aboutus />
-    <Tracking />
-    <Contactus />
     <Footer >
     </Footer>
-    <Aboutuspage/>
-    <Contactuspage/>
   </div>
 </template>
 
@@ -23,12 +17,15 @@ import Footer from './components/Footer.vue';
 import Aboutuspage from './components/Aboutuspage.vue';
 import Home from './pages/Home.vue'
 import Contactuspage from './components/Contactuspage.vue';
+import Navbar from './components/Navbar.vue';
 
 export default {
   name: 'App',
   components: {
+    Navbar,
     Home,
-    Contactuspage
+    Contactuspage,
+    Footer
   },
 }
 </script>
