@@ -63,7 +63,8 @@
                 <div class="image">
                     <img src="../assets/bluerect.webp" style="width: 100%;">
                     <img src="../assets/map.webp" style="position: absolute; right: 20%; bottom: 10%; max-width: 80%;">
-                </div>
+                </div> 
+
             </div>
         </div>
     </div>

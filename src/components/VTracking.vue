@@ -27,7 +27,7 @@
 
 <script>
 export default {
-    name: "Tracking",
+    name: "VTracking",
 };
 </script>
 
