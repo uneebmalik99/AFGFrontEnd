@@ -6,18 +6,17 @@
                 <h1 class="tracking-subtitle">Vehicle and Container Tracking</h1>
             </div>
             <div class="row justify-content-center">
-                <div class="col-lg-8">
+                <div class="col-lg-6">
                     <div class="tracking-form">
                         <p class="tracking-instructions text-center">
                             Enter your Vin No, Lot No, or Container No to track your shipments.
                         </p>
                         <div class="input-group mb-3">
-                            <input v-model="trackingNumber" type="text" class="form-control"
-                                placeholder="Vin/Lot/Container number" aria-label="Vin/Lot/Container number" />
-                        </div>
-                        <div class="text-center">
+                            <input v-model="trackingNumber"  type="text" maxlength="17"  class="form-control"
+                                placeholder="Vin/Lot/Container number"  aria-label="Vin/Lot/Container number" />
                             <button class="btn  btn-lg" type="button">Track</button>
                         </div>
+                        
                     </div>
                 </div>
             </div>
@@ -47,9 +46,12 @@ export default {
 .tracking-subtitle {
     font-size: 32px;
     font-weight: 700;
-    color: #002d72;
+    color: #011936;
 }
-
+::v-deep .form-control::placeholder {
+  color: #A6A6A6; /* Change this to your desired color */
+/* Optional: Ensures the color opacity is not altered */
+}
 .tracking-form .input-group {
     display: flex;
     align-items: center;
@@ -75,9 +77,10 @@ export default {
 
 .btn {
     background-color: #ff4c60;
-    padding: 10px 20px; /* Adjust button padding */
+    padding: 8px 30px; /* Adjust button padding */
     border-radius: 8px;
     color: white;
+    font-size: 14px;
 }
 
 @media (max-width: 767px) {
@@ -86,6 +89,7 @@ export default {
         align-items: center; /* Center items horizontally */
     }
     .tracking-form .input-group .form-control {
+      
         width: 100%; /* Make input full width */
         margin-right: 0; /* Remove margin for smaller screens */
         margin-bottom: 10px; /* Add space between input and button */
