@@ -4,7 +4,11 @@
             <img src="../assets/contactus.webp" alt="Ship Image" class="img-fluid w-100 hero-image">
             <div class="hero-text">
                 <h1 class="display-4">Contact Us</h1>
-                <p>HOME &gt; CONTACT US</p>
+                <p>
+                    <span class="home">HOME</span>
+                    <span class="arrow"> &gt; </span>
+                    <span class="contact-us">CONTACT US</span>
+                </p>
             </div>
         </div>
     </div>
@@ -59,7 +63,8 @@
                 <div class="image">
                     <img src="../assets/bluerect.webp" style="width: 100%;">
                     <img src="../assets/map.webp" style="position: absolute; right: 20%; bottom: 10%; max-width: 80%;">
-                </div>
+                </div> 
+
             </div>
         </div>
     </div>
@@ -77,46 +82,17 @@ export default {
 </script>
 
 <style scoped>
-.navbar {
-    padding: 20px 0;
-}
-
-.navbar-brand {
-    font-family: Montserrat;
-    font-size: 32px;
-    font-weight: 700;
-    text-align: left;
-    color: #333333;
-}
-
-.nav-item {
-    font-family: Montserrat;
-    font-size: 15px;
-    font-weight: 700;
-    text-align: left;
-    color: #333333;
-}
-
-.btn {
-    background: #011936;
-    color: white;
-    border-radius: 26px;
-    padding: 10px 26px;
-}
-
 .hero-section {
     position: relative;
     text-align: left;
-    color: white;
+   
 }
 
 .hero-image {
-    width: 1506px;
-    height: 461px;
-    top: 69px;
-    gap: 0px;
-    opacity: 0px;
+    width: 100%;
+    height: auto;
     object-fit: cover;
+    color: #00000080;
 }
 
 .hero-text {
@@ -130,9 +106,29 @@ export default {
 .hero-text h1 {
     font-size: 56px;
     font-weight: 700;
+    color: #FFFFFF;
+
 }
 
-.hero-text p {
+.home {
+    color: #FFFFFF;
+    font-family: Montserrat;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24.38px;
+    text-align: left;
+
+}
+
+.arrow {
+    width: 8px;
+    height: 14px;
+    gap: 0px;
+    opacity: 0px;
+}
+
+.contact-us {
+    font-family: Montserrat;
     font-size: 20px;
     font-weight: 700;
     color: #011936;
