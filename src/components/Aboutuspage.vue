@@ -4,7 +4,11 @@
             <img src="../assets/Ship2.webp" alt="Ship Image" class="img-fluid w-100 hero-image">
             <div class="hero-text">
                 <h1 class="display-4">About Us</h1>
-                <p>HOME &gt; ABOUT US</p>
+                <p>
+                    <span class="home">HOME</span>
+                    <span class="arrow"> &gt; </span>
+                    <span class="about-us">ABOUT US</span>
+                </p>
             </div>
         </div>
         <div class="container-fluid p-0">
@@ -150,32 +154,6 @@ export default {
 </script>
 
 <style scoped>
-.navbar {
-    padding: 20px 0;
-}
-
-.navbar-brand {
-    font-family: Montserrat;
-    font-size: 32px;
-    font-weight: 700;
-    text-align: left;
-    color: #333333;
-}
-
-.nav-item {
-    font-family: Montserrat;
-    font-size: 15px;
-    font-weight: 700;
-    text-align: left;
-    color: #333333;
-}
-
-.btn {
-    background: #011936;
-    color: white;
-    border-radius: 26px;
-    padding: 10px 26px;
-}
 
 .hero-section {
     position: relative;
@@ -197,13 +175,38 @@ export default {
 }
 
 .hero-text h1 {
+    font-family: Montserrat;
     font-size: 56px;
     font-weight: 700;
+    line-height: 68.26px;
+    text-align: left;
+    font-weight: 700;
+
 }
 
-.hero-text p {
+.home {
+    font-family: Montserrat;
     font-size: 20px;
     font-weight: 700;
+    line-height: 24.38px;
+    text-align: left;
+    color: #ffffff;
+}
+
+.arrow {
+    width: 8px;
+    height: 14px;
+    gap: 0px;
+    opacity: 0px;
+
+}
+
+.about-us {
+    font-family: Montserrat;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24.38px;
+    text-align: left;
     color: #011936;
 }
 
