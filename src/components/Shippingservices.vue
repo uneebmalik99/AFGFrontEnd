@@ -1,58 +1,58 @@
 <template>
-    <div class="container-fluid p-0" style="background-color:#f4fffd;">
-        <div class="hero-section">
-            <div class="hero-text">
-                <h1 class="display-4">Shipping Services</h1>
-                <p>
-                    <span class="home">HOME</span>
-                    <span class="arrow"> &gt; </span>
-                    <span class="services">SERVICES</span>
-                    <span class="arrow"> &gt; </span>
-                    <span class="customer-support">SHIPPING SERVICES</span>
-                </p>
-            </div>
-        </div>
-        <div class="container-fluid">
-            <div class="support-buttons-container my-4">
-                <div class="support-buttons d-flex justify-content-start">
-                    <button @click="setActive(0)" class="btn" :class="{'active': activeButton === 0}">Shipping Services</button>
-                    <button @click="setActive(1)" class="btn btn-outline-primary" :class="{'active': activeButton === 1}">Global Reach</button>
-                    <button @click="setActive(2)" class="btn btn-outline-primary" :class="{'active': activeButton === 2}">Direct Ship Line Partnerships</button>
-                </div>
-                <div class="progress-container">
-                    <div class="progress-bar" :style="progressBarStyle"></div>
-                </div>
-            </div>
-        </div>
-        <div class="container mb-4">
-            <div class="row align-items-center">
-                <div class="col-md-6">
-                    <h2 class="call-heading mt-4">Shipping Services</h2>
-                    <p class="call-subtitle">
-                        Lorem ipsum dolor sit amet consectetur. Nisi diam est fermentum tortor tincidunt congue viverra.
-                        Pulvinar elit ipsum ut fermentum eget. Non egestas pellentesque tristique turpis tortor
-                        habitasse ac vel enim. Pretium et sit lobortis enim est nunc ultrices mi quam.
-                    </p>
-                    <p class="call-subtitle">
-                        Lorem ipsum dolor sit amet consectetur. Nisi diam est fermentum tortor tincidunt congue viverra.
-                        Pulvinar elit ipsum ut fermentum eget. Non egestas pellentesque tristique turpis tortor
-                        habitasse ac vel enim. Pretium et sit lobortis enim est nunc ultrices mi quam.
-                    </p>
-                    <p class="call-subtitle">
-                        Lorem ipsum dolor sit amet consectetur. Nisi diam est fermentum tortor tincidunt congue viverra.
-                        Pulvinar elit ipsum ut fermentum eget. Non egestas pellentesque tristique turpis tortor
-                        habitasse ac vel enim. Pretium et sit lobortis enim est nunc ultrices mi quam.
-                    </p>
-                </div>
-                <div class="col-md-6 position-relative text-center">
-                    <div class="image-container">
-                        <img src="../assets/serviceblue.webp" class="img-fluid custom-image service-blue">
-                        <img src="../assets//service.webp" class="img-fluid custom-image service-top">
-                    </div>
-                </div>
-            </div>
-        </div>
+   <div class="container-fluid p-0" style="background-color:#f4fffd;">
+    <div class="hero-section">
+      <div class="hero-text">
+        <h1 class="display-4">Shipping Services</h1>
+        <p>
+          <span class="home">HOME</span>
+          <span class="arrow"> &gt; </span>
+          <span class="services">SERVICES</span>
+          <span class="arrow"> &gt; </span>
+          <span class="customer-support">SHIPPING SERVICES</span>
+        </p>
+      </div>
     </div>
+    <div class="container-fluid">
+      <div class="support-buttons-container my-4">
+        <div class="support-buttons d-flex justify-content-start ">
+          <button @click="setActive(0)" class="btn" :class="{'active': activeButton === 0}">Shipping Services</button>
+          <button @click="setActive(1)" class="btn btn-outline-primary" :class="{'active': activeButton === 1}">Global Reach</button>
+          <button @click="setActive(2)" class="btn btn-outline-primary" :class="{'active': activeButton === 2}">Direct Ship Line Partnerships</button>
+        </div>
+        <div class="progress-container mt-2">
+          <div class="progress-bar" :style="progressBarStyle"></div>
+        </div>
+      </div>
+    </div>
+    <div class="container mb-4">
+      <div class="row align-items-center">
+        <div class="col-12 col-md-6 mb-4 mb-md-0">
+          <h2 class="call-heading mt-4">Shipping Services</h2>
+          <p class="call-subtitle">
+            Lorem ipsum dolor sit amet consectetur. Nisi diam est fermentum tortor tincidunt congue viverra.
+            Pulvinar elit ipsum ut fermentum eget. Non egestas pellentesque tristique turpis tortor
+            habitasse ac vel enim. Pretium et sit lobortis enim est nunc ultrices mi quam.
+          </p>
+          <p class="call-subtitle">
+            Lorem ipsum dolor sit amet consectetur. Nisi diam est fermentum tortor tincidunt congue viverra.
+            Pulvinar elit ipsum ut fermentum eget. Non egestas pellentesque tristique turpis tortor
+            habitasse ac vel enim. Pretium et sit lobortis enim est nunc ultrices mi quam.
+          </p>
+          <p class="call-subtitle">
+            Lorem ipsum dolor sit amet consectetur. Nisi diam est fermentum tortor tincidunt congue viverra.
+            Pulvinar elit ipsum ut fermentum eget. Non egestas pellentesque tristique turpis tortor
+            habitasse ac vel enim. Pretium et sit lobortis enim est nunc ultrices mi quam.
+          </p>
+        </div>
+        <div class="col-12 col-md-6 text-center">
+          <div class="image-container position-relative">
+            <img src="../assets/serviceblue.webp" class="img-fluid custom-image service-blue">
+            <img src="../assets/service.webp" class="img-fluid custom-image service-top">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -157,7 +157,7 @@ export default {
 }
 
 .progress-container {
-    width: 100%;
+    width: 63%;
     height: 2px;
     margin: 10px 0;
     background-color: #e9ecef;

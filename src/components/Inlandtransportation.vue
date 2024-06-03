@@ -1,5 +1,5 @@
 <template>
-    <div class="container-fluid p-0" style="background-color:#f4fffd ;">
+     <div class="container-fluid p-0" style="background-color:#f4fffd;">
         <div class="hero-section">
             <div class="hero-text">
                 <h1 class="display-4">Inland Transportation</h1>
@@ -14,7 +14,7 @@
         </div>
         <div class="container-fluid">
             <div class="support-buttons-container my-4">
-                <div class="support-buttons d-flex justify-content-start flex-wrap">
+                <div class="support-buttons d-flex justify-content-start ">
                     <button @click="setActive(0)" class="btn" :class="{'active': activeButton === 0}">Towing Services</button>
                     <button @click="setActive(1)" class="btn btn-outline-primary" :class="{'active': activeButton === 1}">Quick Pickup</button>
                     <button @click="setActive(2)" class="btn btn-outline-primary" :class="{'active': activeButton === 2}">Towing Policy</button>
@@ -26,7 +26,7 @@
         </div>
         <div class="container mb-4">
             <div class="row align-items-center">
-                <div class="col-md-6">
+                <div class="col-12 col-md-6 mb-4 mb-md-0">
                     <h2 class="call-heading mt-4">Towing Services</h2>
                     <p class="call-subtitle">
                         Lorem ipsum dolor sit amet consectetur. Nisi diam est fermentum tortor tincidunt congue viverra.
@@ -44,14 +44,15 @@
                         habitasse ac vel enim. Pretium et sit lobortis enim est nunc ultrices mi quam.
                     </p>
                 </div>
-                <div class="col-md-6 position-relative text-center">
+                <div class="col-12 col-md-6 text-center">
                     <div class="image-container">
                         <img src="../assets/serviceblue.webp" class="img-fluid custom-image service-blue">
-                        <img src="../assets//service.webp" class="img-fluid custom-image service-top">
+                        <img src="../assets/service.webp" class="img-fluid custom-image service-top">
                     </div>
                 </div>
             </div>
         </div>
+        
     </div>
 </template>
 

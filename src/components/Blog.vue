@@ -167,31 +167,4 @@ export default {
     border-radius: 8px;
     object-fit: cover;
 }
-
-/* Responsive styles */
-@media (max-width: 767.98px) {
-    .Heading {
-        font-size: 36px;
-        line-height: 44px;
-    }
-
-    .sub-title {
-        font-size: 24px;
-        line-height: 32px;
-    }
-
-    .text {
-        font-size: 14px;
-        line-height: 20px;
-    }
-
-    .h3-title {
-        font-size: 20px;
-    }
-
-    .quoted {
-        font-size: 16px;
-        line-height: 22px;
-    }
-}
 </style>

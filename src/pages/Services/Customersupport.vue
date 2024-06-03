@@ -1,10 +1,10 @@
 <template>
     <div class="container-fluid p-0" style="background-color:#f4fffd;">
-        <div class="hero-section">
+        <div class="hero-section position-relative">
             <img src="../assets/customersupport.webp" alt="Ship Image" class="img-fluid w-100 hero-image">
-            <div class="hero-text">
+            <div class="hero-text position-absolute text-center text-md-left">
                 <h1 class="display-4">24/7 Customer Support</h1>
-                <p>
+                <p class="text-desc">
                     <span class="home">HOME</span>
                     <span class="arrow"> &gt; </span>
                     <span class="services">SERVICES</span>
@@ -15,19 +15,22 @@
         </div>
         <div class="container-fluid">
             <div class="support-buttons-container my-4">
-                <div class="support-buttons d-flex justify-content-start">
-                    <button @click="setActive(0)" class="btn" :class="{'active': activeButton === 0}">Call center support</button>
-                    <button @click="setActive(1)" class="btn btn-outline-primary" :class="{'active': activeButton === 1}">Message Support</button>
-                    <button @click="setActive(2)" class="btn btn-outline-primary" :class="{'active': activeButton === 2}">Email Support</button>
+                <div class="support-buttons d-flex justify-content-start ">
+                    <button @click="setActive(0)" class="btn" :class="{ 'active': activeButton === 0 }">Call center
+                        support</button>
+                    <button @click="setActive(1)" class="btn btn-outline-primary"
+                        :class="{ 'active': activeButton === 1 }">Message Support</button>
+                    <button @click="setActive(2)" class="btn btn-outline-primary"
+                        :class="{ 'active': activeButton === 2 }">Email Support</button>
                 </div>
-                <div class="progress-container">
+                <div class="progress-container mt-2">
                     <div class="progress-bar" :style="progressBarStyle"></div>
                 </div>
             </div>
         </div>
         <div class="container mb-4">
             <div class="row align-items-center">
-                <div class="col-md-6">
+                <div class="col-12 col-md-6 mb-4 mb-md-0">
                     <h2 class="call-heading">Call Center Support</h2>
                     <p class="call-subtitle">
                         Lorem ipsum dolor sit amet consectetur. Nisi diam est fermentum tortor tincidunt congue viverra.
@@ -45,15 +48,17 @@
                         habitasse ac vel enim. Pretium et sit lobortis enim est nunc ultrices mi quam.
                     </p>
                 </div>
-                <div class="col-md-6 position-relative text-center">
-                    <div class="image-container">
+                <div class="col-12 col-md-6 text-center">
+                    <div class="image-container position-relative">
                         <img src="../assets/serviceblue.webp" class="img-fluid custom-image service-blue">
                         <img src="../assets/service.webp" class="img-fluid custom-image service-top">
                     </div>
                 </div>
             </div>
         </div>
+
     </div>
+
 </template>
 
 <script>
@@ -65,8 +70,8 @@ export default {
     },
     computed: {
         progressBarStyle() {
-            const buttonWidth = 200; // approximate width of each button, adjust as needed
-            const buttonMargin = 10; // approximate margin of each button, adjust as needed
+            const buttonWidth = 200; // Adjust button width for small devices
+            const buttonMargin = 10;
             return {
                 width: `${buttonWidth}px`,
                 left: `${this.activeButton * (buttonWidth + buttonMargin)}px`,
@@ -78,6 +83,21 @@ export default {
             this.activeButton = index;
         },
     },
+    mounted() {
+        window.addEventListener('resize', this.updateProgressBar);
+    },
+    beforeDestroy() {
+        window.removeEventListener('resize', this.updateProgressBar);
+    },
+    methods: {
+        setActive(index) {
+            this.activeButton = index;
+            this.updateProgressBar();
+        },
+        updateProgressBar() {
+            this.$forceUpdate();
+        }
+    }
 };
 </script>
 
@@ -100,6 +120,7 @@ export default {
     left: 50px;
     transform: translateY(-50%);
     font-family: Montserrat, sans-serif;
+    margin-left: 17px;
 }
 
 .hero-text h1 {
@@ -161,7 +182,7 @@ export default {
 }
 
 .progress-container {
-    width: 100%;
+    width: 55%;
     height: 2px;
     margin: 10px 0;
     background-color: #e9ecef;
@@ -203,7 +224,6 @@ export default {
     width: 474px;
     height: 400px;
     gap: 0px;
-    opacity: 0px;
     left: 15%;
 }
 
@@ -228,18 +248,13 @@ export default {
     clip-path: polygon(10% 0%, 90% 0%, 100% 100%, 0% 100%);
 }
 
-.container {
-    width: Fixed (1, 196px)px;
-    height: Hug (457px)px;
-    top: 636px;
-    left: 122px;
-    padding: 9px 0px 9px 0px;
-    gap: 0px;
-    justify-content: space-between;
-    opacity: 0px;
-}
 
 @media (max-width: 767.98px) {
+    .hero-text {
+        left: 20px;
+        transform: translateY(-50%);
+    }
+
     .hero-text h1 {
         font-size: 36px;
         line-height: 48px;
@@ -248,6 +263,10 @@ export default {
     .hero-text p {
         font-size: 16px;
         line-height: 20px;
+    }
+
+    .support-buttons-container {
+        margin-left: 5%;
     }
 
     .support-buttons .btn {
@@ -276,6 +295,11 @@ export default {
     .service-top {
         width: 90%;
         max-width: 270px;
+    }
+
+    .image-container {
+        left: 0;
+        width: 100%;
     }
 }
 </style>
