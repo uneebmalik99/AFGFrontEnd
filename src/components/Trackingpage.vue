@@ -37,7 +37,7 @@
 
         <div class="container">
             <h2 class="mt-4">Vehicle Images</h2>
-            <div class="row1">
+            <div class="row" style="background-color: #FFFFFF;">
                 <div class="col-12 col-md-4 mb-4">
                     <div class="image-container">
                         <img src="../assets/truck1.webp" alt="Vehicle Front" class="img-fluid ">
@@ -288,11 +288,6 @@ h2 {
     background: #f4fffd;
 
 }
-.row1{
-    background: #FFFFFF;
-    display: flex;
-}
-
 
 .img1-fluid {
     width: 95%;
@@ -317,7 +312,7 @@ h2 {
 }
 
 .card {
-    width: 279.81px;
+    width: 260px;
     height: 147.65px;
     gap: 0px;
     border-radius: 12.76px 12.76px 0px 0px;
