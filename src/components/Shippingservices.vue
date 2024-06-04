@@ -60,7 +60,7 @@
      data() {
          return {
              activeButton: 0,
-             buttonWidth: 218, // Default button width for larger screens
+             buttonWidth: 355, // Default button width for larger screens
              buttonMargin: 10, // Default button margin
          };
      },
@@ -158,7 +158,7 @@
      font-family: Montserrat, sans-serif;
      font-size: 20px;
      margin: 0 5px;
-     width: 218px;
+     width: 355px;
      height: 46px;
  }
  

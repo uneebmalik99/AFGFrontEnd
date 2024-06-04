@@ -169,7 +169,7 @@ export default {
     font-family: Montserrat, sans-serif;
     font-size: 20px;
     margin: 0 5px;
-    width: 250px;
+    width: 318px;
     height: 46px;
 }
 
