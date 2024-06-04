@@ -81,7 +81,7 @@ export default {
         },
         getButtonWidth() {
             // Adjust button width based on screen size
-            return window.innerWidth <= 767 ? window.innerWidth * 0.18 : this.buttonWidth;
+            return window.innerWidth <= 767 ? window.innerWidth * 0.25 : this.buttonWidth;
         },
         getButtonMargin() {
             // Adjust button margin based on screen size

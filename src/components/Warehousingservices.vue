@@ -80,7 +80,7 @@
       },
       getButtonWidth() {
         // Adjust button width based on screen size
-        return window.innerWidth <= 767 ? window.innerWidth * 0.2 : this.buttonWidth;
+        return window.innerWidth <= 767 ? window.innerWidth * 0.29 : this.buttonWidth;
       },
       getButtonMargin() {
         // Adjust button margin based on screen size

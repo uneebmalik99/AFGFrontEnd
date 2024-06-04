@@ -3,7 +3,7 @@
   <Inlandtransportation />
   <Loadingservices />
   <Shippingservices />
-  <Warehousingservices />
+   <Warehousingservices /> 
   <Clearinserviceuae/>
   <Bookingservices/>
   <Halfcutservices/>
