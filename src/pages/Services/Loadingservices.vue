@@ -1,59 +1,59 @@
 <template>
-   <div class="container-fluid p-0" style="background-color:#f4fffd;">
-    <div class="hero-section">
-      <img src="../assets/car-bg.webp" alt="Ship Image" class="img-fluid w-100 hero-image">
-      <div class="hero-text">
-        <h1 class="display-4">Loading Services</h1>
-        <p>
-          <span class="home">HOME</span>
-          <span class="arrow"> &gt; </span>
-          <span class="services">SERVICES</span>
-          <span class="arrow"> &gt; </span>
-          <span class="customer-support">LOADING SERVICES</span>
-        </p>
-      </div>
+    <div class="container-fluid p-0" style="background-color:#f4fffd;">
+        <div class="hero-section position-relative">
+            <img src="../assets/car-bg.webp" alt="Ship Image" class="img-fluid w-100 hero-image">
+            <div class="hero-text position-absolute text-center text-md-left">
+                <h1 class="display-4">Loading Services</h1>
+                <p>
+                    <span class="home">HOME</span>
+                    <span class="arrow"> &gt; </span>
+                    <span class="services">SERVICES</span>
+                    <span class="arrow"> &gt; </span>
+                    <span class="customer-support">LOADING SERVICES</span>
+                </p>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="support-buttons-container my-4">
+                <div class="support-buttons d-flex justify-content-start">
+                    <button @click="setActive(0)" class="btn" :class="{'active': activeButton === 0}">Loading Services</button>
+                    <button @click="setActive(1)" class="btn btn-outline-primary" :class="{'active': activeButton === 1}">Safe Transit, Damage Free</button>
+                    <button @click="setActive(2)" class="btn btn-outline-primary" :class="{'active': activeButton === 2}">Mix Shipping</button>
+                </div>
+                <div class="progress-container mt-2">
+                    <div class="progress-bar" :style="progressBarStyle"></div>
+                </div>
+            </div>
+        </div>
+        <div class="container mb-4">
+            <div class="row align-items-center">
+                <div class="col-12 col-md-6 mb-4 mb-md-0">
+                    <h2 class="call-heading">Loading Services</h2>
+                    <p class="call-subtitle">
+                        Lorem ipsum dolor sit amet consectetur. Nisi diam est fermentum tortor tincidunt congue viverra.
+                        Pulvinar elit ipsum ut fermentum eget. Non egestas pellentesque tristique turpis tortor
+                        habitasse ac vel enim. Pretium et sit lobortis enim est nunc ultrices mi quam.
+                    </p>
+                    <p class="call-subtitle">
+                        Lorem ipsum dolor sit amet consectetur. Nisi diam est fermentum tortor tincidunt congue viverra.
+                        Pulvinar elit ipsum ut fermentum eget. Non egestas pellentesque tristique turpis tortor
+                        habitasse ac vel enim. Pretium et sit lobortis enim est nunc ultrices mi quam.
+                    </p>
+                    <p class="call-subtitle">
+                        Lorem ipsum dolor sit amet consectetur. Nisi diam est fermentum tortor tincidunt congue viverra.
+                        Pulvinar elit ipsum ut fermentum eget. Non egestas pellentesque tristique turpis tortor
+                        habitasse ac vel enim. Pretium et sit lobortis enim est nunc ultrices mi quam.
+                    </p>
+                </div>
+                <div class="col-12 col-md-6 text-center">
+                    <div class="image-container position-relative">
+                        <img src="../assets/serviceblue.webp" class="img-fluid custom-image service-blue">
+                        <img src="../assets/service.webp" class="img-fluid custom-image service-top">
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="container-fluid">
-      <div class="support-buttons-container my-4">
-        <div class="support-buttons d-flex justify-content-start ">
-          <button @click="setActive(0)" class="btn" :class="{'active': activeButton === 0}">Loading Services</button>
-          <button @click="setActive(1)" class="btn btn-outline-primary" :class="{'active': activeButton === 1}">Safe Transit, Damage free</button>
-          <button @click="setActive(2)" class="btn btn-outline-primary" :class="{'active': activeButton === 2}">Mix Shipping</button>
-        </div>
-        <div class="progress-container mt-2">
-          <div class="progress-bar" :style="progressBarStyle"></div>
-        </div>
-      </div>
-    </div>
-    <div class="container mb-4">
-      <div class="row align-items-center">
-        <div class="col-12 col-md-6 mb-4 mb-md-0">
-          <h2 class="call-heading">Loading Services</h2>
-          <p class="call-subtitle">
-            Lorem ipsum dolor sit amet consectetur. Nisi diam est fermentum tortor tincidunt congue viverra.
-            Pulvinar elit ipsum ut fermentum eget. Non egestas pellentesque tristique turpis tortor
-            habitasse ac vel enim. Pretium et sit lobortis enim est nunc ultrices mi quam.
-          </p>
-          <p class="call-subtitle">
-            Lorem ipsum dolor sit amet consectetur. Nisi diam est fermentum tortor tincidunt congue viverra.
-            Pulvinar elit ipsum ut fermentum eget. Non egestas pellentesque tristique turpis tortor
-            habitasse ac vel enim. Pretium et sit lobortis enim est nunc ultrices mi quam.
-          </p>
-          <p class="call-subtitle">
-            Lorem ipsum dolor sit amet consectetur. Nisi diam est fermentum tortor tincidunt congue viverra.
-            Pulvinar elit ipsum ut fermentum eget. Non egestas pellentesque tristique turpis tortor
-            habitasse ac vel enim. Pretium et sit lobortis enim est nunc ultrices mi quam.
-          </p>
-        </div>
-        <div class="col-12 col-md-6 text-center">
-          <div class="image-container position-relative">
-            <img src="../assets/serviceblue.webp" class="img-fluid custom-image service-blue">
-            <img src="../assets/service.webp" class="img-fluid custom-image service-top">
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 </template>
 
 <script>
@@ -61,23 +61,43 @@ export default {
     data() {
         return {
             activeButton: 0,
+            buttonWidth: 318, // Default button width for larger screens
+            buttonMargin: 10, // Default button margin
         };
     },
     computed: {
         progressBarStyle() {
-            const buttonWidth = 200; // approximate width of each button, adjust as needed
-            const buttonMargin = 10; // approximate margin of each button, adjust as needed
+            const width = this.getButtonWidth();
+            const margin = this.getButtonMargin();
             return {
-                width: `${buttonWidth}px`,
-                left: `${this.activeButton * (buttonWidth + buttonMargin)}px`,
+                width: `${width}px`,
+                left: `${this.activeButton * (width + margin)}px`,
             };
         },
     },
     methods: {
         setActive(index) {
             this.activeButton = index;
+            this.updateProgressBar();
         },
+        updateProgressBar() {
+            this.$forceUpdate();
+        },
+        getButtonWidth() {
+            // Adjust button width based on screen size
+            return window.innerWidth <= 767 ? window.innerWidth * 0.19 : this.buttonWidth;
+        },
+        getButtonMargin() {
+            // Adjust button margin based on screen size
+            return window.innerWidth <= 767 ? 5 : this.buttonMargin;
+        }
     },
+    mounted() {
+        window.addEventListener('resize', this.updateProgressBar);
+    },
+    beforeDestroy() {
+        window.removeEventListener('resize', this.updateProgressBar);
+    }
 };
 </script>
 
@@ -143,6 +163,8 @@ export default {
     font-family: Montserrat, sans-serif;
     font-size: 20px;
     margin: 0 5px;
+    width: 318px;
+    height: 46px;
 }
 
 .support-buttons .btn.active {
@@ -162,7 +184,7 @@ export default {
 }
 
 .progress-container {
-    width: 60%;
+    width: 83%;
     height: 2px;
     margin: 10px 0;
     background-color: #e9ecef;
@@ -204,7 +226,6 @@ export default {
     width: 474px;
     height: 400px;
     gap: 0px;
-    opacity: 0px;
     left: 15%;
 }
 
@@ -252,7 +273,9 @@ export default {
     }
 
     .support-buttons .btn {
-        font-size: 16px;
+        font-size: 12px;
+        width: 100px; /* Adjust button width for smaller screens */
+        height: 80px; /* Increase button height for smaller screens */
     }
 
     .call-heading {
