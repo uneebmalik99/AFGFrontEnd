@@ -6,15 +6,22 @@
                 <h1 class="tracking-subtitle">Vehicle and Container Tracking</h1>
             </div>
             <div class="row justify-content-center">
-                <div class="col-lg-6">
+
+                <div class="col-lg-8 col-md-10 col-sm-12">
+
+
                     <div class="tracking-form">
                         <p class="tracking-instructions text-center">
                             Enter your Vin No, Lot No, or Container No to track your shipments.
                         </p>
                         <div class="input-group mb-3">
-                            <input v-model="trackingNumber"  type="text" maxlength="17"  class="form-control"
-                                placeholder="Vin/Lot/Container number"  aria-label="Vin/Lot/Container number" />
-                            <button class="btn  btn-lg" type="button">Track</button>
+
+                            <input v-model="trackingNumber" type="text" class="form-control"
+                                placeholder="Vin/Lot/Container number" aria-label="Vin/Lot/Container number" />
+                            <div class="input-group-append">
+                                <button class="btn btn-lg" type="button">Track</button>
+                            </div>
+
                         </div>
                         
                     </div>
@@ -27,6 +34,11 @@
 <script>
 export default {
     name: "VTracking",
+    data() {
+        return {
+            trackingNumber: ""
+        };
+    },
 };
 </script>
 
@@ -77,22 +89,40 @@ export default {
 
 .btn {
     background-color: #ff4c60;
-    padding: 8px 30px; /* Adjust button padding */
-    border-radius: 8px;
     color: white;
-    font-size: 14px;
+    display: inline-block;
+    gap: 11.89px;
+    border-radius: 9.51px;
+    opacity: 0px;
+   
+
 }
 
 @media (max-width: 767px) {
     .tracking-form .input-group {
-        flex-direction: column; /* Stack input and button vertically on smaller screens */
-        align-items: center; /* Center items horizontally */
+        flex-direction: column;
+        /* Stack input and button vertically on smaller screens */
+        align-items: center;
+        /* Center items horizontally */
     }
+
     .tracking-form .input-group .form-control {
-      
-        width: 100%; /* Make input full width */
-        margin-right: 0; /* Remove margin for smaller screens */
-        margin-bottom: 10px; /* Add space between input and button */
+        width: 100%;
+        /* Make input full width */
+        margin-right: 0;
+        /* Remove margin for smaller screens */
+        margin-bottom: 10px;
+        /* Add space between input and button */
+    }
+
+    .tracking-form .input-group .input-group-append {
+        width: 100%;
+    }
+
+    .tracking-form .input-group .input-group-append .btn {
+        width: 100%;
+        /* Make button full width */
+
     }
 }
 </style>

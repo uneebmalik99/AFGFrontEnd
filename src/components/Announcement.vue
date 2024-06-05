@@ -1,6 +1,6 @@
 <template>
     <div class="container-fluid" style="background-color: #f4fffd;">
-        <div class="row justify-content-end" style="margin-right: 10%">
+        <div class="row justify-content-end">
             <p class="text mt-5">
                 <span class="home">HOME</span>
                 <span class="arrow"> &gt; </span>
@@ -12,13 +12,10 @@
         </div>
         <div class="row">
             <div class="col-12 mb-4">
-                <swiper :scrollbar="{
-                    hide: false,
-                    draggable: true,
-                }" :modules="modules" class="mySwiper mb-5">
-                    <swiper-slide v-for="(card, index) in cards" :key="index">
-                        <div class="card mb-5">
-                            <img :src="card.image" class="card-img-fluid" alt="Card image cap">
+                <swiper :scrollbar="{ hide: false, draggable: true }" :modules="modules" :initial-slide="1" class="mySwiper mb-5">
+                    <swiper-slide v-for="(card, index) in cards" :key="index" class="swiper-slide-custom" style="background-color: #f4fffd;">
+                        <div class="card mb-5 swiper-card" style="background-color: #f4fffd;">
+                            <img :src="card.image" class="swiper-slide-img" alt="Card image cap">
                             <div class="overlay">
                                 <h5 class="card-title">{{ card.title }}</h5>
                                 <p class="card-text">{{ card.text }}</p>
@@ -31,20 +28,20 @@
         <div>
             <h4 class="h4-title">Latest Post</h4>
         </div>
-        <div class="container justify-content-start pl-md-3 pl-1">
+        <div class="container justify-content-start">
             <div class="row">
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="card2 mb-5 mt-3 mx-auto">
-                        <img class="card-img-top" src="../assets/cardboat.webp" alt="Card image cap">
+                <div class="col-12 col-md-6 col-lg-4" v-for="(post, index) in posts" :key="index">
+                    <div class="card2 mb-4 mt-3 mx-auto">
+                        <img :src="post.image" class="card-img-top" alt="Card image cap">
                         <div class="card-body">
-                            <h5 class="card-title2">Technology</h5>
-                            <p class="card-text2">Cargo ship going to deliver the containers.</p>
+                            <h5 class="card-title2">{{ post.title }}</h5>
+                            <p class="card-text2">{{ post.text }}</p>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="d-flex justify-content-center mb-5">
-                <button class="button">Load More</button>
+                <button class="button mb-4">Load More</button>
             </div>
         </div>
     </div>
@@ -52,11 +49,8 @@
 
 <script>
 import { Swiper, SwiperSlide } from 'swiper/vue';
-
 import 'swiper/css';
 import 'swiper/css/scrollbar';
-
-// import required modules
 import { Scrollbar } from 'swiper/modules';
 
 export default {
@@ -73,20 +67,28 @@ export default {
         return {
             cards: [
                 {
-                    image: require('../assets/Ann.webp'), // Update image path accordingly
+                    image: require('../assets/Ann.webp'),
                     title: 'Loading Containers in Ship',
                     text: 'Loading of container in ship via lifter with ease safety',
                 },
                 {
-                    image: require('../assets/Ann.webp'), // Update image path accordingly
-                    title: 'Card Title 2',
-                    text: 'Some quick example text to build on the card title and make up the bulk of the card\'s content.',
+                    image: require('../assets/Ann.webp'),
+                    title: 'Loading Containers in Ship',
+                    text: 'Loading of container in ship via lifter with ease safety',
                 },
                 {
-                    image: require('../assets/Ann.webp'), // Update image path accordingly
-                    title: 'Card Title 3',
-                    text: 'Some quick example text to build on the card title and make up the bulk of the card\'s content.',
+                    image: require('../assets/Ann.webp'),
+                    title: 'Loading Containers in Ship',
+                    text: 'Loading of container in ship via lifter with ease safety',
                 },
+            ],
+            posts: [
+                { image: require('../assets/cardboat.webp'), title: 'Technology', text: 'Cargo ship going to deliver the containers.' },
+                { image: require('../assets/A-2.webp'), title: 'Technology', text: 'Cargo ship going to deliver the containers.' },
+                { image: require('../assets/A-3.webp'), title: 'Technology', text: 'Cargo ship going to deliver the containers.' },
+                { image: require('../assets/A-4.webp'), title: 'Technology', text: 'Cargo ship going to deliver the containers.' },
+                { image: require('../assets/A-5.webp'), title: 'Technology', text: 'Cargo ship going to deliver the containers.' },
+                { image: require('../assets/A-6.webp'), title: 'Technology', text: 'Cargo ship going to deliver the containers.' },
             ],
         };
     },
@@ -109,6 +111,7 @@ export default {
     font-weight: 700;
     line-height: 24.38px;
     text-align: left;
+    margin-right: 17px;
 }
 
 .home,
@@ -132,95 +135,56 @@ export default {
 .swiper {
     width: 100%;
     height: 100%;
-    padding: 0 15%;
-    /* Add padding to show the corners of adjacent slides */
+    padding: 0 6%;
 }
+
 
 .swiper-slide {
     text-align: center;
     font-size: 18px;
     background: #fff;
-
-    /* Center slide text vertically */
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.card {
+.swiper-card {
     position: relative;
-    width: 80%;
-    height: auto;
-    max-width: 900px;
+    width: 100%;
+    max-width: 1100px;
     margin: 0 auto;
-    /* Center the card */
+    border-radius: 50px;
 }
 
-.card-img-fluid {
+.swiper-slide-img {
     width: 100%;
     height: auto;
-    object-fit: cover;
+    border-radius: 20px;
 }
 
 .overlay {
     position: absolute;
-    bottom: 100px;
-    left: 20px;
+    bottom: 130px;
+    left: 50px;
     color: #fff;
-    padding: 10px;
-    border-radius: 5px;
+    font-size: 12px;
 }
 
 .card-title {
     font-family: Montserrat;
-    font-size: 31px;
+    font-size: 44px;
     font-weight: 700;
-    line-height: 30px;
     text-align: left;
+    line-height: 18px;
     color: #FFFFFF;
 }
 
 .card-text {
     font-family: Montserrat;
-    font-size: 12px;
+    font-size: 17px;
     font-weight: 500;
-    line-height: 19.5px;
     text-align: left;
     color: #FFFFFF;
-}
-
-.h4-title {
-    padding-left: 15px;
-}
-
-/* Custom styles for the Swiper scrollbar */
-.swiper-scrollbar {
-    position: absolute;
-    left: 0;
-    right: 0;
-    height: 5px;
-    /* Smaller height for the scrollbar */
-    top: 50%;
-    /* Position the scrollbar in the middle */
-    transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.1);
-    /* Light background color */
-    border-radius: 5px;
-}
-
-.swiper-scrollbar-drag {
-    color: #011936;
-    /* Custom color for the scrollbar drag handle */
-    border-radius: 5px;
-}
-
-.card-title2 {
-    font-family: Work Sans;
-    font-size: 13.76px;
-    font-weight: 500;
-    line-height: 19.65px;
-    text-align: left;
-    color: #4B6BFB;
 }
 
 .h4-title {
@@ -233,59 +197,120 @@ export default {
     margin-left: 5%;
 }
 
+.card-title2 {
+    font-family: Work Sans;
+    font-size: 13.76px;
+    font-weight: 500;
+    text-align: left;
+    color: #4B6BFB;
+}
+
 .card-text2 {
     font-family: Work Sans;
     font-size: 20px;
     font-weight: 600;
-    line-height: 27.52px;
     text-align: left;
     color: #181A2A;
 }
 
 .card2 {
     width: 100%;
-    max-width: 385.23px;
+    max-width: 385px;
     height: auto;
-    padding: 15.72px;
-    gap: 15.72px;
-    border-radius: 11.79px;
-    border: 0.98px solid #E8E8EA;
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid #E8E8EA;
     background-color: white;
 }
 
 .button {
     font-family: Montserrat;
-    font-size: 15.72px;
+    font-size: 16px;
     font-weight: 500;
-    line-height: 23.59px;
     text-align: center;
-    justify-content: center;
-    width: auto;
-    height: auto;
-    padding: 11.79px 19.65px;
-    gap: 11.79px;
-    border-radius: 5.9px;
+    padding: 12px 20px;
+    border-radius: 6px;
     background: #ED254E;
+    border: #ED254E;
     color: #FFFFFF;
 }
 
 /* Responsive styles */
-@media (max-width: 767.98px) {
+@media (max-width: 1100px) {
+    .text {
+        text-align: center;
+        margin-right: 0;
+    }
     .Heading {
         font-size: 36px;
         line-height: 44px;
     }
 
+    .swiper {
+        padding: 0 4%;
+    }
+
+    .swiper-scrollbar {
+        height: 3px;
+        top: auto;
+        bottom: 10px;
+        transform: translateY(0);
+    }
+
+    .swiper-card {
+        width: 100%;
+        border-radius: 50px;
+    }
+    
+    .swiper-slide-img {
+        width: 100%;
+        height: auto;
+    }
+
+    .card2 {
+        max-width: 100%;
+        padding: 10px;
+        border-radius: 10px;
+    }
+    
+    .button {
+        font-size: 14px;
+        padding: 10px 15px;
+    }
+}
+
+@media (max-width: 767.98px) {
     .card-title {
-        font-size: 24px;
+        font-size: 18px;
+        
     }
 
     .card-text {
-        font-size: 10px;
+        font-size: 8px;
     }
 
-    .swiper {
-        padding: 0 5%;
+    .overlay {
+        bottom: 10px;
+        left: 5px;
+        font-size: 10px;
+        padding: 3px;
+    }
+
+    .h4-title {
+        font-size: 20px;
+    }
+
+    .card-title2 {
+        font-size: 12px;
+    }
+
+    .card-text2 {
+        font-size: 18px;
+    }
+
+    .card2 {
+        padding: 8px;
+        border-radius: 8px;
     }
 }
 </style>
