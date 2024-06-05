@@ -1,12 +1,18 @@
 <template>
-  <div class="container-fluid">
-    <div class="row align-items-center info-section">
-      <div class="col-md-6 info-text">
-        <div class="app-header">
+  <div style="background-color: #f4fffd; padding-block: 35px;">
+  <div class="container">
+    <div class="app-header" style=" margin-bottom: -40px;">
           <h2 class="app-title">About</h2>
           <h1 class="app-subtitle">About US</h1>
         </div>
-        <p>
+    <div class="row align-items-center info-section">
+    
+      <div class="col-md-6 info-text">
+        <!-- <div class="app-header" style="background-color: yellowgreen;">
+          <h2 class="app-title">About</h2>
+          <h1 class="app-subtitle">About US</h1>
+        </div> -->
+        <p class="about_des" >
           AFG Global Shipping is a professionally managed shipping company running
           with an objective to offer timely, efficient and cost-effective shipping
           services. Thanks to our well experienced work force, we have portrayed
@@ -16,7 +22,7 @@
           service to our existing clients, who built the foundation for us in the
           local and international market.
         </p>
-        <button class="btn btn-primary view-more-button" @click="viewMore">View More <span>→</span></button>
+        <button class="btn btn-primary view-more-button" @click="viewMore">View More<span><img src="../assets/Arrow_right.webp"/> </span></button>
       </div>
       <div class="col-md-6 info-images">
         <img src="../assets/Ship.webp" alt="Ship" class="image-medium img-fluid" />
@@ -25,6 +31,7 @@
       </div>
     </div>
   </div>
+</div>
 </template>
 
 
@@ -60,14 +67,17 @@ export default {
 }
 
 .app-title {
-  font-size: 2em;
+  font-size: 1.7em;
   color: #ff4c60;
   font-family: Montserrat;
-  font-weight: 700;
+  font-weight: 600;
+}
+.about_des{
+  color: #333333;
 }
 
 .app-subtitle {
-  font-size: 1.5em;
+  font-size: 2em;
   color: #002d72;
   font-family: Montserrat;
   font-weight: 700;
@@ -89,30 +99,27 @@ export default {
 .view-more-button {
   display: inline-flex;
   align-items: center;
-  background-color: #002d72;
+  background-color: #011936;
   color: white;
   border: none;
-  font-size: 1em;
-  font-weight: bold;
   cursor: pointer;
-  margin-top: 20px;
+  margin-top: 40px;
   animation-timing-function: cubic-bezier(0.59, 0, 0, 1.01);
   animation-duration: 600ms;
-  width: 159px;
-  height: 60px;
-  border-radius: 40px;
-  opacity: 0px;
-
+  width: 160px;
+  height: 45px;
+  border-radius: 200px;
+  display: flex;
+  justify-content: space-between;
 
 }
 
 .view-more-button span {
-  margin-left: 10px;
-  font-size: 1.5em;
+  
   background: #ff4c60;
-  border-radius: 50px;
-  height: 80%;
-  width: 40%;
+  border-radius: 200px;
+  height: 90%;
+  width: 23%;
 }
 
 .info-images {
@@ -121,6 +128,21 @@ export default {
   background: url('../assets/cubicshape.webp') no-repeat center center;
   background-size: contain;
 }
+
+@media (max-width: 768px) {
+  .info-images {
+  position: relative;
+  height: 505px;
+  display: none;
+  background: url('../assets/cubicshape.webp') no-repeat center center;
+  background-size: contain;
+}
+.about_des{
+  color: #333333;
+  margin-top: 25px;
+}
+}
+
 
 .info-images img {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);

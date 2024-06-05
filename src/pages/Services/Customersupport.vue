@@ -1,7 +1,7 @@
 <template>
     <div class="container-fluid p-0" style="background-color:#f4fffd;">
         <div class="hero-section">
-            <img src="../assets/customersupport.webp" alt="Ship Image" class="img-fluid w-100 hero-image">
+            <!-- <img src="../assets/customersupport.webp" alt="Ship Image" class="img-fluid w-100 hero-image"> -->
             <div class="hero-text">
                 <h1 class="display-4">24/7 Customer Support</h1>
                 <p>
@@ -47,8 +47,8 @@
                 </div>
                 <div class="col-md-6 position-relative text-center">
                     <div class="image-container">
-                        <img src="../assets/serviceblue.webp" class="img-fluid custom-image service-blue">
-                        <img src="../assets/service.webp" class="img-fluid custom-image service-top">
+                        <!-- <img src="../assets/serviceblue.webp" class="img-fluid custom-image service-blue"> -->
+                        <!-- <img src="../assets/service.webp" class="img-fluid custom-image service-top"> -->
                     </div>
                 </div>
             </div>
@@ -58,6 +58,9 @@
 
 <script>
 export default {
+    name: "customersupport",
+
+
     data() {
         return {
             activeButton: 0,

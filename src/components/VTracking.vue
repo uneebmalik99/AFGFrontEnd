@@ -1,12 +1,12 @@
 <template>
-    <div class="tracking-section py-5">
-        <div class="container">
-            <div class="text-center mb-4">
+    <div class="tracking-section">
+        <div class="container" style=" display: flex; align-items: center; flex-direction: column; ">
+            <div class="text-center col-12 mb-4" >
                 <h2 class="tracking-title">Tracking</h2>
                 <h1 class="tracking-subtitle">Vehicle and Container Tracking</h1>
             </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-6">
+            <div class="row col-12 justify-content-center">
+                <div class="col-sm-6 col-md-10 col-lg-10 justify-content-center" >
                     <div class="tracking-form">
                         <p class="tracking-instructions text-center">
                             Enter your Vin No, Lot No, or Container No to track your shipments.
@@ -16,7 +16,6 @@
                                 placeholder="Vin/Lot/Container number"  aria-label="Vin/Lot/Container number" />
                             <button class="btn  btn-lg" type="button">Track</button>
                         </div>
-                        
                     </div>
                 </div>
             </div>

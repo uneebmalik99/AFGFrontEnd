@@ -8,6 +8,7 @@ import About from '@/pages/About.vue';
 import Tracking from '@/pages/Tracking.vue';
 import Services from '@/pages/Services.vue';
 import Announcements from '@/pages/Announcements.vue';
+import Customersupport from '@/pages/Services/Customersupport.vue';
 const routes = [
   { path: '/', component: Home },
   { path: '/aboutus', component: Aboutuspage },
@@ -16,6 +17,7 @@ const routes = [
   { path: '/about', component: About },
   { path: '/tracking', component: Tracking },
   { path: '/services', component: Services },
+  { path: '/customersupport', component:Customersupport  },
   {path: '/announcements', component: Announcements },
   { path: '/aboutus', component: Aboutuspage },
   { path: '/gallery', component: Gallery },

@@ -10,10 +10,10 @@
         </div>
       </div>
       <div class="col-md-12 my-background">
-        <div class="box"> 
+        <div class="box_coverage"> 
           <!-- Create grid of response boxes -->
           <div class="col-md-12 response-grid">
-            <div class="col-md-12 response-box">
+            <div class="col-md-12 response-box_coverage">
               <div class="col-md-3 ">
                  <img src="../assets/Vector.webp" alt="Savannah GA" class="img-fluid"/>
             </div>
@@ -23,7 +23,7 @@
             </div>
 
 
-            <div class="col-md-12 response-box">
+            <div class="col-md-12 response-box_coverage">
               <div class="col-md-3 ">
                  <img src="../assets/Vector (1).webp" alt="Los Angeles CA" class="img-fluid"  />
             </div>
@@ -31,7 +31,7 @@
               <h5 class="">Los Angeles CA</h5>
           </div>
             </div>
-            <div class="col-md-12 response-box">
+            <div class="col-md-12 response-box_coverage">
               <div class="col-md-3 ">
                  <img src="../assets/Vector (2).webp" alt="Baltimore MD" class="img-fluid"  />
             </div>
@@ -39,7 +39,7 @@
               <h5 class="">Baltimore MD</h5>
           </div>
             </div>
-            <div class="col-md-12 response-box">
+            <div class="col-md-12 response-box_coverage">
               <div class="col-md-3 ">
                  <img src="../assets/Vector (3).webp" alt="Houston TX" class="img-fluid" />
             </div>
@@ -50,7 +50,7 @@
 
 
 
-            <div class="col-md-12 response-box">
+            <div class="col-md-12 response-box_coverage">
               <div class="col-md-3 ">
                  <img src="../assets/Vector (4).webp" alt="Newark NJ" class="img-fluid"  />
             </div>
@@ -89,7 +89,7 @@ export default {
 .coverage-header {
   margin-bottom: 20px;
 }
-.box {
+.box_coverage {
 
   margin-right: 1%;
   position: absolute;
@@ -167,13 +167,13 @@ export default {
   grid-template-columns: repeat(2, 1fr);
   gap: 5px;
 }
-.response-box {
+.response-box_coverage {
   padding: 2px;
   margin-top: 15px;
   display: flex;
   justify-content: space-between;
 }
-.inner-box {
+.inner-box_coverage {
   background-color: #e0e0e0;
   padding: 5px;
   flex: 1;

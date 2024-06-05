@@ -4,8 +4,8 @@
       <img src="../assets/Gallery.webp" alt="Gallery Image" class="gallery-image"/>
       <div class="overlay"></div>
       <div class="breadcrumbs">
-        <span>hbhjg</span>
-        Home > Gallery</div>
+        Home > Gallery
+      </div>
     </div>
 
     <div class="masonry-gallery">
@@ -17,8 +17,6 @@
     </div>
   </div>
 </template>
-
-
 
 <script>
 import Masonry from 'vue-masonry-css';
@@ -35,16 +33,11 @@ export default {
         { id: 2, src: require('@/assets/Gallery_02.webp'), alt: 'Image 2' },
         { id: 3, src: require('@/assets/Gallery_03.webp'), alt: 'Image 3' },
         { id: 4, src: require('@/assets/Gallery_04.webp'), alt: 'Image 4' },
-        // Add more images as needed
       ]
     };
   }
 };
 </script>
-
-
-
-
 
 <style>
 .gallery {
@@ -70,17 +63,17 @@ export default {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.8); /* Black overlay with 0.8 opacity */
+  background-color: rgba(0, 0, 0, 0.6); /* Black overlay with 0.6 opacity */
 }
 
 .breadcrumbs {
   position: absolute;
-  top: 50%; /* Move to the vertical center */
-  left: 10%; /* Adjust the position as needed */
-  transform: translateY(-50%); /* Center it vertically */
+  top: 50%;
+  left: 10%;
+  transform: translateY(-50%);
   color: white;
-  font-size: 16px; /* Adjust the font size as needed */
-  z-index: 10; /* Ensure it is above the overlay */
+  font-size: 16px;
+  z-index: 10;
 }
 
 .masonry-gallery {
@@ -97,5 +90,3 @@ export default {
   display: block;
 }
 </style>
-
-
