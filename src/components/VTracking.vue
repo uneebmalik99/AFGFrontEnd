@@ -6,18 +6,24 @@
                 <h1 class="tracking-subtitle">Vehicle and Container Tracking</h1>
             </div>
             <div class="row justify-content-center">
+
                 <div class="col-lg-8 col-md-10 col-sm-12">
+
+
                     <div class="tracking-form">
                         <p class="tracking-instructions text-center">
                             Enter your Vin No, Lot No, or Container No to track your shipments.
                         </p>
                         <div class="input-group mb-3">
+
                             <input v-model="trackingNumber" type="text" class="form-control"
                                 placeholder="Vin/Lot/Container number" aria-label="Vin/Lot/Container number" />
                             <div class="input-group-append">
                                 <button class="btn btn-lg" type="button">Track</button>
                             </div>
+
                         </div>
+                        
                     </div>
                 </div>
             </div>
@@ -52,9 +58,12 @@ export default {
 .tracking-subtitle {
     font-size: 32px;
     font-weight: 700;
-    color: #002d72;
+    color: #011936;
 }
-
+::v-deep .form-control::placeholder {
+  color: #A6A6A6; /* Change this to your desired color */
+/* Optional: Ensures the color opacity is not altered */
+}
 .tracking-form .input-group {
     display: flex;
     align-items: center;
@@ -86,6 +95,7 @@ export default {
     border-radius: 9.51px;
     opacity: 0px;
    
+
 }
 
 @media (max-width: 767px) {
@@ -112,6 +122,7 @@ export default {
     .tracking-form .input-group .input-group-append .btn {
         width: 100%;
         /* Make button full width */
+
     }
 }
 </style>
