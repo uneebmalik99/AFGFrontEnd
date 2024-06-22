@@ -18,7 +18,7 @@
         <div class="row col-md-12 col-sm-12 col-lg-12" style="display: flex; justify-content:center">
           <div class="col-sm-12 col-md-6 col-lg-4">
             <div class="box_service">
-              <img src="@/assets/S_1.webp">
+              <img src="@/assets/customersupport_small.png">
               <h5 class="Service_Title">24/7 Customer Support</h5>
               <p class="Service_des">We provide 24/7 customer support to our client via email, calls, and website</p>
               <button class="view-more-button" @click="this.$router.push('/customersupport');">&nbsp; &nbsp; View More<span><img src="../assets/Arrow_right.webp"/></span></button>
@@ -27,7 +27,7 @@
 
           <div class="col-sm-12 col-md-6 col-lg-4">
             <div class="box_service">
-              <img src="@/assets/S_2.webp">
+              <img src="@/assets/towing_small.png">
               <h5 class="Service_Title">Towing Services</h5>
               <p class="Service_des">We provide 24/7 customer support to our client via email, calls, and website</p>
               <button class="view-more-button" @click="this.$router.push('/towingservices');">&nbsp; View More<span class="view-more-buttonicon"><img src="../assets/Arrow_right.webp"/></span></button>
@@ -36,7 +36,7 @@
 
           <div class="col-sm-12 col-md-6 col-lg-4">
             <div class="box_service">
-              <img src="@/assets/S_3.webp">
+              <img src="@/assets/loading_small.png">
               <h5 class="Service_Title">Loading Services</h5>
               <p class="Service_des">We provide 24/7 customer support to our client via email, calls, and website</p>
               <button class="view-more-button" @click="this.$router.push('/loadingservices');">&nbsp; View More<span class="view-more-buttonicon"><img src="../assets/Arrow_right.webp"/></span></button>
@@ -45,7 +45,7 @@
 
           <div class="col-sm-12 col-md-6 col-lg-4">
             <div class="box_service">
-              <img src="@/assets/S_4.webp">
+              <img src="@/assets/shipping_small.png">
               <h5 class="Service_Title">Shipping Services</h5>
               <p class="Service_des">We provide 24/7 customer support to our client via email, calls, and website</p>
               <button class="view-more-button" @click="this.$router.push('/shippingservices');">&nbsp; View More<span class="view-more-buttonicon"><img src="../assets/Arrow_right.webp"/></span></button>
@@ -54,7 +54,7 @@
 
           <div class="col-sm-12 col-md-6 col-lg-4">
             <div class="box_service">
-              <img src="@/assets/S_5.webp">
+              <img src="@/assets/warehousing_small.png">
               <h5 class="Service_Title">Warehousing services</h5>
               <p class="Service_des">We provide 24/7 customer support to our client via email, calls, and website</p>
               <button class="view-more-button" @click="this.$router.push('/warehousingservices');">&nbsp; View More<span class="view-more-buttonicon"><img src="../assets/Arrow_right.webp"/></span></button>
@@ -63,7 +63,7 @@
 
           <div class="col-sm-12 col-md-6 col-lg-4">
             <div class="box_service">
-              <img src="@/assets/S_6.webp">
+              <img src="@/assets/clearence_small.png">
               <h5 class="Service_Title">Clearance Services in UAE</h5>
               <p class="Service_des">We provide 24/7 customer support to our client via email, calls, and website</p>
               <button class="view-more-button" @click="this.$router.push('/clearinserviceuae');">&nbsp; View More<span class="view-more-buttonicon"><img src="../assets/Arrow_right.webp"/></span></button>
@@ -72,7 +72,7 @@
 
           <div class="col-sm-12 col-md-6 col-lg-4">
             <div class="box_service">
-              <img src="@/assets/S_7.webp">
+              <img src="@/assets/container_loading_small.png">
               <h5 class="Service_Title">Booking Services</h5>
               <p class="Service_des">We provide 24/7 customer support to our client via email, calls, and website</p>
               <button class="view-more-button" @click="this.$router.push('/bookingservices');">&nbsp; View More<span class="view-more-buttonicon"><img src="../assets/Arrow_right.webp"/></span></button>
@@ -81,7 +81,7 @@
 
           <div class="col-sm-12 col-md-6 col-lg-4">
             <div class="box_service">
-              <img src="@/assets/S_8.webp">
+              <img src="@/assets/halfcut_small.png">
               <h5 class="Service_Title">Half-cut Services</h5>
               <p class="Service_des">We provide 24/7 customer support to our client via email, calls, and website</p>
               <button class="view-more-button" @click="this.$router.push('/halfcutservices');">&nbsp; View More<span class="view-more-buttonicon"><img src="../assets/Arrow_right.webp"/></span></button>
@@ -179,6 +179,13 @@ export default {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 
               0 12px 40px rgba(0, 0, 0, 0.19);
   transform: scale(1.05); /* Increase the size by 5% */
+}
+.box_service img{
+  height: auto;
+  width: 40%;
+  align-self: center;
+  padding: 5%;
+
 }
 .breadcrumbs {
   position: absolute;

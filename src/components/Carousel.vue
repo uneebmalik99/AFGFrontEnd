@@ -4,7 +4,14 @@
       <div class="carousel" :style="{ transform: `translateX(-${currentIndex * cardWidth}px)` }">
         <div v-for="(card, index) in cards" :key="index" class="carousel-card">
           <div class="card-content">
+
+            
             <img :src="card.image" alt="Gallery Image" class="gallery-image"/>
+            <div class="innerbox">
+              <h6>{{card.title}}</h6>
+              <p style="width: 100%;color: grey; text-align: center;">{{card.des}}</p>
+            </div>
+           
           </div>
         </div>
       </div>
@@ -22,15 +29,15 @@ import { nextTick } from 'vue';
 export default {
   data() {
     return {
-      cards: [    
-        { title: "Card 1", image: require('../assets/S_1.webp') },
-        { title: "Card 2", image: require('../assets/S_8.webp') },
-        { title: "Card 3", image: require('../assets/S_4.webp') },
-        { title: "Card 4", image: require('../assets/S_2.webp') },
-        { title: "Card 5", image: require('../assets/S_3.webp') },
-        { title: "Card 6", image: require('../assets/S_5.webp') },
-        { title: "Card 7", image: require('../assets/S_6.webp') },
-        { title: "Card 8", image: require('../assets/S_7.webp') },
+      cards: [     
+        { title: "24/7 Customer Support",des:'We provide 24/7 customer support to our client via email, calls, and website', image: require('../assets/customersupport_small.png') },
+        { title: "HalfCut Service",des:'We provide 24/7 customer support to our client via email, calls, and website', image: require('../assets/halfcut_small.png') },
+        { title: "Booking Service",des:'We provide 24/7 customer support to our client via email, calls, and website', image: require('../assets/loading_small.png') },
+        { title: "Towing Service", des:'We provide 24/7 customer support to our client via email, calls, and website',image: require('../assets/towing_small.png') },
+        { title: "Shipping Service", des:'We provide 24/7 customer support to our client via email, calls, and website',image: require('../assets/shipping_small.png') },
+        { title: "Warehousing Service",des:'We provide 24/7 customer support to our client via email, calls, and website', image: require('../assets/warehousing_small.png') },
+        { title: "Clearence Service",des:'We provide 24/7 customer support to our client via email, calls, and website', image: require('../assets/clearence_small.png') },
+        { title: "Loading Service", des:'We provide 24/7 customer support to our client via email, calls, and website',image: require('../assets/container_loading_small.png') },
       ],
       currentIndex: 0,
       cardWidth: 0
@@ -76,6 +83,24 @@ export default {
   overflow: hidden;
 }
 
+.innerbox{
+  background-color: white;
+  border-radius: 10px;
+  padding: 5%;
+}
+.innerbox h6 {
+    border-bottom: 1px solid #ddd; /* Light gray line */
+    padding-bottom: 8px; /* Space between the text and the line */
+}
+.innerbox p {
+    width: 100%; /* Ensure the paragraph takes up full width */
+    text-align: center; /* Center align text within the paragraph */
+    display: -webkit-box; /* Required for line clamping */
+    -webkit-line-clamp: 3; /* Limit to 3 lines */
+    -webkit-box-orient: vertical; /* Required for line clamping */
+    overflow: hidden; /* Hide overflowing text */
+    text-overflow: ellipsis; /* Add ellipsis (...) to overflowing text */
+}
 .carousel {
   display: flex;
   transition: transform 0.3s ease-in-out;
@@ -88,14 +113,21 @@ export default {
 }
 
 .card-content {
-  background-color: #a5a5e0;
+  background-color: #F1F1F1;
   border-radius: 10px;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a shadow */
 }
 
 .gallery-image {
-  max-width: 100%;
-  height: 350px;
+  width: 60%;
+  height: auto;
+  margin-block: 5px;
   border-radius: 10px;
 }
 

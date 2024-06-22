@@ -1,8 +1,8 @@
 <template>
   <div class="wrapper">
     <div class="content"  style="background-color: rgba(0, 0, 0, 0.9); border-radius: 10px;" >
-      <h5>AFG Shipping</h5>
-     <h7 class="group">THE AMERICAN FREIGHT GROUP</h7>
+      <!-- <h5>AFG Shipping</h5> -->
+     <h4 class="group">THE AMERICAN FREIGHT GROUP</h4>
       <h1 class="big">Big or Small</h1>
       <h1>We Ship It All</h1>
       <p style="font-size: small;">We provide you with full package services, from bidding on your favorite <br />
@@ -27,6 +27,7 @@
 <Offer/>
 
   <Grid />
+  <Howitworks/>
   <Partners/>
   <Coverage/>
   <VTracking />
@@ -46,6 +47,7 @@ import Services from './../components/Services.vue';
 import Faq from './../components/Faq.vue';
 import Partners from './../components/Partners.vue';
 import Grid from './../components/Gridblock.vue';
+import Howitworks from './../components/Howitworks.vue';
 import Offer from './../components/Offer.vue';
 
 
@@ -55,6 +57,7 @@ export default {
   components: {
     Offer,
     Grid,
+    Howitworks,
     Partners,
     Coverage,
     VTracking,
@@ -98,8 +101,8 @@ html, body {
   width:50px;
 }
 .big{
-  color:#011936;
-  font-size: 33;
+  color:#1974d2;
+  font-size: 33px;
   font-weight: 600;
 }
 

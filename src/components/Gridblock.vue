@@ -1,8 +1,5 @@
 
 <template>
-
-
-
 <div style="background-color: #F4FFFD;">
   <div class="container pt-5 "  >
     <div style="display: flex; justify-content: center;" class="col-md-6 col-lg-6 col-sm-12">
