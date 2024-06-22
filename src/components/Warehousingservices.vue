@@ -1,22 +1,23 @@
 <template>
-    <div class="container-fluid p-0" style="background-color:#f4fffd;">
-      <div class="hero-section">
-        <div class="hero-text">
-          <h1 class="display-4">Warehousing Services</h1>
-          <p>
-            <span class="home">HOME</span>
-            <span class="arrow"> &gt; </span>
-            <span class="services">SERVICES</span>
-            <span class="arrow"> &gt; </span>
-            <span class="customer-support">WAREHOUSING SERVICES</span>
-          </p>
+      <div class="gallery">
+        <div class="hero-section">
+            <div class="overlay"></div>
+            <div class="breadcrumbs">
+                <h1>Warehousing Services</h1>
+                <div class="breadcrumb_des">
+                    <p>HOME &nbsp > SERVICES > &nbsp </p>
+                    <p class="breadcrumb_name"> WAREHOUSING SERVICES</p>
+                </div>
+            </div>
         </div>
-      </div>
+    </div>
+
+    <div class="container-fluid p-0" style="background-color:#f4fffd;">
       <div class="container-fluid">
         <div class="support-buttons-container my-4">
-          <div class="support-buttons d-flex justify-content-start">
+          <div class="support-buttons d-flex justify-content-start py-3">
             <button @click="setActive(0)" class="btn" :class="{'active': activeButton === 0}">Warehousing</button>
-            <button @click="setActive(1)" class="btn btn-outline-primary" :class="{'active': activeButton === 1}">Warehouse Locations</button>
+            <button @click="setActive(1)" class="btn " :class="{'active': activeButton === 1}">Warehouse Locations</button>
           </div>
           <div class="progress-container mt-2">
             <div class="progress-bar" :style="progressBarStyle"></div>
@@ -48,7 +49,7 @@
           </div>
         </div>
       </div>
-    </div>
+      </div>
   </template>
   
   <script>
@@ -56,7 +57,7 @@
     data() {
       return {
         activeButton: 0,
-        buttonWidth: 275, // Default button width for larger screens
+        buttonWidth: 240, // Default button width for larger screens
         buttonMargin: 10, // Default button margin
       };
     },
@@ -80,7 +81,7 @@
       },
       getButtonWidth() {
         // Adjust button width based on screen size
-        return window.innerWidth <= 767 ? window.innerWidth * 0.29 : this.buttonWidth;
+        return window.innerWidth <= 767 ? window.innerWidth * 0.35 : this.buttonWidth;
       },
       getButtonMargin() {
         // Adjust button margin based on screen size
@@ -97,46 +98,26 @@
   </script>
   
   <style scoped>
-  .hero-section {
-    position: relative;
-    text-align: left;
-    color: white;
+  .gallery {
     width: 100%;
-    height: 441px;
-    background: #00000080;
-  }
-  
-  .hero-text {
-    position: absolute;
-    top: 50%;
-    left: 50px;
-    transform: translateY(-50%);
-    font-family: Montserrat, sans-serif;
-  }
-  
-  .hero-text h1 {
-    font-size: 56px;
-    font-weight: 700;
-    line-height: 68px;
-  }
-  
-  .hero-text p {
-    font-size: 20px;
-    font-weight: 700;
-    line-height: 24px;
-  }
-  
-  .home,
-  .services,
-  .customer-support,
-  .arrow {
-    font-family: Montserrat, sans-serif;
-  }
-  
-  .arrow {
-    color: #ffffff;
-  }
-  
+}
+
+.breadcrumb_des {
+    display: flex;
+    flex-direction: row;
+}
+
+.breadcrumb_name {
+    color: #011936;
+    font-weight: 900;
+}
+
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+}
   .customer-support {
     color: #011936;
   }
@@ -152,10 +133,11 @@
     font-weight: bold;
     padding: 0.5rem 1.5rem;
     font-family: Montserrat, sans-serif;
-    font-size: 20px;
+    font-size: 15px;
     margin: 0 5px;
-    width: 275px;
+    width: 240px;
     height: 46px;
+    border: 1px solid black;
   }
   
   .support-buttons .btn.active {
@@ -242,20 +224,20 @@
   }
   
   @media (max-width: 767.98px) {
-    .hero-text h1 {
-      font-size: 36px;
-      line-height: 48px;
-    }
-  
-    .hero-text p {
-      font-size: 16px;
-      line-height: 20px;
-    }
-  
+    .breadcrumb_des {
+    display: flex;
+    flex-direction: row;
+    font-size: 14px;
+}
+
+.breadcrumb_name {
+    color: #011936;
+    font-weight: 700;
+}
     .support-buttons .btn {
-      font-size: 12px;
-      width: 110px; /* Adjust button width for smaller screens */
-      height: 60px; /* Increase button height for smaller screens */
+      font-size: 10px;
+      width: 130px; 
+      height: 40px; 
     }
   
     .call-heading {
@@ -287,5 +269,46 @@
       width: 100%;
     }
   }
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .support-buttons-container {
+        margin-left: 7%;
+    }
+
+    .support-buttons .btn {
+        font-size: 12px;
+        width: 240px;
+        height: 46px;
+    }
+
+    .call-heading {
+        font-size: 32px;
+        line-height: 40px;
+    }
+
+    .call-subtitle {
+        font-size: 18px;
+        line-height: 22px;
+    }
+
+    .progress-container {
+        width: 70%;
+    }
+
+    .service-blue {
+        width: 90%;
+        max-width: 350px;
+    }
+
+    .service-top {
+        width
+        : 80%;
+        max-width: 300px;
+    }
+
+    .image-container {
+        left: 10%;
+        width: 90%;
+    }
+}
   </style>
   

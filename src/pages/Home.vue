@@ -8,9 +8,9 @@
       <p style="font-size: small;">We provide you with full package services, from bidding on your favorite <br />
       cars in the US auctions and delivering to your desired locations.</p>
       <div>
-        <div style="display: flex; flex-direction: row;">
-          <button class="let_btn"><img src="../assets/Arrow_right.webp"/> </button>
-          <h5>LET’S TALK</h5>
+        <div style="display: flex; flex-direction: row; justify-content: flex-start; align-items: center;">
+          <button class="let_btn"><img style="height: 15px; width: 15px;object-fit: contain;" src="../assets/Arrow_right.webp"/> </button>
+          <h6 style="margin-left: 10px;font-weight: 300; text-align: center; align-self:center;">LET’S TALK</h6>
         </div>
       </div>
     </div>
@@ -24,7 +24,7 @@
 
   <!-- <Technology /> -->
 
-
+<Offer/>
 
   <Grid />
   <Partners/>
@@ -46,12 +46,14 @@ import Services from './../components/Services.vue';
 import Faq from './../components/Faq.vue';
 import Partners from './../components/Partners.vue';
 import Grid from './../components/Gridblock.vue';
+import Offer from './../components/Offer.vue';
 
 
 
 export default {
   name: "Home",
   components: {
+    Offer,
     Grid,
     Partners,
     Coverage,
@@ -86,10 +88,14 @@ html, body {
 }
 
 .let_btn{
-  background: #ff4c60;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0px;
+  background: #011936;
   border-radius: 200px;
-  height:20px;
-  width:20px;
+  height:50px;
+  width:50px;
 }
 .big{
   color:#011936;

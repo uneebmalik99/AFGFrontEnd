@@ -6,159 +6,113 @@
       
       <div class="breadcrumbs">
         <h1>Services</h1>
-        <div class="breadcrumb_des"><p>HOME &nbsp > &nbsp </p>
-        <p class="breadcrumb_name"> SERVICES</p></div>
-       
-       
+        <div class="breadcrumb_des">
+          <p>HOME &nbsp > &nbsp </p>
+          <p class="breadcrumb_name"> SERVICES</p>
+        </div>
       </div>
     </div>
 
     <div class="py-3" style="background-color: #F4FFFD;">
-
-    <div class="container py-5" style="display: flex; justify-content: center; align-items: center;">
-
-      <div class="row col-md-12 col-sm-12 col-lg-12" style="display: flex; justify-content:center">
-        <div class=" col-sm-12  col-md-6 col-lg-4 " >
-          <div class="box_service">
-            <img src="@/assets/S_1.webp" >
-          <h5 class="Service_Title">24/7 Customer Support</h5>
-          <p class="Service_des">We provide 24/7 customer support to our client
-via email, calls, and website</p>
-<button class="btn btn-primary view-more-button" @click="viewMore">View More<span><img src="../assets/Arrow_right.webp"/> </span></button>
+      <div class="container py-5" style="display: flex; justify-content: center; align-items: center;">
+        <div class="row col-md-12 col-sm-12 col-lg-12" style="display: flex; justify-content:center">
+          <div class="col-sm-12 col-md-6 col-lg-4">
+            <div class="box_service">
+              <img src="@/assets/S_1.webp">
+              <h5 class="Service_Title">24/7 Customer Support</h5>
+              <p class="Service_des">We provide 24/7 customer support to our client via email, calls, and website</p>
+              <button class="view-more-button" @click="this.$router.push('/customersupport');">&nbsp; &nbsp; View More<span><img src="../assets/Arrow_right.webp"/></span></button>
             </div>
+          </div>
 
-         
-
-        </div>
-
-        <div class=" col-sm-12  col-md-6 col-lg-4 " >
-          <div class="box_service">
-            <img src="@/assets/S_2.webp" >
-          <h5 class="Service_Title">Towing Services</h5>
-          <p class="Service_des">We provide 24/7 customer support to our client
-via email, calls, and website
-</p>
-<button class="btn btn-primary view-more-button" @click="viewMore">View More<span class="view-more-buttonicon"><img  src="../assets/Arrow_right.webp"/> </span></button>
+          <div class="col-sm-12 col-md-6 col-lg-4">
+            <div class="box_service">
+              <img src="@/assets/S_2.webp">
+              <h5 class="Service_Title">Towing Services</h5>
+              <p class="Service_des">We provide 24/7 customer support to our client via email, calls, and website</p>
+              <button class="view-more-button" @click="this.$router.push('/towingservices');">&nbsp; View More<span class="view-more-buttonicon"><img src="../assets/Arrow_right.webp"/></span></button>
             </div>
+          </div>
 
-         
-
-        </div>
-
-        <div class=" col-sm-12  col-md-6 col-lg-4 " >
-          <div class="box_service">
-            <img src="@/assets/S_3.webp" >
-          <h5 class="Service_Title">Loading Services</h5>
-          <p class="Service_des">We provide 24/7 customer support to our client
-via email, calls, and website</p>
-<button class="btn btn-primary view-more-button" @click="viewMore">View More<span class="view-more-buttonicon"><img  src="../assets/Arrow_right.webp"/> </span></button>
+          <div class="col-sm-12 col-md-6 col-lg-4">
+            <div class="box_service">
+              <img src="@/assets/S_3.webp">
+              <h5 class="Service_Title">Loading Services</h5>
+              <p class="Service_des">We provide 24/7 customer support to our client via email, calls, and website</p>
+              <button class="view-more-button" @click="this.$router.push('/loadingservices');">&nbsp; View More<span class="view-more-buttonicon"><img src="../assets/Arrow_right.webp"/></span></button>
             </div>
+          </div>
 
-         
-
-        </div>
-
-        <div class=" col-sm-12  col-md-6 col-lg-4 " >
-          <div class="box_service">
-            <img src="@/assets/S_4.webp" >
-          <h5 class="Service_Title">Shipping Services</h5>
-          <p class="Service_des">We provide 24/7 customer support to our client
-via email, calls, and website</p>
-<button class="btn btn-primary view-more-button" @click="viewMore">View More<span class="view-more-buttonicon"><img  src="../assets/Arrow_right.webp"/> </span></button>
+          <div class="col-sm-12 col-md-6 col-lg-4">
+            <div class="box_service">
+              <img src="@/assets/S_4.webp">
+              <h5 class="Service_Title">Shipping Services</h5>
+              <p class="Service_des">We provide 24/7 customer support to our client via email, calls, and website</p>
+              <button class="view-more-button" @click="this.$router.push('/shippingservices');">&nbsp; View More<span class="view-more-buttonicon"><img src="../assets/Arrow_right.webp"/></span></button>
             </div>
+          </div>
 
-         
-
-        </div>
-
-        <div class=" col-sm-12  col-md-6 col-lg-4 " >
-          <div class="box_service">
-            <img src="@/assets/S_5.webp" >
-          <h5 class="Service_Title">Warehousing services</h5>
-          <p class="Service_des">We provide 24/7 customer support to our client
-via email, calls, and website</p>
-<button class="btn btn-primary view-more-button" @click="viewMore">View More<span class="view-more-buttonicon"><img  src="../assets/Arrow_right.webp"/> </span></button>
+          <div class="col-sm-12 col-md-6 col-lg-4">
+            <div class="box_service">
+              <img src="@/assets/S_5.webp">
+              <h5 class="Service_Title">Warehousing services</h5>
+              <p class="Service_des">We provide 24/7 customer support to our client via email, calls, and website</p>
+              <button class="view-more-button" @click="this.$router.push('/warehousingservices');">&nbsp; View More<span class="view-more-buttonicon"><img src="../assets/Arrow_right.webp"/></span></button>
             </div>
+          </div>
 
-         
-
-        </div>
-
-        <div class=" col-sm-12  col-md-6 col-lg-4 " >
-          <div class="box_service">
-            <img src="@/assets/S_6.webp" >
-          <h5 class="Service_Title">Clearance Services in UAE</h5>
-          <p class="Service_des">We provide 24/7 customer support to our client
-via email, calls, and website</p>
-<button class="btn btn-primary view-more-button" @click="viewMore">View More<span class="view-more-buttonicon"><img  src="../assets/Arrow_right.webp"/> </span></button>
+          <div class="col-sm-12 col-md-6 col-lg-4">
+            <div class="box_service">
+              <img src="@/assets/S_6.webp">
+              <h5 class="Service_Title">Clearance Services in UAE</h5>
+              <p class="Service_des">We provide 24/7 customer support to our client via email, calls, and website</p>
+              <button class="view-more-button" @click="this.$router.push('/clearinserviceuae');">&nbsp; View More<span class="view-more-buttonicon"><img src="../assets/Arrow_right.webp"/></span></button>
             </div>
+          </div>
 
-         
-
-        </div>
-
-        <div class=" col-sm-12  col-md-6 col-lg-4 " >
-          <div class="box_service">
-            <img src="@/assets/S_7.webp" >
-          <h5 class="Service_Title">Booking Services</h5>
-          <p class="Service_des">We provide 24/7 customer support to our client
-via email, calls, and website</p>
-<button class="btn btn-primary view-more-button" @click="viewMore">View More<span class="view-more-buttonicon"><img  src="../assets/Arrow_right.webp"/> </span></button>
+          <div class="col-sm-12 col-md-6 col-lg-4">
+            <div class="box_service">
+              <img src="@/assets/S_7.webp">
+              <h5 class="Service_Title">Booking Services</h5>
+              <p class="Service_des">We provide 24/7 customer support to our client via email, calls, and website</p>
+              <button class="view-more-button" @click="this.$router.push('/bookingservices');">&nbsp; View More<span class="view-more-buttonicon"><img src="../assets/Arrow_right.webp"/></span></button>
             </div>
+          </div>
 
-         
-
-        </div>
-
-        <div class=" col-sm-12  col-md-6 col-lg-4 " >
-          <div class="box_service">
-            <img src="@/assets/S_8.webp" >
-          <h5 class="Service_Title">Half-cut Services</h5>
-          <p class="Service_des">We provide 24/7 customer support to our client
-via email, calls, and website</p>
-<button class="btn btn-primary view-more-button" @click="viewMore">View More<span class="view-more-buttonicon"><img  src="../assets/Arrow_right.webp"/> </span></button>
+          <div class="col-sm-12 col-md-6 col-lg-4">
+            <div class="box_service">
+              <img src="@/assets/S_8.webp">
+              <h5 class="Service_Title">Half-cut Services</h5>
+              <p class="Service_des">We provide 24/7 customer support to our client via email, calls, and website</p>
+              <button class="view-more-button" @click="this.$router.push('/halfcutservices');">&nbsp; View More<span class="view-more-buttonicon"><img src="../assets/Arrow_right.webp"/></span></button>
             </div>
-
-         
-
+          </div>
         </div>
-
       </div>
-
-
-
-   
     </div>
-
-
-    
-  </div>
-
-   
   </div>
 </template>
 
 <script>
-
 export default {
   name: 'Services',
- 
-  
+  methods: {
+    viewMore() {
+      // Your view more logic here
+    },
+  },
 };
 </script>
 
 <style>
 .gallery {
-  
   width: 100%;
 }
-.breadcrumb_des{
+.breadcrumb_des {
   display: flex;
   flex-direction: row;
 }
-
-
-.breadcrumb_name{
+.breadcrumb_name {
   color: #011936;
   font-weight: 700;
 }
@@ -168,7 +122,6 @@ export default {
   height: 400px; /* Adjust the height as needed */
   overflow: hidden;
 }
-
 .gallery-image {
   width: 100%;
   height: 100%;
@@ -176,7 +129,7 @@ export default {
 }
 .view-more-button {
   display: inline-flex;
-  padding-right:3px;
+  padding-right: 3px;
   align-items: center;
   background-color: #011936;
   color: white;
@@ -191,36 +144,17 @@ export default {
   display: flex;
   justify-content: space-between;
   font-size: 10px;
-
 }
-
-
-/* .view-more-button-span span {
-  
-  background: #ff4c60;
-  border-radius: 200px;
-  height: 40px;
-  width: 40px;
-display:flex;
-justify-content: center;
-align-items: center;
-
-
-} */
-
-.Service_Title{
+.Service_Title {
   margin-top: 5px;
   padding-inline: 5px;
   color: #011936;
 }
-
-.Service_des{
+.Service_des {
   margin-top: 2px;
   padding-inline: 5px;
   color: #011936;
-
 }
-
 .overlay {
   position: absolute;
   top: 0;
@@ -229,28 +163,22 @@ align-items: center;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.6); /* Black overlay with 0.6 opacity */
 }
-
-
-.box_service{
+.box_service {
   background-color: white; 
-  box_service-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 
-                0 6px 20px rgba(0, 0, 0, 0.19);
-  transition: box_service-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
-
-  
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 
+              0 6px 20px rgba(0, 0, 0, 0.19);
+  transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
   display: flex;
   margin-top: 30px;
   border-radius: 10px;
-  padding:10px;
-  justify-content:space-around;
+  padding: 10px;
+  justify-content: space-around;
   flex-direction: column;
 }
-
 .box_service:hover {
-    box_service-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 
-                0 12px 40px rgba(0, 0, 0, 0.19);
-                transform: scale(1.05); /* Increase the size by 5% */
-
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 
+              0 12px 40px rgba(0, 0, 0, 0.19);
+  transform: scale(1.05); /* Increase the size by 5% */
 }
 .breadcrumbs {
   position: absolute;
@@ -263,58 +191,4 @@ align-items: center;
   font-size: 16px;
   z-index: 10;
 }
-
-
 </style>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- <template>
-  <Customersupport />
-  <Inlandtransportation />
-  <Loadingservices />
-  <Shippingservices />
-   <Warehousingservices /> 
-  <Clearinserviceuae/>
-  <Bookingservices/>
-  <Halfcutservices/>
-</template>
-
-<script>
-import Loadingservices from './../components/Loadingservices.vue';
-import Customersupport from './../components/Customersupport.vue';
-import Inlandtransportation from './../components/Inlandtransportation.vue';
-import Shippingservices from './../components/Shippingservices.vue';
-import Warehousingservices from '@/components/Warehousingservices.vue';
-import Clearinserviceuae from '@/components/Clearinserviceuae.vue';
-import Bookingservices from '@/components/Bookingservices.vue';
-import Halfcutservices from '@/components/Halfcutservices.vue';
-export default {
-
-  name: "Services",
-  components: {
-    Customersupport,
-    Inlandtransportation,
-    Loadingservices,
-    Shippingservices,
-    Warehousingservices,
-    Clearinserviceuae,
-    Bookingservices,
-    Halfcutservices
-  },
-}
-</script>
-
-<style></style> -->

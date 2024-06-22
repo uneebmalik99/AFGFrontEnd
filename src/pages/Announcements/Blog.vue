@@ -11,7 +11,7 @@
         </div>
         <div class="row justify-content-center">
             <div class="col-12 col-md-11 col-lg-10">
-                <img src="../assets/blogboat.webp" class="img-fluid w-100 hero-image mb-4 mt-3">
+                <img src="../../assets/blogboat.webp" class="img-fluid w-100 hero-image mb-4 mt-3">
             </div>
         </div>
         <div class="row justify-content-center">
@@ -83,7 +83,7 @@
         </div>
         <div class="row justify-content-center">
             <div class="col-12 col-md-11 col-lg-10">
-                <img src="../assets/blog.webp" class="img-fluid w-100 hero-image mb-4 mt-3">
+                <img src="../../assets/blog.webp" class="img-fluid w-100 hero-image mb-4 mt-3">
             </div>
         </div>
     </div>

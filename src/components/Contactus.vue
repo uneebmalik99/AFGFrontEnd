@@ -1,7 +1,4 @@
 <template>
- 
-
-
     <div  class="py-5" style="background-color: #f4fffd; "> 
 
             <div class="contact_home_right">
@@ -9,7 +6,7 @@
             <div class="" style="width: 30%;  display: flex; justify-content: flex-end; align-self: flex-end;">
               
                     <img src="../assets/Navyshape.webp" >
-                    <img src="../assets/Boat.webp" style="position: absolute; top: 10%; right: 10%;;">
+                    <img src="../assets/Boat.webp" style=" position: absolute; top: 10%; right: 5%;;">
                 
             </div>
         </div>
@@ -39,9 +36,9 @@
 
 
         <div class="contact-info mt-5 col-sm-12 col-md-12 col-lg-12">
-<div class="row details_address" >
+<div class=" details_address"  >
     <img src="../assets/address2.webp" class="icon" alt="Address Icon">
-   <div  style=" margin-left: 10px; display: flex; justify-content: center; flex-direction: column; align-items: center;">
+   <div  class="text-section">
     <h5>Address</h5>
     <p class="text1 ">AFG Global Shipping 290 NYE AVE, Irvington, NJ 07111</p>
 
@@ -52,9 +49,9 @@
     </div>
 
 
-    <div class="row details_address" >
+    <div class=" details_address" >
     <img src="../assets/phone.webp" class="icon" alt="Address Icon">
-   <div  style=" margin-left: 10px; display: flex; justify-content: center; flex-direction: column; align-items: center;">
+   <div  class="text-section">
     <h5>Phone</h5>
     <p class="text1 ">+1 862 237 7066</p>
 
@@ -66,9 +63,9 @@
 
 
 
-    <div class="row details_address" >
+    <div class=" details_address" >
     <img src="../assets/email2.webp" class="icon" alt="Address Icon">
-   <div  style=" margin-left: 10px; display: flex; justify-content: center; flex-direction: column; align-items: center;">
+   <div  class="text-section">
     <h5>Email</h5>
     <p class="text1 ">Csupport@afgglobalusa.com</p>
 
@@ -113,21 +110,17 @@ export default {
 .details_address{
     padding-inline: 10px; 
     display: flex; 
+    flex-direction: row;
     justify-content: center; 
     align-self: flex-start;
 }
 
-@media (max-width: 576px) {
-    
-    .details_address{
-    padding-inline: 8px; 
-    display: flex; 
-    justify-content: center; 
-    align-self: center;
-}
-}
 
-
+.contact-info{
+     display: flex;
+     flex-direction: column; 
+     justify-content: flex-start;
+}
 
 .contactus-title {
     font-family: Montserrat;
@@ -145,11 +138,7 @@ export default {
 
 }
 
-@media (max-width: 990px) {
-    .contact_home_right {
-        width: 0%;
-    }
-}
+
 
 .form_name{
     border: 1px solid #E0E0E0;
@@ -210,8 +199,48 @@ export default {
 
 }
 
+.text-section{
+    margin-left: 10px; 
+    display: flex;
+     justify-content: center;
+      flex-direction: column;
+       align-items: flex-start;
+}
+
 .info {
     margin-left: 15px;
+}
+
+@media (max-width: 990px) {
+    .contact_home_right {
+        width: 0%;
+    }
+}
+
+@media (max-width: 576px) {
+    
+    .details_address{
+    padding-inline: 8px; 
+    display: flex; 
+    justify-content: center; 
+    align-self: center;
+}
+.text-section{
+    margin-left: 10px; 
+    display: flex;
+    margin-top: 10px;
+     justify-content: center;
+      flex-direction: column;
+       align-items: center;
+}
+.details_address{
+    padding-inline: 10px; 
+    display: flex; 
+    flex-direction: column;
+    justify-content: center; 
+    align-self: center;
+}
+
 }
 
 @media (max-width: 992px) {
@@ -219,4 +248,5 @@ export default {
         flex-direction: column;
     }
 }
+
 </style>

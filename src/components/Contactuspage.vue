@@ -1,71 +1,109 @@
 <template>
-    <div class="container-fluid p-0">
-          <div class="hero-section">
-              <img src="../assets/contactus.webp"  class="img-fluid w-100 hero-image">
-              <div class="hero-text">
-                  <h1 class="display-4">Contact Us</h1>
-                  <p>
-                      <span class="home">HOME</span>
-                      <span class="arrow"> &gt; </span>
-                      <span class="contact-us">CONTACT US</span>
-                  </p>
-              </div>
-          </div>
+
+
+      <div class="image-container" >
+      <img src="../assets/contactus.webp" alt="Gallery Image" class="gallery-image"/>
+      <div class="overlay"></div>
+      
+      <div class="breadcrumbs">
+        <h1>Contact Us</h1>
+        <div class="breadcrumb_des">
+          <p>HOME &nbsp > &nbsp </p>
+          <p class="breadcrumb_name"> CONTACT US</p>
+        </div>
       </div>
-      <div class="container-fluid ">
-          <div class="row ">
-              <div class="col-md-6 mb-md-0  mt-5">
-                  <div class="form mx-3 mx-md-5 ">
-                    <div class="contactus-header mx-3 mx-md-5">
-                      <h3 class="contactus-subtitle mt-5">Get In <span class="touch">Touch </span></h3>
-                  </div>
-                      <div class="mx-3 mx-md-5 mt-3">
-                          <p class="text">Feel free to contact us any time.</p>
-                      </div>
-                      <div class="mx-3 mx-md-5 mt-4">
-                          <input type="text" class="form-control mt-4" placeholder="Name *">
-                          <input type="email" class="form-control mt-4" placeholder="Email">
-                          <input type="tel" class="form-control mt-4" placeholder="Phone number *">
-                          <textarea class="form-control mt-4" placeholder="Write your message here" rows="3"></textarea>
-                          <button class="btn btn-primary btn-lg mt-4 w-100" style="background-color: #ed254e;">SEND MESSAGE</button>
-                      </div>
-                      <div class="contact-info mx-3 mx-md-5 mt-5">
-                          <div class="contact-item d-flex align-items-start mt-4">
-                              <img src="../assets/address2.webp" class="icon" alt="Address Icon">
-                              <div class="info ml-3">
-                                  <h4>Address</h4>
-                                  <p class="text1">AFG Global Shipping 290 NYE AVE, Irvington, NJ 07111</p>
-                              </div>
-                          </div>
-                          <div class="contact-item d-flex align-items-start mt-4">
-                              <img src="../assets/phone.webp" class="icon" alt="Call Icon">
-                              <div class="info ml-3">
-                                  <h4>Phone</h4>
-                                  <p class="text1">+1 862 237 7066</p>
-                              </div>
-                          </div>
-                          <div class="contact-item d-flex align-items-start mt-4">
-                              <img src="../assets/email2.webp" class="icon" alt="Email Icon">
-                              <div class="info ml-3">
-                                  <h4>Email</h4>
-                                  <p class="text1 mb-2">Csupport@afgglobalusa.com</p>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              <div class="col-md-6 d-flex justify-content-md-end">
-                  <div class="image position-relative ">
-                      <img src="../assets/bluerect.webp" class="img-fluid w-100 bluerect-image">
-                      <img src="../assets/map.webp" class="position-absolute map-image" >
-                  </div>
-              </div>
-          </div>
-      </div>
-  </template>
+    </div>
+    <div style="background-color: #f4fffd; ">
+
+ <div class="right_div">
+    <div class="right_div_box">
+        
+</div>
+ </div>
+
+ <div class="container" >
+    <div class="py-0 col-sm-12 col-md-12 col-lg-12 mt-5 main_header" >
+                    <h3 class="contactus-subtitle">Get In <span class="touch">Touch</span></h3>
+                    <div>
+                        <p class="text">Feel free to contact us any time.</p>
+                    </div>
+                </div>
+                <div class="row col-sm-12 col-md-12 col-lg-12" style="display: flex; justify-content: center;">
+                    <div class="col-sm-10 col-md-10 col-lg-6 " >
+                        <input type="text" class="form_name col-12 mt-4 py-2" placeholder="Name *">
+                        <input type="email" class="form_email col-12 mt-4 py-2" placeholder="Email">
+                        <input type="tel" class="form_phoneno col-12 mt-4 py-2" placeholder="Phone number *">
+                        <textarea class="form-control form_message col-12 mt-4 py-2"
+                            placeholder="Write your message here" rows="3"></textarea>
+                        <button class="btn btn-primary btn-lg mt-4 col-12"
+                            style="background-color: #ed254e; border: 0px;">SEND
+                            MESSAGE</button>
+
+
+                        <div class="contact-info mt-5 col-sm-12 col-md-12 col-lg-12 py-4" >
+
+
+                            
+                            <div class=" py-1 details_address">
+                                <img src="../assets/address2.webp" class="icon" alt="Address Icon">
+                                <div
+                                    class="box_details_2">
+                                    <h5>Address</h5>
+                                    <p class="text1 ">AFG Global Shipping 290 NYE AVE, Irvington, NJ 07111</p>
+
+                                </div>
+                            </div>
+                            <div class=" py-1  details_address">
+                                <img src="../assets/phone.webp" class="icon" alt="Address Icon">
+                                <div
+                                   class="box_details_2">
+                                    <h5>Phone</h5>
+                                    <p class="text1 ">+1 862 237 7066</p>
+                                </div>
+                            </div>
+                            <div class=" py-1  details_address">
+                                <img src="../assets/email2.webp" class="icon" alt="Address Icon">
+                                <div
+                                class="box_details_2">
+                                    <h5>Email</h5>
+                                    <p class="text1 ">csupport@afgglobalusa.com</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12 col-md-6 col-lg-6">
+                        <div id="map" class="position-absolute map-image"  style=" width: 80%; height: 100%;"></div>
+
+                    </div>
+                </div>
+ </div>
+
+ </div>
+
+
+
+   
+    </template>
   
   <script>
   export default {
+    mounted() {
+    this.initMap();
+  },
+  methods: {
+    initMap() {
+      const map = new google.maps.Map(document.getElementById("map"), {
+        center: { lat: 40.720163240204926, lng: -74.21926653069052 }, // AFG Global Shipping coordinates
+        zoom: 15,
+      });
+      new google.maps.Marker({
+        position: { lat: 40.720163240204926, lng: -74.21926653069052 },
+        map,
+        title: "AFG Global Shipping",
+      });
+    },
+  },
       data() {
           return {
   
@@ -100,7 +138,12 @@
       font-weight: 700;
       color: #FFFFFF;
   }
-  
+  .map-image {
+      right: 10%;
+      bottom: 10%;
+      max-width: auto;
+      height: auto;
+  }
   .home {
       color: #FFFFFF;
       font-family: Montserrat;
@@ -109,6 +152,24 @@
       line-height: 24.38px;
       text-align: left;
   }
+
+
+  .right_div{
+    display: flex;
+    justify-content: flex-end;
+  }
+
+
+  .box_details_2{
+    margin-left: 10px; 
+    display: flex; justify-content: center; flex-direction: column; align-items: flex-start;
+  }
+
+  .main_header{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
   
   .arrow {
       width: 8px;
@@ -116,147 +177,211 @@
       gap: 0px;
       opacity: 0px;
   }
-  
-  .contact-us {
-      font-family: Montserrat;
-      font-size: 20px;
-      font-weight: 700;
-      color: #011936;
-  }
-  
   .container-fluid {
-      background: #f4fffd;
-  }
-  
-  .touch{
-    color: #DD5471;
+    background: #f4fffd;
+}
 
+.details_address {
+    display: flex;
+    justify-content: flex-start;
+    align-self: flex-start;
+    flex-direction: row;
+}
+.touch {
+    color: #ed254e;
+    font-family: Montserrat;
+    font-size: 54px;
+    font-weight: 700;
+    line-height: 65.83px;
+
+
+}
+
+@media (max-width: 576px) {
+
+    .details_address {
+        padding-inline: 8px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-self: center;
+    }
+    .box_details_2{
+    margin-left: 10px; 
+    display: flex; justify-content: center; margin-top: 10px; flex-direction: column; align-items: center;
   }
-  
-  .contactus-subtitle {
-      font-family: Montserrat;
-      font-size: 48px;
-      font-weight: 700;
-      line-height: 58.51px;
-      text-align: left;
-      color: #011936;
+  .right_div{
+    display: none;
   }
-  
-  .contact-item {
-      display: flex;
-  }
-  
-  .icon {
-      width: 30px;
-      height: auto;
-  }
-  
-  .text1 {
-      margin-bottom: 0;
-      color: #ed254e;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-  }
-  
-  .info {
-      margin-left: 15px;
-  }
-  
-  .bluerect-image {
-      height: auto;
-  }
-  
+
   .map-image {
-      right: 30%;
-      bottom: 10%;
-      max-width: auto;
-      height: auto;
+     display: none;
   }
-  
-  @media (max-width: 992px) {
-      .hero-text h1 {
-          font-size: 40px;
-      }
-  
-      .home, .contact-us {
-          font-size: 16px;
-      }
-      .contactus-subtitle {
-          font-size: 36px;
-      }
-  
-      .map-image {
-          right: 20%;
-          bottom: 10%;
-          max-width: 70%;
-          display: none;
-      }
-      .bluerect-image{
-          right: 20%;
-          bottom: 10%;
-          max-width: 70%;
-          display: none;
-      }
+  .main_header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
-  
-  @media (max-width: 768px) {
-      .contact-item {
-          flex-direction: column;
-          align-items: flex-start;
-      }
-  
-      .map-image {
-          right: 20%;
-          bottom: 10%;
-          max-width: 70%;
-          display: none;
-      }
-      .bluerect-image{
-          right: 20%;
-          bottom: 10%;
-          max-width: 70%;
-          display: none;
-      }
-  
-      .contact-info {
-          margin-left: 0 !important;
-          margin-right: 0 !important;
-      }
-  
-      .text1 {
-          font-size: 12px;
-      }
-      .icon{
-        height: 8%;
-        width: 8%;
-      }
+}
+
+.contact_home_right {
+    width: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: flex-end;
+
+}
+
+.touch {
+    color: #ed254e;
+    font-family: Montserrat;
+    font-size: 54px;
+    font-weight: 700;
+    line-height: 65.83px;
+
+
+}
+
+.right_div_box{
+     width: 30%;
+      height:115%;
+      background-color:rgba(1,25,54,0.8); 
+      position: absolute;
+       display: flex;
+        justify-content: flex-end; 
+        align-items: flex-end;
+
+}
+@media (max-width: 990px) {
+    .contact_home_right {
+        width: 0%;
+    }
+
+    .details_address {
+        padding-inline: 8px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-self: center;
+    }
+    .main_header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
-  @media (max-width: 1300px) {
-      .hero-text h1 {
-          font-size: 40px;
-      }
-  
-      .home, .contact-us {
-          font-size: 16px;
-      }
-      .contactus-subtitle {
-          font-size: 36px;
-      }
-  
-      .map-image {
-          right: 20%;
-          bottom: 10%;
-          max-width: 70%;
-          display: none;
-      }
-      .bluerect-image{
-          right: 20%;
-          bottom: 10%;
-          max-width: 70%;
-          display: none;
-      }
+
+    .box_details_2{
+    margin-left: 10px; 
+    display: flex; justify-content: center; margin-top: 10px; flex-direction: column; align-items: center;
   }
-  
-  </style>
-  
+  .right_div{
+    display: none;
+  }
+  .map-image {
+     display: none;
+  }
+}
+
+.form_name {
+    border: 1px solid #E0E0E0;
+    border-radius: 2px;
+}
+
+.form_name::placeholder {
+    color: #828282;
+    
+}
+
+.form_email {
+    border: 1px solid #E0E0E0;
+    border-radius: 2px;
+}
+
+.form_email::placeholder {
+    color: #828282;
+}
+
+.form_phoneno {
+    border: 1px solid #E0E0E0;
+    border-radius: 2px;
+}
+
+.form_phoneno::placeholder {
+    color: #828282;
+
+}
+
+.form_message {
+    border: 1px solid #E0E0E0;
+    border-radius: 2px;
+
+}
+
+.contactus-subtitle {
+    font-family: Montserrat;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 58.51px;
+    text-align: left;
+    color: #011936;
+}
+
+.contact-item {
+    display: flex;
+}
+
+.icon {
+    width: 30px;
+    height: auto;
+    display: flex;
+    align-self: center;
+}
+
+.text1 {
+    font-size: 12px;
+    color: #ed254e;
+    text-align: center;
+
+
+}
+
+.info {
+    margin-left: 15px;
+}
+
+@media (max-width: 992px) {
+    .contact-item {
+        flex-direction: column;
+    }
+    .box_details_2{
+    margin-left: 10px; 
+    display: flex; justify-content: center; margin-top: 10px; flex-direction: column; align-items: center;
+  }
+}
+
+@media (max-width: 1200px) {
+    .right_div_box{
+     width: 30%;
+      height:100vh;
+      background-color:rgba(1,25,54,0.8); 
+      position: absolute;
+       display: flex;
+        justify-content: flex-end; 
+        align-items: flex-end;
+
+}
+}
+
+@media (max-width: 1024px) {
+    .right_div_box{
+     width: 30%;
+      height:70vh;
+      background-color:rgba(1,25,54,0.8); 
+      position: absolute;
+       display: flex;
+        justify-content: flex-end; 
+        align-items: flex-end;
+
+}
+}
+</style>

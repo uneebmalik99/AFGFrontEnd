@@ -58,6 +58,7 @@ export default {
         Swiper,
         SwiperSlide,
     },
+  
     setup() {
         return {
             modules: [Scrollbar],
@@ -164,27 +165,31 @@ export default {
 
 .overlay {
     position: absolute;
-    bottom: 130px;
+    bottom: 30px;
     left: 50px;
     color: #fff;
     font-size: 12px;
+    background-color: transparent;
 }
 
 .card-title {
     font-family: Montserrat;
-    font-size: 44px;
+    font-size: 38px;
     font-weight: 700;
     text-align: left;
     line-height: 18px;
     color: #FFFFFF;
+    margin-top: 34%;
 }
 
 .card-text {
     font-family: Montserrat;
-    font-size: 17px;
+    font-size: 15px;
     font-weight: 500;
     text-align: left;
     color: #FFFFFF;
+    padding-top: 0.5%;
+   
 }
 
 .h4-title {
@@ -235,7 +240,6 @@ export default {
     color: #FFFFFF;
 }
 
-/* Responsive styles */
 @media (max-width: 1100px) {
     .text {
         text-align: center;

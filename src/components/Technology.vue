@@ -1,68 +1,44 @@
 <template>
-  <div class="my-background" >
-  <div class="container " style="display: flex;justify-content: center;">
-    <div class="row  col-12 header_box" >
-    <div class="col-lg-5 col-md-10 col-sm-10 app-header" >
-      <h2 class="app-title">Our App</h2>
-      <h1 class="app-subtitle">Technology and Tracking</h1>
-      <p class="app-description">
-        In line with our dedication to innovation, AFG Global is using new tools
-        designed to elevate your experience with us, granting you 24/7 access to
-        essential information about your vehicles, shipments, invoices and
-        real-time updates and implementation with its website, mobile app and
-        the AFG system.
-      </p>
-    </div>
-  </div>
-  </div>
- 
-  <div class="row mt-5" >
-  <div class="col-md-6 d-flex justify-content-center align-items-center" >
-    <img src="../assets/iPhone 15.webp" alt="Left Image" class="img-fluid2" />
-    
-  </div>
-  <!-- <div class="col-md-6 d-flex  align-items-center justify-content-end">
-    <div class="row justify-content-center app-download" >
-          <div class="col-md-8 app-download-info" style="background-color: rgba(255, 255, 255, 0.1);">
+  <div class="my-background">
+    <div class="container">
+      <div class="row header_box">
+        <div class="col-lg-5 col-md-10 col-sm-12 app-header">
+          <h2 class="app-title">Our App</h2>
+          <h1 class="app-subtitle">Technology and Tracking</h1>
+          <p class="app-description">
+            In line with our dedication to innovation, AFG Global is using new tools designed to elevate your experience
+            with us, granting you 24/7 access to essential information about your vehicles, shipments, invoices and
+            real-time updates and implementation with its website, mobile app and the AFG system.
+          </p>
+        </div>
+      </div>
+
+      <div class="row ">
+        <div class="col-md-6 col-sm-12 d-flex justify-content-center align-items-center">
+          <img src="../assets/iPhone 15.webp" alt="Left Image" class="img-fluid2" />
+        </div>
+        <div class="col-md-6 col-sm-12 d-flex justify-content-center align-items-center">
+
+          <div class="app-download-info">
             <h1 class="download-title0">Download</h1>
             <h2 class="download-title">Our App Now</h2>
             <p class="download-description">
-              Our latest app, using latest technology to meet with user requirments. AFG Global was established with the sole aim of enabling growth, by providing efficient and prompt logistics, solutions.
+              Our latest app, using latest technology to meet with user requirements. AFG Global was established with
+              the sole aim of enabling growth, by providing efficient and prompt logistics, solutions.
             </p>
-            <div class="download-buttons d-flex justify-content-center ">
-              <a
-                href="https://play.google.com/store"
-                target="_blank"
-                class="download-button"
-              >
-                <img
-                  src="../assets/Googleplay.webp"
-                  alt="Get it on Google Play"
-                  class="img-fluid"
-                />
+            <div class="download-buttons d-flex justify-content-center">
+              <a href="https://play.google.com/store" target="_blank" class="download-button">
+                <img src="../assets/Googleplay.webp" alt="Get it on Google Play" class="img-fluid" />
               </a>
-              <a
-                href="https://www.apple.com/app-store/"
-                target="_blank"
-                class="download-button ml-4"
-              >
-                <img
-                  src="../assets/Appplay.webp"
-                  alt="Download on the App Store"
-                  class="img-fluid"
-                />
+              <a href="https://www.apple.com/app-store/" target="_blank" class="download-button ml-4">
+                <img src="../assets/Appplay.webp" alt="Download on the App Store" class="img-fluid" />
               </a>
             </div>
-          
+          </div>
         </div>
-        </div>
-
-
-  </div> -->
-</div>
-
-</div>
-
+      </div>
+    </div>
+  </div>
 </template>
 
 
@@ -74,9 +50,7 @@ export default {
       images: [],
     };
   },
-  methods: {
-    // Define your methods if needed
-  },
+  methods: {},
 };
 </script>
 
@@ -87,61 +61,67 @@ export default {
   padding: 20px;
 }
 
-.header_box{
+.header_box {
   display: flex;
   justify-content: flex-start;
 }
 
-
 @media (max-width: 992px) {
-  .header_box{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  .header_box {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .app-header {
+    text-align: center;
+    margin-top: 5%;
+  }
+
+  .my-background {
+    background-size: contain;
+  }
+  .app-title {
+    font-size: 20px;
+  }
+
+  .app-subtitle {
+    font-size: 25px;
+  }
+
+  .app-description {
+    font-size: 14px;
+    width: 270px;
+    margin-top: 1%;
+  }
 }
-.app-header {
-  text-align: left;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 5%;
+
+@media (max-width: 768px) {
+  .app-header {
+    margin-top: 10%;
+  }
 }
-}
+
 .my-background {
   background: #f4fffd;
-  background-image: url('../assets/App_bg.png'); /* Replace with your image path */
-  background-size: contain; /* Adjust to fit the entire div */
-  background-position: right; /* Center the image */
-  background-repeat: no-repeat; /* Prevent repeating the image */
-  height: auto; /* Set the height as needed, e.g., full viewport height */
+  background-image: url('../assets/App_bg.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
   width: 100%;
   position: relative;
+  padding: 20px;
 }
 
-.App_heading{
-  background-color: grey;
-
-}
 .app-header {
   text-align: left;
   margin-top: 5%;
 }
 
-.left-block {
-  margin-right: 0px;
-}
-
-.right-block {
-  margin-left: auto;
-  margin-right: 0;
-}
 .app-title {
   font-size: 2em;
   color: #ff4c60;
   font-family: Montserrat;
   font-weight: 700;
-  text-align: left;
 }
 
 .app-subtitle {
@@ -149,62 +129,44 @@ export default {
   color: #002d72;
   font-family: Montserrat;
   font-weight: 700;
-  text-align: left;
 }
 
 .app-description {
-  margin-top: 8%;
+  margin-top: 3%;
   color: black;
-  text-align: left;
-}
-
-.app-download {
-  position: relative;
-  margin-top: 40px;
-}
-
-.app-promo {
-  align-items: center;
-}
-
-.app-image {
-  max-width: 100%;
-  height: auto;
-  margin-bottom: 20px;
 }
 
 .app-download-info {
-  background: transparent;
+  background: rgba(255, 255, 255, 0.1);
   padding: 20px;
-  border: 1px solid  rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 30px;
-  display:flex;
-  flex-direction: column;
-  justify-content: space-around;
   text-align: center;
+  margin-bottom: 60%;
 }
-.download-title0 {
-  margin-bottom: 5px;
-  font-family: Montserrat;
+
+.download-title0,
+.download-title {
   color: white;
+  font-family: Montserrat;
+}
+
+.download-title0 {
   font-size: 2em;
   font-weight: 700;
 }
+
 .download-title {
-  margin-bottom: 10px;
-  font-family: Montserrat;
-  color: white;
   font-size: 2em;
   font-weight: 500;
 }
 
 .download-description {
-  margin-bottom: 20px;
   color: #ffffff;
   text-align: left;
   padding-inline: 40px;
   font-family: Montserrat;
-  font-size: 1em;
+  font-size: 14px;
   font-weight: 400;
 }
 
@@ -212,47 +174,136 @@ export default {
   width: 150px;
 }
 
-.img-fluid2{
-  max-width: 60%; /* Adjust the percentage as needed */
+.img-fluid2 {
+  max-width: 94%;
   height: auto;
-}
-.background-image {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  background: url("../assets/bg.webp") no-repeat center center;
-  background-size: cover;
-  opacity: 0.7;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-/* Adjustments for smaller screens */
-@media (max-width: 992px) {
-  .my-background {
-    background-size: contain; /* Ensure the image is fully visible */
-    height: auto; /* Adjust height to auto for better responsiveness */
-  }
+  margin-bottom: 40%;
 }
 
 @media (max-width: 768px) {
-  .my-background {
-    background-size: contain; /* Ensure the image is fully visible */
-    height: auto; /* Adjust height to auto for better responsiveness */
+  .app-description {
+    margin-top: 10%;
   }
+
+  .app-download {
+    margin-bottom: 20%;
+  }
+
+  .download-description {
+    padding-inline: 20px;
+    font-size: 0.9em;
+  }
+
+  .download-buttons .download-button img {
+    width: 120px;
+  }
+
+  .img-fluid2 {
+    max-width: 80%;
+  }
+
+  .my-background {
+    background-size: contain;
+  }
+
+  .app-header {
+    text-align: left;
+    margin-top: 5%;
+  }
+
+  .app-title {
+    font-size: 17px;
+  }
+
+  .app-subtitle {
+    font-size: 19px;
+  }
+
+  .app-description {
+    font-size: 10px;
+    width: 270px;
+    margin-top: 1%;
+  }
+
+  .download-title0,
+  .download-title {
+    color: white;
+    font-family: Montserrat;
+  }
+
+  .download-title0 {
+    font-size: 1em;
+    font-weight: 700;
+  }
+
+  .download-title {
+    font-size: 2em;
+    font-weight: 500;
+  }
+
+  .download-description {
+    color: #ffffff;
+    text-align: left;
+    padding-inline: 40px;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  .download-buttons .download-button img {
+    width: 150px;
+  }
+
 }
 
 @media (max-width: 576px) {
+
+  .download-title0,
+  .download-title {
+    font-size: 12px;
+  }
+
+  .download-description {
+    font-size: 11px;
+    padding-inline: 10px;
+  }
+
+  .download-buttons .download-button img {
+    width: 30px;
+  }
+
+  .img-fluid2 {
+    max-width: 80%;
+    height: 50%;
+    margin-right: 50%;
+  }
+
+  .app-download-info {
+    margin-top: -100%;
+    max-width: 53%;
+    margin-left: 50%;
+    padding: 1px;
+  }
+
   .my-background {
-    background-size: contain; /* Ensure the image is fully visible */
-    height: auto; /* Adjust height to auto for better responsiveness */
+    background-size: contain;
   }
 }
 
 @media (max-width: 480px) {
-  .my-background {
-    background-size: contain; /* Ensure the image is fully visible */
-    height: auto; /* Adjust height to auto for better responsiveness */
+  .download-description {
+    padding-inline: 5px;
+  }
+
+  .download-buttons .download-button img {
+    width: 58px;
+  }
+
+
+  .img-fluid2 {
+    max-width: 50%;
+    height: 50%;
+    margin-top: 10%;
   }
 }
 </style>

@@ -1,40 +1,65 @@
 <template>
   <div class="gallery">
     <div class="image-container">
-      <img src="../assets/Gallery.webp" alt="Gallery Image" class="gallery-image"/>
+      <img src="@/assets/Gallery.webp" alt="Gallery Image" class="gallery-image" />
       <div class="overlay"></div>
       <div class="breadcrumbs">
         Home > Gallery
       </div>
     </div>
-
-    <div class="masonry-gallery">
-      <masonry :cols="{ 'default': 4, '1100': 3, '700': 2, '500': 1 }" gutter="30px">
-        <div v-for="image in images" :key="image.id" class="masonry-item">
-          <img :src="image.src" :alt="image.alt" />
+    <div class="container container--gallery">
+      <div class="row">
+        <div
+          v-for="(image, index) in images"
+          :key="index"
+          :class="image.colClass"
+          @click="showGallery(index)"
+        >
+          <div class="photo-zoom">
+            <img :src="image.src" alt="" />
+          </div>
         </div>
-      </masonry>
+      </div>
+      <vue-easy-lightbox
+        v-if="visible"
+        :imgs="images.map(image => image.src)"
+        :index="index"
+        @hide="handleHide"
+      />
     </div>
   </div>
 </template>
 
 <script>
-import Masonry from 'vue-masonry-css';
+import VueEasyLightbox from 'vue-easy-lightbox';
 
 export default {
   name: 'MasonryGallery',
   components: {
-    Masonry
+    VueEasyLightbox
   },
   data() {
     return {
+      visible: false,
+      index: 0,
       images: [
-        { id: 1, src: require('@/assets/Gallery_01.webp'), alt: 'Image 1' },
-        { id: 2, src: require('@/assets/Gallery_02.webp'), alt: 'Image 2' },
-        { id: 3, src: require('@/assets/Gallery_03.webp'), alt: 'Image 3' },
-        { id: 4, src: require('@/assets/Gallery_04.webp'), alt: 'Image 4' },
+        { src: require('@/assets/Gallery_01.webp'), colClass: 'col-12 col-sm-6 col-md-4' },
+        { src: require('@/assets/Gallery_02.webp'), colClass: 'col-12 col-sm-6 col-md-8' },
+        { src: require('@/assets/Gallery_03.webp'), colClass: 'col-12 col-sm-6 col-md-4' },
+        { src: require('@/assets/Gallery_04.webp'), colClass: 'col-12 col-sm-6 col-md-4' },
+        { src: require('@/assets/Gallery_05.webp'), colClass: 'col-12 col-sm-6 col-md-4' },
+        { src: require('@/assets/Gallery_06.webp'), colClass: 'col-12 col-md-12' }
       ]
     };
+  },
+  methods: {
+    showGallery(index) {
+      this.index = index;
+      this.visible = true;
+    },
+    handleHide() {
+      this.visible = false;
+    }
   }
 };
 </script>
@@ -47,7 +72,7 @@ export default {
 .image-container {
   position: relative;
   width: 100%;
-  height: 400px; /* Adjust the height as needed */
+  height: 400px;
   overflow: hidden;
 }
 
@@ -63,7 +88,7 @@ export default {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.6); /* Black overlay with 0.6 opacity */
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
 .breadcrumbs {
@@ -76,17 +101,40 @@ export default {
   z-index: 10;
 }
 
-.masonry-gallery {
-  padding: 20px;
+.container--gallery {
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 
-.masonry-item {
-  margin-bottom: 30px;
+.container--gallery .row {
+  margin-left: -4px;
+  margin-right: -4px;
 }
 
-.masonry-item img {
+.container--gallery [class*="col-"] {
+  padding-left: 4px;
+  padding-right: 4px;
+  margin-bottom: 8px;
+}
+
+.photo-zoom {
+  outline: 0;
+  overflow: hidden;
+  position: relative;
+  display: block;
+  height: 230px;
+}
+
+.photo-zoom img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
   width: 100%;
   height: auto;
-  display: block;
+  transform: translate(-50%, -50%);
+}
+
+.image-source-link {
+  color: #98c3d1;
 }
 </style>

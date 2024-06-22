@@ -1,5 +1,8 @@
 
 <template>
+
+
+
 <div style="background-color: #F4FFFD;">
   <div class="container pt-5 "  >
     <div style="display: flex; justify-content: center;" class="col-md-6 col-lg-6 col-sm-12">
@@ -26,7 +29,7 @@
          <!-- Second box_grid -->
         <div class="box_grid col-md-6 col-lg-6 col-sm-6"  style="align-items:center">
         <div class="row">
-          <div class="box_first " >
+          <div class="box_first " style="align-items: flex-end;" >
             <img src="../assets/icon2.webp" class="icon">
           </div>
           <div class="box_second  ">
@@ -44,7 +47,7 @@ to one of our various warehouses </p>
       </div>
       <!-- Third box_grid -->
       <div class="row col-md-12 col-lg-12 col-sm-12" >
-        <div class="box_grid col-md-6 col-lg-6 col-sm-6 col-xs-6"  style="align-items:flex-start">
+        <div class="box_grid col-md-6 col-lg-6 col-sm-6 col-xs-6"  >
         <div class="row">
           <div class="box_first " style="align-items: center;">
             <img src="../assets/icon3.webp" class="icon">
@@ -145,6 +148,7 @@ to one of our various warehouses </p>
 
   .box_head{
     font-weight: 600;
+    font-size: 25px;
     color: #011936
   }
 
@@ -208,12 +212,23 @@ to one of our various warehouses </p>
     .child-div-row2 {
       width: 100px; /* Adjust width for smaller screens */
     }
+    .box_head{
+    font-weight: 600;
+    font-size: 20px;
+    color: #011936
+  }
+
   }
   @media screen and (max-width: 480px) {
     .child-div-row1,
     .child-div-row2 {
       width: 150px; /* Adjust width for even smaller screens */
     }
+    .box_head{
+    font-weight: 600;
+    font-size: 18px;
+    color: #011936
+  }
   }
   </style>
   

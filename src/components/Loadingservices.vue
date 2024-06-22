@@ -1,26 +1,27 @@
 <template>
-    <div class="container-fluid p-0" style="background-color:#f4fffd;">
-        <div class="hero-section position-relative">
-            <img src="../assets/car-bg.webp" class="img-fluid w-100 hero-image">
-            <div class="hero-text position-absolute text-center text-md-left">
-                <h1 class="display-4">Loading Services</h1>
-                <p>
-                    <span class="home">HOME</span>
-                    <span class="arrow"> &gt; </span>
-                    <span class="services">SERVICES</span>
-                    <span class="arrow"> &gt; </span>
-                    <span class="customer-support">LOADING SERVICES</span>
-                </p>
+    <div class="gallery">
+        <div class="image-container0">
+            <img src="../assets/car-bg.webp" alt="Gallery Image" class="gallery-image" />
+            <div class="overlay"></div>
+
+            <div class="breadcrumbs">
+                <h1>Loading Services</h1>
+                <div class="breadcrumb_des">
+                    <p>HOME &nbsp > SERVICES > &nbsp </p>
+                    <p class="breadcrumb_name"> LOADING SERVICES</p>
+                </div>
             </div>
         </div>
+    </div>
+    <div class="container-fluid p-0" style="background-color:#f4fffd;">
         <div class="container-fluid">
             <div class="support-buttons-container my-4">
-                <div class="support-buttons d-flex justify-content-start">
+                <div class="support-buttons d-flex justify-content-start py-3">
                     <button @click="setActive(0)" class="btn" :class="{ 'active': activeButton === 0 }">Loading
                         Services</button>
-                    <button @click="setActive(1)" class="btn btn-outline-primary"
+                    <button @click="setActive(1)" class="btn "
                         :class="{ 'active': activeButton === 1 }">Safe Transit, Damage Free</button>
-                    <button @click="setActive(2)" class="btn btn-outline-primary"
+                    <button @click="setActive(2)" class="btn "
                         :class="{ 'active': activeButton === 2 }">Mix Shipping</button>
                 </div>
                 <div class="progress-container mt-2">
@@ -67,7 +68,7 @@ export default {
     data() {
         return {
             activeButton: 0,
-            buttonWidth: 318, // Default button width for larger screens
+            buttonWidth: 258, // Default button width for larger screens
             buttonMargin: 10, // Default button margin
         };
     },
@@ -91,7 +92,7 @@ export default {
         },
         getButtonWidth() {
             // Adjust button width based on screen size
-            return window.innerWidth <= 767 ? window.innerWidth * 0.27 : this.buttonWidth;
+            return window.innerWidth <= 767 ? window.innerWidth * 0.28 : this.buttonWidth;
         },
         getButtonMargin() {
             // Adjust button margin based on screen size
@@ -108,49 +109,27 @@ export default {
 </script>
 
 <style scoped>
-.hero-section {
-    position: relative;
-    text-align: left;
-    color: white;
-}
-
-.hero-image {
-    height: 500px;
-    object-fit: cover;
+.gallery {
     width: 100%;
 }
 
-.hero-text {
-    position: absolute;
-    top: 50%;
-    left: 50px;
-    transform: translateY(-50%);
-    font-family: Montserrat, sans-serif;
-    margin-left: 17px;
+.breadcrumb_des {
+    display: flex;
+    flex-direction: row;
 }
 
-.hero-text h1 {
-    font-size: 56px;
+.breadcrumb_name {
+    color: #011936;
     font-weight: 700;
-    line-height: 68px;
 }
 
-.hero-text p {
-    font-size: 20px;
-    font-weight: 700;
-    line-height: 24px;
+.image-container0 {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
 }
 
-.home,
-.services,
-.customer-support,
-.arrow {
-    font-family: Montserrat, sans-serif;
-}
-
-.arrow {
-    color: #ffffff;
-}
 
 .customer-support {
     color: #011936;
@@ -167,10 +146,11 @@ export default {
     font-weight: bold;
     padding: 0.5rem 1.5rem;
     font-family: Montserrat, sans-serif;
-    font-size: 20px;
+    font-size: 15px;
     margin: 0 5px;
-    width: 318px;
+    width: 258px;
     height: 46px;
+    border: 1px solid black;
 }
 
 .support-buttons .btn.active {
@@ -262,24 +242,25 @@ export default {
         transform: translateY(-50%);
     }
 
-    .hero-text h1 {
-        font-size: 36px;
-        line-height: 48px;
-    }
+    .breadcrumb_des {
+    display: flex;
+    flex-direction: row;
+    font-size: 14px;
+}
 
-    .hero-text p {
-        font-size: 16px;
-        line-height: 20px;
-    }
+.breadcrumb_name {
+    color: #011936;
+    font-weight: 700;
+}
 
     .support-buttons-container {
         margin-left: 5%;
     }
 
     .support-buttons .btn {
-        font-size: 12px;
-        width: 100px; /* Adjust button width for smaller screens */
-        height: 80px; /* Increase button height for smaller screens */
+        font-size: 9px;
+        width: 140px;
+        height: 65px;
     }
 
     .call-heading {
@@ -309,6 +290,47 @@ export default {
     .image-container {
         left: 0;
         width: 100%;
+    }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+    .support-buttons-container {
+        margin-left: 7%;
+    }
+
+    .support-buttons .btn {
+        font-size: 12px;
+        width: 258px;
+        height: 46px;
+    }
+
+    .call-heading {
+        font-size: 32px;
+        line-height: 40px;
+    }
+
+    .call-subtitle {
+        font-size: 18px;
+        line-height: 22px;
+    }
+
+    .progress-container {
+        width: 70%;
+    }
+
+    .service-blue {
+        width: 90%;
+        max-width: 350px;
+    }
+
+    .service-top {
+        width
+        : 80%;
+        max-width: 300px;
+    }
+
+    .image-container {
+        left: 10%;
+        width: 90%;
     }
 }
 </style>

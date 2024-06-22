@@ -9,6 +9,13 @@
             class="scroll-container"
             ref="scrollContainer"
             @scroll="handleScroll"
+            @mousedown="mouseDown"
+            @mouseup="mouseUp"
+            @mouseleave="mouseUp"
+            @mousemove="mouseMove"
+            @touchstart="touchStart"
+            @touchend="touchEnd"
+            @touchmove="touchMove"
           >
             <div class="partner-logo" v-for="(image, index) in images" :key="'clone-start-' + index">
               <img :src="image" :alt="'Partner ' + (index + 1)">
@@ -44,6 +51,9 @@ export default {
   data() {
     return {
       images: [G1, G2, G3, G4, G5, G6, G7, G8, G9, G10, G11],
+      isDown: false,
+      startX: 0,
+      scrollLeft: 0
     };
   },
   mounted() {
@@ -64,6 +74,35 @@ export default {
       } else if (container.scrollLeft >= contentWidth * 2) {
         container.scrollLeft = contentWidth;
       }
+    },
+    mouseDown(e) {
+      this.isDown = true;
+      this.startX = e.pageX - this.$refs.scrollContainer.offsetLeft;
+      this.scrollLeft = this.$refs.scrollContainer.scrollLeft;
+    },
+    mouseUp() {
+      this.isDown = false;
+    },
+    mouseMove(e) {
+      if (!this.isDown) return;
+      e.preventDefault();
+      const x = e.pageX - this.$refs.scrollContainer.offsetLeft;
+      const walk = (x - this.startX) * 3; // Scroll-fast
+      this.$refs.scrollContainer.scrollLeft = this.scrollLeft - walk;
+    },
+    touchStart(e) {
+      this.isDown = true;
+      this.startX = e.touches[0].pageX - this.$refs.scrollContainer.offsetLeft;
+      this.scrollLeft = this.$refs.scrollContainer.scrollLeft;
+    },
+    touchEnd() {
+      this.isDown = false;
+    },
+    touchMove(e) {
+      if (!this.isDown) return;
+      const x = e.touches[0].pageX - this.$refs.scrollContainer.offsetLeft;
+      const walk = (x - this.startX) * 3; // Scroll-fast
+      this.$refs.scrollContainer.scrollLeft = this.scrollLeft - walk;
     }
   }
 };
@@ -88,10 +127,11 @@ export default {
   display: flex;
   overflow-x: auto;
   padding: 10px;
-  scrollbar-width: none; /* Firefox */
+  scrollbar-width: none; 
+  -ms-overflow-style: none;  
 }
 .scroll-container::-webkit-scrollbar {
-  display: none; /* Chrome, Safari and Opera */
+  display: none; 
 }
 .partner-logo {
   flex: 0 0 auto;

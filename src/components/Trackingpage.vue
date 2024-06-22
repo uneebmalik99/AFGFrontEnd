@@ -36,15 +36,15 @@
         </div>
 
         <div class="container">
-            <h2 class="mt-4">Vehicle Images</h2>
-            <div class="row" style="background-color: #FFFFFF;">
+            <h2 class="mt-4 mb-4">Vehicle Images</h2>
+            <div class="row " style="background-color: #FFFFFF;">
                 <div class="col-12 col-md-4 mb-4">
-                    <div class="image-container">
+                    <div class="image-container mt-4">
                         <img src="../assets/truck1.webp" alt="Vehicle Front" class="img-fluid ">
                     </div>
                 </div>
                 <div class="col-12 col-md-8 mb-4">
-                    <div class="image1-container">
+                    <div class="image1-container mt-4">
                         <img src="../assets/truck2.webp" alt="Vehicle Side" class="img1-fluid ">
                     </div>
                 </div>
@@ -54,42 +54,43 @@
             <!-- Vehicle Detail Section -->
             <div class="row mt-4 mb-4" style="background-color:#FFFFFF;">
                 <div class="col-12">
-                    <h2 class="text-left">Vehicle Detail <span class="float-right vin-number">VIN No :
+                    <h2 class="text-left" style="padding-top: 1%;">Vehicle Detail <span
+                            class="float-right vin-number">VIN No :
                             1nb4SrHETXDt52457</span></h2>
                 </div>
-                <div class="col-12 col-md-6 col-lg-3 mb-3">
+                <div class="line mt-2"></div>
+                <div class="col-11 col-md-6 col-lg-3 mb-3" style="padding-top: 2%">
                     <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Customer:</h5>
-                            <p class="card-text">Werner Steuber</p>
-                            <p class="card-text">P. NO: 754-938-4255</p>
+                        <div class="card-body" style="padding-top: 2%;">
+                            <h5 class="card-title" style="padding-top: 2%;">Customer:</h5>
+                            <p class="card-text">Werner Steuber <br> P. NO: 754-938-4255</p>
+
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-6 col-lg-3 mb-3">
+                <div class="col-11 col-md-6 col-lg-3 mb-3" style="padding-top: 2%">
                     <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Address</h5>
+                        <div class="card-body" style="padding-top: 2%;">
+                            <h5 class="card-title" style="padding-top: 2%;">Address</h5>
                             <p class="card-text">644 Hazel Canyon Apt. 398,<br> Sawaynberg</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-6 col-lg-3 mb-3">
+                <div class="col-11 col-md-6 col-lg-3 mb-3" style="padding-top: 2%">
                     <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Vehicle Information</h5>
-                            <p class="card-text">YearMakeModel: 2013DODGEDurango</p>
-                            <p class="card-text">vehicle model: xyz</p>
-                            <p class="card-text">shipping via: AFG shipping</p>
+                        <div class="card-body" style="padding-top: 2%;">
+                            <h5 class="card-title" style="padding-top: 2%;">Vehicle Information</h5>
+                            <p class="card-text">YearMakeModel: 2013DODGEDurango<br>vehicle model: xyz<br>shipping via:
+                                AFG shipping</p>
+
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-6 col-lg-3 mb-3">
+                <div class="col-11 col-md-6 col-lg-3 mb-3" style="padding-top: 2%">
                     <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Order Date</h5>
-                            <p class="card-text">4:43 PM</p>
-                            <p class="card-text">THU, 16 May 2024</p>
+                        <div class="card-body" style="padding-top: 2%;">
+                            <h5 class="card-title" style="padding-top: 2%;">Order Date</h5>
+                            <p class="card-text">4:43 PM<br> THU, 16 May 2024</p>
                         </div>
                     </div>
                 </div>
@@ -97,8 +98,9 @@
             <!-- Tracking Section -->
             <div class="row mt-4" style="background-color:#FFFFFF;">
                 <div class="col-12">
-                    <h3 class="text-center">Tracking Order Number:<span class="num">012112334556</span>
+                    <h3 class="text-center" style="padding-top: 2%;">Tracking Order Number:<span class="num">012112334556</span>
                     </h3>
+                    <div class="line mt-4"></div>
 
                     <div class="status-section d-flex justify-content-between align-items-center mt-4">
                         <span class="status-item shipping"><strong>Shipping Via:</strong> AFG</span>
@@ -106,7 +108,7 @@
                         <span class="status-item date"><strong>Expected Date:</strong> 20 May, 2024</span>
                     </div>
 
-                    <div class="tracking-container mt-4">
+                    <div class="tracking-container mt-5">
                         <div class="tracking-step active">
                             <div class="icon-container">
                                 <img src="../assets/Confirmorder.webp" alt="Confirmed Order" />
@@ -229,7 +231,6 @@ export default {
 .tracking-form .input-group .form-control {
     border-radius: 0.25rem;
     margin-right: 10px;
-    /* Add space between input and button */
 }
 
 .tracking-instructions {
@@ -247,7 +248,6 @@ export default {
 .btn {
     background-color: #ff4c60;
     padding: 10px 20px;
-    /* Adjust button padding */
     border-radius: 8px;
     color: white;
 }
@@ -255,19 +255,31 @@ export default {
 @media (max-width: 767px) {
     .tracking-form .input-group {
         flex-direction: column;
-        /* Stack input and button vertically on smaller screens */
         align-items: center;
-        /* Center items horizontally */
     }
 
     .tracking-form .input-group .form-control {
         width: 100%;
-        /* Make input full width */
         margin-right: 0;
-        /* Remove margin for smaller screens */
         margin-bottom: 10px;
-        /* Add space between input and button */
     }
+    .card-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card-container .col-11 {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 10px; 
+    }
+
+    .card-container .card {
+        width: 100%; 
+        max-width: 300px; 
+    }
+
 }
 
 .image-container {
@@ -286,6 +298,16 @@ h2 {
 
 .row {
     background: #f4fffd;
+
+}
+
+.line {
+    border: 0.1px solid #23232133;
+    width: 96%;
+    height: 0px;
+    gap: 2px;
+    border: 0.1px 0px 0px 0px;
+    margin-left: 2%;
 
 }
 
@@ -315,8 +337,10 @@ h2 {
     width: 260px;
     height: 147.65px;
     gap: 0px;
-    border-radius: 12.76px 12.76px 0px 0px;
+    border-radius: 12.76px;
     opacity: 0px;
+    box-shadow: 0px 0px 9.11px 0px #00000040;
+    justify-content: center;
 
 }
 
@@ -339,22 +363,26 @@ h2 {
 }
 
 .card-title {
+    width: 200px;
+    height: 30px;
+    opacity: 0px;
+    background: #FAFAFA;
     font-family: Montserrat;
-    font-size: 14.58px;
+    font-size: 20px;
     font-weight: 500;
     line-height: 17.78px;
     text-align: center;
-    color: #333333;
-    background: #FAFAFA;
+
 }
 
 .card-text {
     font-family: Montserrat;
     font-size: 12.84px;
     font-weight: 400;
-    line-height: 13px;
+    line-height: 15.65px;
     text-align: left;
     color: #333333;
+    padding-top: 4%;
 
 }
 
@@ -393,12 +421,10 @@ h2 {
 .status-item strong {
     color: #333333;
     font-family: Montserrat;
-font-size: 17px;
-font-weight: 600;
-line-height: 18.29px;
-text-align: left;
-
-;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 18.29px;
+    text-align: left;
 }
 
 .shipping {
@@ -411,7 +437,7 @@ text-align: left;
 }
 
 .date {
-    text-align: right;
+    text-align: left;
 }
 
 @media (max-width: 767.98px) {
@@ -428,6 +454,24 @@ text-align: left;
     .status {
         text-align: left;
     }
+    .text-left {
+    font-family: Montserrat;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 24.34px;
+    color: #333333;
+
+}
+
+.vin-number {
+    font-family: Montserrat;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 24.34px;
+    text-align: right;
+    color: #333333;
+}
+    
 }
 
 .tracking-container {
@@ -447,8 +491,8 @@ text-align: left;
 }
 
 .tracking-step .icon-container {
-    width: 100px;
-    height: 100px;
+    width: 90px;
+    height: 90px;
     background-color: #d3d3d3;
     border-radius: 14px;
     display: flex;
@@ -474,12 +518,13 @@ text-align: left;
     height: 4px;
     background-color: #d3d3d3;
     z-index: 0;
-    
+
 }
 
 .tracking-step.active~.tracking-line {
     background-color: #002d72;
 }
+
 .text-center {
     font-weight: bold;
     color: #343a40;
@@ -499,5 +544,18 @@ text-align: left;
     .tracking-line {
         display: none;
     }
+}
+@media (min-width: 1024px) {
+    .col-11 {
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+
+    .card {
+        width: 100%;
+    }
+   .card-title{
+    width: 170px;
+   }
 }
 </style>

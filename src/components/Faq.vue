@@ -1,38 +1,36 @@
 <template>
   <div style="background-color: #f4fffd;">
-  <div class="container py-5" >
-    <div class="faq-container">
-      <div class="faq-content">
-        <h2>FAQs</h2>
-        <h3>How Can We Help You?</h3>
-        <div class="scroll-box">
-          <ul>
-            <li v-for="(faq, index) in faqs" :key="index">
-              <h4>{{ index + 1 }}. {{ faq.question }}</h4>
-              <p>{{ faq.answer }}</p>
-            </li>
-          </ul>
+    <div class="container py-5">
+      <div class="row faq-container">
+        <div class="col-sm-12 col-md-6 col-lg-6 faq-content">
+          <h2>FAQs</h2>
+          <h3>How Can We Help You?</h3>
+          <div class="scroll-box">
+            <ul>
+              <li v-for="(faq, index) in faqs" :key="index" @click="toggleAnswer(index)" :class="{ active: activeIndex === index }">
+                <h4>
+                  <span :class="{ active: activeIndex === index }">{{ index + 1 }}.</span> {{ faq.question }}
+                </h4>
+                <p v-if="activeIndex === index">{{ faq.answer }}</p>
+                <div class="line" :class="{ active: activeIndex === index }"></div>
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
-      <div class="faq-image-container">
-        <div  class="bg_image">
-          <!-- <img src="../assets/contianer_contect.webp" alt="FAQ Image" /> -->
-        <div class="contact-box" >
-          <p>Still have questions?</p>
-          <button>Contact Us</button>
-          <p>OR</p>
-          <p>write us</p>
-          <p style="color: #ED254E;padding-inline: 8px;">Csupport@afgglobalusa.com</p>
+        <div class="col-sm-0 col-md-6 col-lg-6 faq-image-container">
+          <div class="bg_image">
+            <div class="contact-box">
+              <p>Still have questions?</p>
+              <button>Contact Us</button>
+              <p>OR</p>
+              <p>write us</p>
+              <p style="color: #ED254E; padding-inline: 8px;">csupport@afgglobalusa.com</p>
+            </div>
+          </div>
         </div>
-        </div>
-       
-
-      
       </div>
     </div>
   </div>
-  </div>
-
 </template>
 
 <script>
@@ -40,6 +38,7 @@ export default {
   name: 'FaqSection',
   data() {
     return {
+      activeIndex: 0, // Set the first item as active by default
       faqs: [
         {
           question: 'How much does it cost to transport a vehicle?',
@@ -57,7 +56,6 @@ export default {
           question: 'Can I transport a non-operational vehicle?',
           answer: 'Yes, you can transport non-operational vehicles...'
         },
-
         {
           question: 'How long does it take to transport a vehicle?',
           answer: 'The transportation time can vary based on...'
@@ -65,12 +63,16 @@ export default {
         {
           question: 'Can I transport a non-operational vehicle?',
           answer: 'Yes, you can transport non-operational vehicles...'
-        },
-        // Add more FAQs as needed
+        }
       ]
     };
+  },
+  methods: {
+    toggleAnswer(index) {
+      this.activeIndex = this.activeIndex === index ? null : index;
+    }
   }
-};
+}
 </script>
 
 <style scoped>
@@ -103,15 +105,9 @@ export default {
 
 .faq-container {
   padding-bottom: 100px;
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  max-width: 1200px;
-  position: relative;
 }
 
 .faq-content {
-  flex: 1;
   padding-right: 20px;
 }
 
@@ -127,17 +123,17 @@ export default {
   margin-bottom: 20px;
 }
 
-.bg_image{
-      width: 375px;
-      height: 68vh; /* Adjust as needed */
-      background-image: url('../assets/contianer_contect.webp');
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
+.bg_image {
+  width: 70%;
+  height: 92vh;
+  background-image: url('../assets/contianer_contect.webp');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .scroll-box {
-  max-height: 400px;
+  max-height: 250px;
   margin-top: 30px;
   overflow-y: auto;
   padding-right: 10px;
@@ -150,45 +146,103 @@ export default {
 
 .scroll-box li {
   margin-bottom: 20px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  position: relative;
 }
 
 .scroll-box h4 {
-  font-size: 18px;
-  color: #2c3e50;
+  font-size: 16px;
+  color: #011936;
+  padding-top: 10px;
+  font-family: Montserrat;
+  font-weight: 700;
+  line-height: 18.19px;
+  text-align: left;
+  display: flex;
+  align-items: center;
+}
+
+.scroll-box h4 span {
+  border: 1px solid black;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+}
+
+.scroll-box h4 span.active {
+  background-color: #011936;
+  color: white;
+  border: 1px solid black;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  font-size: 17px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .scroll-box p {
+  color: #011936;
+  font-family: Montserrat;
   font-size: 16px;
-  color: #7f8c8d;
+  font-weight: 400;
+  line-height: 16.54px;
+  text-align: left;
+  margin-top: 10px;
+  margin-left: 50px;
+}
+
+.line {
+  height: 1.36px;
+  background-color: grey;
+  margin-top: 20px;
+  width: 70%;
+  margin-left: 10px;
+}
+
+.line.active {
+  background-color: #ED254E;
+}
+
+.scroll-box::-webkit-scrollbar {
+  width: 5px;
+}
+
+.scroll-box::-webkit-scrollbar-track {
+  background: #f4fffd;
+}
+
+.scroll-box::-webkit-scrollbar-thumb {
+  background: #011936;
+  border-radius: 4.5px;
 }
 
 .faq-image-container {
-  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   position: relative;
 }
 
-.faq-image-container img {
-  max-width: 100%;
-  margin-bottom: 20px;
-}
-
 .contact-box {
   background-color: #011936;
   border: 10px solid white;
   color: white;
-  padding: 10px;
+  padding: 8px;
   position: absolute;
   bottom: -120px;
   height: 340px;
-  margin-left: -120px;
+  left: -20px;
   text-align: center;
   border-radius: 400px;
   z-index: 1;
-  
-  /* Flexbox properties */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -208,7 +262,6 @@ export default {
   margin: 10px 0;
 }
 
-
 @media (max-width: 768px) {
   .faq-container {
     flex-direction: column;
@@ -220,14 +273,98 @@ export default {
   }
 
   .faq-image-container {
-    
     align-items: flex-end;
-    position: relative;
-      
   }
 
   .faq-image-container img {
     width: 80%;
   }
+
+  .faq-content h2 {
+    font-size: 20px; 
+  }
+
+  .faq-content h3 {
+    font-size: 28px; 
+  }
+
+  .scroll-box h4 {
+    font-size: 10px; 
+    padding-top: 5px;
+  }
+
+  .scroll-box p {
+    font-size: 10px; 
+    margin-top: 5px;
+    margin-left: 42px;
+  }
+  .scroll-box h4 span.active {
+    width: 35px;
+    height: 35px;
+  }
+  .scroll-box h4 span {
+    width: 35px;
+    height: 35px;
+  }
+
+  .bg_image {
+    width: 90%;
+    height: 70vh;
+    margin-top: 18%;
+  }
+  .line {
+  height: 1.36px;
+  background-color: grey;
+  margin-top: 10px;
+  width: 70%;
+  margin-left: 10px;
 }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .faq-container {
+    flex-direction: row;
+  }
+
+  .faq-content {
+    padding-right: 15px;
+  }
+
+  .faq-image-container {
+    align-items: center;
+  }
+
+  .bg_image {
+    width: 83%;
+    height: 40vh;
+  }
+
+  .scroll-box h4 {
+    font-size: 13px; 
+  }
+
+  .scroll-box p {
+    font-size: 12px; 
+  }
+}
+
+@media (min-width: 1025px) {
+  .faq-container {
+    flex-direction: row;
+  }
+
+  .faq-content {
+    padding-right: 20px;
+  }
+
+  .faq-image-container {
+    align-items: center;
+  }
+
+  .bg_image {
+    width: 80%;
+    height: 105vh;
+  }
+}
+
 </style>

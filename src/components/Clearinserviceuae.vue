@@ -1,55 +1,66 @@
 <template>
-    <div class="container-fluid p-0" style="background-color:#f4fffd;">
+    <div class="gallery">
         <div class="hero-section">
-            <div class="hero-text">
-                <h1 class="display-4">Custom Clearance Services in UAE</h1>
-                <p>
-                    <span class="home">HOME</span>
-                    <span class="arrow"> &gt; </span>
-                    <span class="services">SERVICES</span>
-                    <span class="arrow"> &gt; </span>
-                    <span class="customer-support">CUSTOM CLEARANCE SERVICES IN UAE</span>
-                </p>
-            </div>
-        </div>
-        <div class="container-fluid">
-            <div class="support-buttons-container my-4">
-                <div class="support-buttons d-flex justify-content-start">
-                    <button @click="setActive(0)" class="btn" :class="{ 'active': activeButton === 0 }">Custom Clearance Services</button>
-                    <button @click="setActive(1)" class="btn btn-outline-primary" :class="{ 'active': activeButton === 1 }">Notice for Arrival</button>
-                    <button @click="setActive(2)" class="btn btn-outline-primary" :class="{ 'active': activeButton === 2 }">Documentation & Attestation</button>
-                </div>
-                <div class="progress-container mt-2">
-                    <div class="progress-bar" :style="progressBarStyle"></div>
-                </div>
-            </div>
-        </div>
-        <div class="container mb-4">
-            <div class="row align-items-center">
-                <div class="col-12 col-md-6 mb-4 mb-md-0">
-                    <h2 class="call-heading mt-4">Custom Clearance Services</h2>
-                    <p class="call-subtitle">
-                        Lorem ipsum dolor sit amet consectetur. Nisi diam est fermentum tortor tincidunt congue viverra.
-                        Pulvinar elit ipsum ut fermentum eget. Non egestas pellentesque tristique turpis tortor habitasse ac vel enim. Pretium et sit lobortis enim est nunc ultrices mi quam.
-                    </p>
-                    <p class="call-subtitle">
-                        Lorem ipsum dolor sit amet consectetur. Nisi diam est fermentum tortor tincidunt congue viverra.
-                        Pulvinar elit ipsum ut fermentum eget. Non egestas pellentesque tristique turpis tortor habitasse ac vel enim. Pretium et sit lobortis enim est nunc ultrices mi quam.
-                    </p>
-                    <p class="call-subtitle">
-                        Lorem ipsum dolor sit amet consectetur. Nisi diam est fermentum tortor tincidunt congue viverra.
-                        Pulvinar elit ipsum ut fermentum eget. Non egestas pellentesque tristique turpis tortor habitasse ac vel enim. Pretium et sit lobortis enim est nunc ultrices mi quam.
-                    </p>
-                </div>
-                <div class="col-12 col-md-6 text-center">
-                    <div class="image-container position-relative">
-                        <img src="../assets/serviceblue.webp" class="img-fluid custom-image service-blue">
-                        <img src="../assets/service.webp" class="img-fluid custom-image service-top">
-                    </div>
+            <div class="overlay"></div>
+            <div class="breadcrumbs">
+                <h1>Custom Clearance Services in UAE</h1>
+                <div class="breadcrumb_des">
+                    <p>HOME &nbsp > SERVICES > &nbsp </p>
+                    <p class="breadcrumb_name"> CUSTOM CLEARANCE SERVICES IN UAE</p>
                 </div>
             </div>
         </div>
     </div>
+
+    <div class="container-fluid p-0" style="background-color:#f4fffd;">
+        <div class="container-fluid">
+            <div class="support-buttons-container my-4">
+                <div class="support-buttons d-flex justify-content-start py-3">
+                    <button @click="setActive(0)" class="btn" :class="{ 'active': activeButton === 0 }">Custom Clearance
+                        Services</button>
+                    <button @click="setActive(1)" class="btn " :class="{ 'active': activeButton === 1 }">Notice for
+                        Arrival</button>
+                    <button @click="setActive(2)" class="btn " :class="{ 'active': activeButton === 2 }">Documentation &
+                        Attestation</button>
+                </div>
+                <div class="progress-container mt-2">
+                    <div class="progress-bar" :style="progressBarStyle">
+                    </div>
+                </div>
+            </div>
+            <div class="container mb-4">
+                <div class="row align-items-center">
+                    <div class="col-12 col-md-6 mb-4 mb-md-0">
+                        <h2 class="call-heading mt-4">Custom Clearance Services</h2>
+                        <p class="call-subtitle">
+                            Lorem ipsum dolor sit amet consectetur. Nisi diam est fermentum tortor tincidunt congue
+                            viverra.
+                            Pulvinar elit ipsum ut fermentum eget. Non egestas pellentesque tristique turpis tortor
+                            habitasse ac vel enim. Pretium et sit lobortis enim est nunc ultrices mi quam.
+                        </p>
+                        <p class="call-subtitle">
+                            Lorem ipsum dolor sit amet consectetur. Nisi diam est fermentum tortor tincidunt congue
+                            viverra.
+                            Pulvinar elit ipsum ut fermentum eget. Non egestas pellentesque tristique turpis tortor
+                            habitasse ac vel enim. Pretium et sit lobortis enim est nunc ultrices mi quam.
+                        </p>
+                        <p class="call-subtitle">
+                            Lorem ipsum dolor sit amet consectetur. Nisi diam est fermentum tortor tincidunt congue
+                            viverra.
+                            Pulvinar elit ipsum ut fermentum eget. Non egestas pellentesque tristique turpis tortor
+                            habitasse ac vel enim. Pretium et sit lobortis enim est nunc ultrices mi quam.
+                        </p>
+                    </div>
+                    <div class="col-12 col-md-6 text-center">
+                        <div class="image-container position-relative">
+                            <img src="../assets/serviceblue.webp" class="img-fluid custom-image service-blue">
+                            <img src="../assets/service.webp" class="img-fluid custom-image service-top">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
 </template>
 
 <script>
@@ -57,7 +68,7 @@ export default {
     data() {
         return {
             activeButton: 0,
-            buttonWidth: 330, // Default button width for larger screens
+            buttonWidth: 283, // Default button width for larger screens
             buttonMargin: 10, // Default button margin
         };
     },
@@ -81,7 +92,7 @@ export default {
         },
         getButtonWidth() {
             // Adjust button width based on screen size
-            return window.innerWidth <= 767 ? window.innerWidth * 0.25 : this.buttonWidth;
+            return window.innerWidth <= 767 ? window.innerWidth * 0.26 : this.buttonWidth;
         },
         getButtonMargin() {
             // Adjust button margin based on screen size
@@ -98,45 +109,27 @@ export default {
 </script>
 
 <style scoped>
+.gallery {
+    width: 100%;
+}
+
+.breadcrumb_des {
+    display: flex;
+    flex-direction: row;
+}
+
+.breadcrumb_name {
+    color: #011936;
+    font-weight: 900;
+}
+
 .hero-section {
     position: relative;
-    text-align: left;
-    color: white;
     width: 100%;
-    height: 441px;
-    background: #00000080;
+    height: 400px;
+    overflow: hidden;
 }
 
-.hero-text {
-    position: absolute;
-    top: 50%;
-    left: 50px;
-    transform: translateY(-50%);
-    font-family: Montserrat, sans-serif;
-}
-
-.hero-text h1 {
-    font-size: 56px;
-    font-weight: 700;
-    line-height: 68px;
-}
-
-.hero-text p {
-    font-size: 20px;
-    font-weight: 700;
-    line-height: 24px;
-}
-
-.home,
-.services,
-.customer-support,
-.arrow {
-    font-family: Montserrat, sans-serif;
-}
-
-.arrow {
-    color: #ffffff;
-}
 
 .customer-support {
     color: #011936;
@@ -153,10 +146,11 @@ export default {
     font-weight: bold;
     padding: 0.5rem 1.5rem;
     font-family: Montserrat, sans-serif;
-    font-size: 20px;
+    font-size: 15px;
     margin: 0 5px;
-    width: 332px;
+    width: 283px;
     height: 46px;
+    border: 1px solid black;
 }
 
 .support-buttons .btn.active {
@@ -243,20 +237,21 @@ export default {
 }
 
 @media (max-width: 767.98px) {
-    .hero-text h1 {
-        font-size: 36px;
-        line-height: 48px;
-    }
+    .breadcrumb_des {
+    display: flex;
+    flex-direction: row;
+    font-size: 11px;
+}
 
-    .hero-text p {
-        font-size: 16px;
-        line-height: 20px;
-    }
+.breadcrumb_name {
+    color: #011936;
+    font-weight: 700;
+}
 
     .support-buttons .btn {
-        font-size: 10px;
-        width: 105px; /* Adjust button width for smaller screens */
-        height: 70px; /* Increase button height for smaller screens */
+        font-size: 9px;
+        width: 115px;
+        height: 50px;
     }
 
     .call-heading {
@@ -286,6 +281,47 @@ export default {
     .image-container {
         left: 0;
         width: 100%;
+    }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+    .support-buttons-container {
+        margin-left: 7%;
+    }
+
+    .support-buttons .btn {
+        font-size: 12px;
+        width: 283px;
+    height: 46px;
+    }
+
+    .call-heading {
+        font-size: 32px;
+        line-height: 40px;
+    }
+
+    .call-subtitle {
+        font-size: 18px;
+        line-height: 22px;
+    }
+
+    .progress-container {
+        width: 70%;
+    }
+
+    .service-blue {
+        width: 90%;
+        max-width: 350px;
+    }
+
+    .service-top {
+        width
+        : 80%;
+        max-width: 300px;
+    }
+
+    .image-container {
+        left: 10%;
+        width: 90%;
     }
 }
 </style>

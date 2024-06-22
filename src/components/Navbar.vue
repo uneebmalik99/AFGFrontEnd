@@ -1,6 +1,6 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-light bg-light px-5">
-    <a class="navbar-brand" href="/">AFG Shipping</a>
+    <router-link class="navbar-brand" to="/">AFG Shipping</router-link>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -8,51 +8,63 @@
 
     <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
       <ul class="navbar-nav mx-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+        <li class="nav-item" :class="{ active: isActive('/') }">
+          <router-link class="nav-link" to="/">Home</router-link>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/aboutus">About Us</a>
+        <li class="nav-item" :class="{ active: isActive('/aboutus') }">
+          <router-link class="nav-link" to="/aboutus">About Us</router-link>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        
+        <li class="nav-item dropdown" :class="{ active: isActive('/services') }">
+          <router-link class="nav-link dropdown-toggle" to="/services" id="navbarDropdown" role="button">
             Services
-          </a>
+          </router-link>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="/customersupport">24/7 Customer Support</a>
-            <a class="dropdown-item" href="#">Towing Services</a>
-            <a class="dropdown-item" href="#">Loading Services</a>
-            <a class="dropdown-item" href="#">Shipping Services</a>
-            <a class="dropdown-item" href="#">Warehousing Services</a>
-            <a class="dropdown-item" href="#">Clearance Services in UAE</a>
-            <a class="dropdown-item" href="#">Booking Services</a>
-            <a class="dropdown-item" href="#">Half-cut Services</a>
+            <router-link class="dropdown-item" to="/customersupport">24/7 Customer Support</router-link>
+            <router-link class="dropdown-item" to="/towingservices">Towing Services</router-link>
+            <router-link class="dropdown-item" to="/loadingservices">Loading Services</router-link>
+            <router-link class="dropdown-item" to="/shippingservices">Shipping Services</router-link>
+            <router-link class="dropdown-item" to="/warehousingservices">Warehousing Services</router-link>
+            <router-link class="dropdown-item" to="/clearinserviceuae">Clearance Services in UAE</router-link>
+            <router-link class="dropdown-item" to="/bookingservices">Booking Services</router-link>
+            <router-link class="dropdown-item" to="/halfcutservices">Half-cut Services</router-link>
           </div>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/tracking">Tracking</a>
+        <li class="nav-item" :class="{ active: isActive('/tracking') }">
+          <router-link class="nav-link" to="/tracking">Tracking</router-link>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/contact-us">Contact Us</a>
+        <li class="nav-item" :class="{ active: isActive('/gallery') }">
+          <router-link class="nav-link" to="/gallery">Gallery</router-link>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/announcements">Announcements</a>
+        <li class="nav-item" :class="{ active: isActive('/contact-us') }">
+          <router-link class="nav-link" to="/contact-us">Contact Us</router-link>
+        </li>
+        <li class="nav-item" :class="{ active: isActive('/announcements') }">
+          <router-link class="nav-link" to="/announcements" id="navbarAnnouncements" role="button">
+            Announcements
+          </router-link>
         </li>
       </ul>
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Login</button>
+      <button class="btn my-2 my-sm-0" type="button">Login</button>
     </div>
   </nav>
 </template>
 
 <script>
 export default {
-  name: 'Navbar'
+  name: 'Navbar',
+  methods: {
+    isActive(route) {
+      return this.$route.path === route || this.$route.path.startsWith(route + '/');
+    }
+  }
 };
 </script>
 
 <style scoped>
 .navbar {
   padding: 20px 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow to the bottom */
 }
 
 .navbar-brand {
@@ -70,12 +82,16 @@ export default {
   transition: color 0.3s;
 }
 
-.nav-item .nav-link.active {
+.nav-item.active .nav-link {
   color: #011936;
 }
 
 .nav-item .nav-link:hover {
   color: #011936;
+}
+
+.nav-item.dropdown:hover .dropdown-menu {
+  display: block;
 }
 
 .btn {
@@ -98,52 +114,18 @@ export default {
     width: 100%;
   }
 }
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: white;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  padding: 0.5rem 0;
+  margin-top: 0.25rem;
+}
+
+.nav-item.dropdown:hover .dropdown-menu {
+  display: block;
+}
 </style>
-
-  
-
-
-
-     <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container-fluid">
-        <router-link class="navbar-brand" to="/">AFG Logo</router-link>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <router-link to="/" class="nav-link" active-class="active">Home</router-link>
-            </li>
-            <li class="nav-item">
-              <router-link to="/aboutus" class="nav-link" active-class="active">About</router-link>
-            </li>
-            <li class="nav-item">
-              <router-link to="/services" class="nav-link" active-class="active">Services</router-link>
-            </li>
-            <li class="nav-item">
-              <router-link to="/tracking" class="nav-link" active-class="active">Tracking</router-link>
-            </li>
-            <li class="nav-item">
-              <router-link to="/contact-us" class="nav-link" active-class="active">Contact Us</router-link>
-            </li>
-            <li class="nav-item">
-              <router-link to="/gallery" class="nav-link" active-class="active">Gallery</router-link>
-            </li>
-            <li class="nav-item">
-              <router-link to="/announcements" class="nav-link" active-class="active">Announcements</router-link>
-            </li>
-          </ul>
-          <button class="btn btn-primary" type="button">Log In</button>
-        </div>
-      </div>
-    </nav> -->
- 
