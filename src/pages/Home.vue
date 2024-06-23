@@ -15,7 +15,7 @@
       </div>
     </div>
     <video height="800" width="100%" loop autoplay muted preload="auto">
-      <source src="../assets/Video/AfgShipping_video.mp4" type="video/mp4">
+      <source src="#" type="video/mp4">
       Your browser does not support the video tag.
     </video>
   </div>
