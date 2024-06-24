@@ -11,6 +11,7 @@
     "@chenfengyuan/vue-carousel": "^2.0.0",
     "@popperjs/core": "^2.11.8",
     "@syncfusion/ej2-vue-inputs": "^25.2.5",
+    "axios": "^1.7.2",
     "bootstrap": "^4.5.2",
     "bootstrap-vue": "^2.23.1",
     "core-js": "^3.8.3",

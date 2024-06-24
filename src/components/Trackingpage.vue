@@ -24,39 +24,43 @@
                             Enter your Vin No, Lot No, or Container No to track your shipments.
                         </p>
                         <div class="input-group mb-3">
-                            <input v-model="trackingNumber" type="text" class="form-control"
-                                placeholder="Vin/Lot/Container number" aria-label="Vin/Lot/Container number" />
+                            <input
+                                v-model="trackingNumber"
+                                type="text"
+                                class="form-control"
+                                placeholder="Vin/Lot/Container number"
+                                aria-label="Vin/Lot/Container number"
+                            />
                         </div>
                         <div class="text-center">
-                            <button class="btn  btn-lg" type="button">Track</button>
+                            <button class="btn  btn-lg" type="button" @click="trackShipment">Track</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="container">
+        <div class="container" v-if="vehicleData.status == 'success'">
             <h2 class="mt-4 mb-4">Vehicle Images</h2>
-            <div class="row " style="background-color: #FFFFFF;">
-                <div class="col-12 col-md-4 mb-4">
+           
+            <div class="row " style="background-color: #FFFFFF;" v-if="vehicleData.data.images" >
+                <div class="col-12 col-md-4 mb-4" v-for="image in vehicleData.data.images" :key="image.id">
                     <div class="image-container mt-4">
-                        <img src="../assets/truck1.webp" alt="Vehicle Front" class="img-fluid ">
+                        <img :src="`https://admin.afgshipping.com/uploads/${image.thumbnail}`" alt="Vehicle Image" class="img-fluid">
                     </div>
                 </div>
-                <div class="col-12 col-md-8 mb-4">
-                    <div class="image1-container mt-4">
-                        <img src="../assets/truck2.webp" alt="Vehicle Side" class="img1-fluid ">
-                    </div>
-                </div>
+                
             </div>
         </div>
         <div class="container mt-5">
             <!-- Vehicle Detail Section -->
             <div class="row mt-4 mb-4" style="background-color:#FFFFFF;">
                 <div class="col-12">
-                    <h2 class="text-left" style="padding-top: 1%;">Vehicle Detail <span
-                            class="float-right vin-number">VIN No :
-                            1nb4SrHETXDt52457</span></h2>
+                    <h2 class="text-left" style="padding-top: 1%;">Vehicle Detail
+                        <span class="float-right vin-number">
+                            VIN No: {{ vehicleData && vehicleData.data ? vehicleData.data.vin : '' }}
+                        </span>
+                        </h2>
                 </div>
                 <div class="line mt-2"></div>
                 <div class="col-11 col-md-6 col-lg-3 mb-3" style="padding-top: 2%">
@@ -80,7 +84,7 @@
                     <div class="card">
                         <div class="card-body" style="padding-top: 2%;">
                             <h5 class="card-title" style="padding-top: 2%;">Vehicle Information</h5>
-                            <p class="card-text">YearMakeModel: 2013DODGEDurango<br>vehicle model: xyz<br>shipping via:
+                            <p class="card-text">YearMakeModel: {{ vehicleData && vehicleData.data ? vehicleData.data.year : '' }}-{{ vehicleData && vehicleData.data ? vehicleData.data.make : '' }}-{{ vehicleData && vehicleData.data ? vehicleData.data.model : '' }}<br>vehicle model: {{ vehicleData && vehicleData.data ? vehicleData.data.model : '' }}<br>shipping via:
                                 AFG shipping</p>
 
                         </div>
@@ -148,12 +152,29 @@
     </div>
 </template>
 <script>
+import axios from 'axios';
 export default {
     data() {
-        return {
-
+        return {    
+            trackingNumber: '',
+            vehicleData: [],
         };
-    }
+    },
+    methods: {
+        async trackShipment() {
+        if (this.trackingNumber) {
+            try {
+                const response = await axios.get(`http://127.0.0.1:8000/api/vehicles/search/${this.trackingNumber}`);
+                console.log(response.data);
+                this.vehicleData = response.data;
+            } catch (error) {
+            console.error('Error tracking shipment:', error);
+            }
+        } else {
+            alert('Please enter a tracking number.');
+        }
+        }
+  }
 };
 </script>
 
