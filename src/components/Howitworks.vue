@@ -5,6 +5,54 @@
     <div style="display: flex; justify-content: center;" class="col-md-6 col-lg-6 col-sm-12">
       <h1 class="works">How It Works</h1>
     </div>
+
+    <div class="row col-md-12 col-lg-12 col-sm-12" style="margin-top: 30px;">
+      <!-- First box_grid -->
+      <div class="box_grid col-md-6 col-lg-6 col-sm-6"  style="align-items:flex-start">
+        <div class="row">
+          <div class="box_first " >
+            <img src="../assets/icon1.webp" class="icon">
+          </div>
+          <div class="box_second  ">
+            <img src="../assets/redicon1.webp" class="icon">
+          </div>
+          <div class="box_thrid  ">
+            <div>
+              <h4 class="box_head">Purchase</h4>
+            <p class="box_p">Customer purchases product</p>
+              </div>
+          </div>
+        </div>
+      </div>
+         <!-- Second box_grid -->
+        <div class="box_grid col-md-6 col-lg-6 col-sm-6"  style="align-items:center">
+        <div class="row">
+          <div class="box_first " style="align-items: flex-end;" >
+            <img src="../assets/icon2.webp" class="icon">
+          </div>
+          <div class="box_second  ">
+            <img src="../assets/redicon2.webp" class="icon">
+          </div>
+          <div class="box_thrid  ">
+            <div>
+              <h4 class="box_head">Dispatch</h4>
+            <p class="box_p">We dispatch and receive the product<br/>
+to one of our various warehouses </p>
+              </div>
+          </div>
+        </div>
+      </div>
+      </div>
+
+    <div class="col-12 content_area">
+      <div cl>
+        1
+      </div>
+      <div>
+        2
+      </div>
+
+    </div>
    
     </div>
 </div>
@@ -33,7 +81,15 @@
   
   <style scoped>
  
-  
+  .content_area{
+    background-color: red;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    
+
+
+  }
   
   /* Remove width constraints for smaller screens */
   @media screen and (max-width: 768px) {
