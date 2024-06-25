@@ -45,7 +45,7 @@
           </router-link>
         </li>
       </ul>
-      <button class="btn my-2 my-sm-0" type="button">Login</button>
+      <button class="btn my-2 my-sm-0" type="button" @click="openLoginPage">Login</button>
     </div>
   </nav>
 </template>
@@ -56,6 +56,9 @@ export default {
   methods: {
     isActive(route) {
       return this.$route.path === route || this.$route.path.startsWith(route + '/');
+    },
+    openLoginPage() {
+      window.location.href = 'https://admin.afgshipping.com/';
     }
   }
 };

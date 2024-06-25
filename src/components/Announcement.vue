@@ -40,7 +40,7 @@
                     </div>
                 </div>
             </div>
-            <div class="d-flex justify-content-center mb-5">
+            <div class="d-flex justify-content-center ">
                 <button class="button mb-4">Load More</button>
             </div>
         </div>

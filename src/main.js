@@ -13,4 +13,10 @@ import router from './router';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.bundle.js';
 
-createApp(App).use(router).mount('#app');
+import Vue3Lottie from 'vue3-lottie'
+const app = createApp(App);
+
+// Register Vue3Lottie as a global component
+app.component('Vue3Lottie', Vue3Lottie);
+
+app.use(router).mount('#app');

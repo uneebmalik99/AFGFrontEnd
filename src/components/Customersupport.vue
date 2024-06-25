@@ -1,7 +1,7 @@
 <template>
     <div class="gallery ">
         <div class="image-container0">
-            <img src="../assets/customersupport.webp" alt="Gallery Image" class="gallery-image" />
+            <img src="../assets/customersupport.webp" alt="Gallery Image" class="customersuport-image" />
             <div class="overlay"></div>
 
             <div class="breadcrumbs">
@@ -27,7 +27,7 @@
                 </div>
             </div>
         </div>
-        <div class="container mb-4">
+        <div class="container ">
             <div class="row align-items-center">
                 <div class="col-12 col-md-6 mb-4 mb-md-0">
                     <h2 class="call-heading">Call Center Support</h2>
@@ -125,9 +125,8 @@ export default {
     height: 400px;
     overflow: hidden;
 }
-
-.arrow {
-    color: #ffffff;
+.customersuport-image{
+    justify-content: center;
 }
 
 .customer-support {
@@ -136,7 +135,7 @@ export default {
 
 .support-buttons-container {
     text-align: left;
-    margin-top: 20px;
+    margin-top: 0px !important;
     margin-left: 10%;
 }
 

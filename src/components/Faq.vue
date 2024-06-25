@@ -126,7 +126,7 @@ export default {
 .bg_image {
   width: 70%;
   height: 92vh;
-  background-image: url('../assets/contianer_contect.webp');
+  background-image: url('../assets/faqs.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;

@@ -1,48 +1,54 @@
 <template>
-    
-        <div class="gallery">
-        <div class="hero-section">
+    <div class="gallery ">
+        <div class="image-container0">
+            <img src="../assets/Booking.webp" alt="Gallery Image" class="booking-image" />
             <div class="overlay"></div>
+
             <div class="breadcrumbs">
                 <h1>Booking Services</h1>
                 <div class="breadcrumb_des">
-                    <p>HOME &nbsp > SERVICES > &nbsp </p>
+                    <p>HOME &nbsp > Services > &nbsp </p>
                     <p class="breadcrumb_name"> BOOKING SERVICES</p>
                 </div>
             </div>
         </div>
     </div>
-
     <div class="container-fluid p-0" style="background-color:#f4fffd;">
         <div class="container-fluid">
             <div class="support-buttons-container my-4">
                 <div class="support-buttons d-flex justify-content-start py-3">
-                    <button @click="setActive(0)" class="btn" :class="{'active': activeButton === 0}">Container Booking</button>
-                    <button @click="setActive(1)" class="btn " :class="{'active': activeButton === 1}">Booking Solution</button>
-                    <button @click="setActive(2)" class="btn " :class="{'active': activeButton === 2}">Customized Solutions</button>
+                    <button @click="setActive(0)" class="btn" :class="{ 'active': activeButton === 0 }">Container
+                        Booking</button>
+                    <button @click="setActive(1)" class="btn " :class="{ 'active': activeButton === 1 }">Booking
+                        Solution</button>
+                    <button @click="setActive(2)" class="btn " :class="{ 'active': activeButton === 2 }">Customized
+                        Solutions</button>
                 </div>
                 <div class="progress-container mt-2">
                     <div class="progress-bar" :style="progressBarStyle"></div>
                 </div>
             </div>
         </div>
-        <div class="container mb-4">
+        <div class="container ">
             <div class="row align-items-center">
                 <div class="col-12 col-md-6 mb-4 mb-md-0">
                     <h2 class="call-heading mt-4">Container Booking</h2>
                     <p class="call-subtitle">
                         Lorem ipsum dolor sit amet consectetur. Nisi diam est fermentum tortor tincidunt congue viverra.
-                        Pulvinar elit ipsum ut fermentum eget. Non egestas pellentesque tristique turpis tortor habitasse
+                        Pulvinar elit ipsum ut fermentum eget. Non egestas pellentesque tristique turpis tortor
+                        habitasse
                         ac vel enim. Pretium et sit lobortis enim est nunc ultrices mi quam.
                     </p>
                     <p class="call-subtitle">
                         Lorem ipsum dolor sit amet consectetur. Nisi diam est fermentum tortor tincidunt congue viverra.
-                        Pulvinar elit ipsum ut fermentum eget. Non egestas pellentesque tristique turpis tortor habitasse
+                        Pulvinar elit ipsum ut fermentum eget. Non egestas pellentesque tristique turpis tortor
+                        habitasse
                         ac vel enim. Pretium et sit lobortis enim est nunc ultrices mi quam.
                     </p>
                     <p class="call-subtitle">
                         Lorem ipsum dolor sit amet consectetur. Nisi diam est fermentum tortor tincidunt congue viverra.
-                        Pulvinar elit ipsum ut fermentum eget. Non egestas pellentesque tristique turpis tortor habitasse
+                        Pulvinar elit ipsum ut fermentum eget. Non egestas pellentesque tristique turpis tortor
+                        habitasse
                         ac vel enim. Pretium et sit lobortis enim est nunc ultrices mi quam.
                     </p>
                 </div>
@@ -114,14 +120,17 @@ export default {
 
 .breadcrumb_name {
     color: #011936;
-    font-weight: 900;
+    font-weight: 700;
 }
 
-.hero-section {
+.image-container0 {
     position: relative;
     width: 100%;
     height: 400px;
     overflow: hidden;
+}
+.booking-image{
+justify-content:center ;
 }
 
 .customer-support {
@@ -130,7 +139,7 @@ export default {
 
 .support-buttons-container {
     text-align: left;
-    margin-top: 20px;
+    margin-top: 0px !important;
     margin-left: 10%;
 }
 
@@ -242,20 +251,20 @@ export default {
 
 @media (max-width: 767.98px) {
     .breadcrumb_des {
-    display: flex;
-    flex-direction: row;
-    font-size: 14px;
-}
+        display: flex;
+        flex-direction: row;
+        font-size: 14px;
+    }
 
-.breadcrumb_name {
-    color: #011936;
-    font-weight: 700;
-}
+    .breadcrumb_name {
+        color: #011936;
+        font-weight: 700;
+    }
 
     .support-buttons .btn {
         font-size: 10px;
-        width: 100px; 
-        height: 40px; 
+        width: 100px;
+        height: 40px;
     }
 
     .call-heading {
@@ -287,6 +296,7 @@ export default {
         width: 100%;
     }
 }
+
 @media (min-width: 768px) and (max-width: 1024px) {
     .support-buttons-container {
         margin-left: 7%;
@@ -318,14 +328,14 @@ export default {
     }
 
     .service-top {
-        width
-        : 80%;
+        width: 80%;
         max-width: 300px;
     }
 
     .image-container {
         left: 10%;
         width: 90%;
+        background-size: contain;
     }
 }
 </style>
