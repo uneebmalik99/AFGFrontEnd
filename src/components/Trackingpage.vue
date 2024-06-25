@@ -1,14 +1,14 @@
 <template>
-    <div class="container-fluid p-0">
-        <div class="hero-section">
-            <img src="../assets/tracking.webp" alt="Ship Image" class="img-fluid w-100 hero-image">
-            <div class="hero-text">
-                <h1 class="display-4">Tracking</h1>
-                <p>
-                    <span class="home">HOME</span>
-                    <span class="arrow"> &gt; </span>
-                    <span class="tracking">TRACKING</span>
-                </p>
+    <div class="gallery ">
+        <div class="image-container0">
+            <img src="../assets/tracking.webp" alt="Gallery Image" class="tracking-image" />
+
+            <div class="breadcrumbs">
+                <h1>Tracking</h1>
+                <div class="breadcrumb_des">
+                    <p>HOME &nbsp > Services > &nbsp </p>
+                    <p class="breadcrumb_name"> TRACKING</p>
+                </div>
             </div>
         </div>
     </div>
@@ -179,50 +179,28 @@ export default {
 </script>
 
 <style scoped>
-.hero-section {
-    position: relative;
-    text-align: left;
-
-}
-
-.hero-image {
+.gallery {
     width: 100%;
-    height: auto;
-    object-fit: cover;
-    color: #00000080;
 }
 
-.hero-text {
-    position: absolute;
-    top: 50%;
-    left: 50px;
-    transform: translateY(-50%);
-    font-family: Montserrat;
+.breadcrumb_des {
+    display: flex;
+    flex-direction: row;
 }
 
-.hero-text h1 {
-    font-size: 56px;
+.breadcrumb_name {
+    color: #011936;
     font-weight: 700;
-    color: #FFFFFF;
-
 }
 
-.home {
-    color: #FFFFFF;
-    font-family: Montserrat;
-    font-size: 20px;
-    font-weight: 700;
-    line-height: 24.38px;
-    text-align: left;
-
+.image-container0 {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
 }
-
-.arrow {
-    width: 8px;
-    height: 14px;
-    gap: 0px;
-    opacity: 0px;
-    color: #FFFFFF;
+.tracking-image{
+    justify-content: center;
 }
 
 .tracking {

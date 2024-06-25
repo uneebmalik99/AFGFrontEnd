@@ -1,11 +1,17 @@
 <template>
-  <div class="gallery">
-    <div class="image-container">
-      <img src="@/assets/Gallery.webp" alt="Gallery Image" class="gallery-image" />
-      <div class="overlay"></div>
-      <div class="breadcrumbs">
-        Home > Gallery
-      </div>
+    <div class="gallery ">
+        <div class="image-container0">
+            <img src="../assets/Gallery.webp" alt="Gallery Image" class="gallery-image" />
+            <div class="overlay"></div>
+
+            <div class="breadcrumbs">
+                <h1>Gallery</h1>
+                <div class="breadcrumb_des">
+                    <p>HOME &nbsp > &nbsp </p>
+                    <p class="breadcrumb_name">GALLERY</p>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="container container--gallery">
       <div class="row">
@@ -27,7 +33,6 @@
         @hide="handleHide"
       />
     </div>
-  </div>
 </template>
 
 <script>
@@ -66,20 +71,27 @@ export default {
 
 <style>
 .gallery {
-  width: 100%;
+    width: 100%;
 }
 
-.image-container {
-  position: relative;
-  width: 100%;
-  height: 400px;
-  overflow: hidden;
+.breadcrumb_des {
+    display: flex;
+    flex-direction: row;
 }
 
-.gallery-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.breadcrumb_name {
+    color: #011936;
+    font-weight: 700;
+}
+
+.image-container0 {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+}
+.gallery-image{
+    justify-content: center;
 }
 
 .overlay {

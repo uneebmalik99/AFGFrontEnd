@@ -1,40 +1,32 @@
 <template>
   <div class="wrapper">
-    <div class="content"  style="background-color: rgba(0, 0, 0, 0.9); border-radius: 10px;" >
-      <!-- <h5>AFG Shipping</h5> -->
-     <h4 class="group">THE AMERICAN FREIGHT GROUP</h4>
+    <div class="content" style="background-color: rgba(0, 0, 0, 0.9); border-radius: 10px;">
+      <h4 class="group">THE AMERICAN FREIGHT GROUP</h4>
       <h1 class="big">Big or Small</h1>
       <h1>We Ship It All</h1>
-      <p style="font-size: small;">We provide you with full package services, from bidding on your favorite <br />
-      cars in the US auctions and delivering to your desired locations.</p>
+      <p style="font-size: small;">We provide you with full package services, from bidding on your favorite <br /> cars in
+        the US auctions and delivering to your desired locations.</p>
       <div>
         <div style="display: flex; flex-direction: row; justify-content: flex-start; align-items: center;">
-          <button class="let_btn"><img style="height: 15px; width: 15px;object-fit: contain;" src="../assets/Arrow_right.webp"/> </button>
-          <h6 style="margin-left: 10px;font-weight: 300; text-align: center; align-self:center;">LET’S TALK</h6>
+          <button class="let_btn">
+            <img style="height: 15px; width: 15px;object-fit: contain;" src="../assets/Arrow_right.webp" />
+          </button>
+          <h6 style="margin-left: 10px;font-weight: 300; text-align: center; align-self:center;"> LET’S TALK </h6>
         </div>
       </div>
     </div>
     <video height="800" width="100%" loop autoplay muted preload="auto">
-      <source src="#" type="video/mp4">
-      Your browser does not support the video tag.
+      <source src="../assets/Video/AfgShipping_video.mp4" type="video/mp4"> Your browser does not support the video tag.
     </video>
   </div>
-
-
-
-  <!-- <Technology /> -->
-
-<Offer/>
-
+  <Offer />
   <Grid />
-  <Howitworks/>
-  <Partners/>
-  <Coverage/>
+  <Partners />
+  <Coverage />
   <VTracking />
   <Faq />
   <Aboutus />
-  <Contactus/>
-
+  <Contactus />
 </template>
 
 <script>
@@ -49,8 +41,6 @@ import Partners from './../components/Partners.vue';
 import Grid from './../components/Gridblock.vue';
 import Howitworks from './../components/Howitworks.vue';
 import Offer from './../components/Offer.vue';
-
-
 
 export default {
   name: "Home",
@@ -71,7 +61,8 @@ export default {
 </script>
 
 <style>
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   height: 100%;
@@ -81,33 +72,35 @@ html, body {
 .wrapper {
   position: relative;
   width: 100%;
-  height: 100vh; /* Full viewport height */
+  height: 100vh;
+  /* Full viewport height */
   overflow: hidden;
 }
 
-.group{
+.group {
   color: #ED254E;
   font-weight: 500;
 }
 
-.let_btn{
+.let_btn {
   display: flex;
   justify-content: center;
   align-items: center;
   border: 0px;
   background: #011936;
   border-radius: 200px;
-  height:50px;
-  width:50px;
+  height: 50px;
+  width: 50px;
 }
-.big{
-  color:#1974d2;
+
+.big {
+  color: #1974d2;
   font-size: 33px;
   font-weight: 600;
 }
 
-.we{
-  color:white;
+.we {
+  color: white;
   font-size: 33;
   font-weight: bolder;
 }
@@ -115,16 +108,21 @@ html, body {
 .content {
   position: absolute;
   top: 50%;
-  left: 8%; /* Margin from the left */
+  left: 8%;
+  /* Margin from the left */
   transform: translateY(-50%);
-  color: white; /* Ensure text color is white for better readability */
+  color: white;
+  /* Ensure text color is white for better readability */
   padding: 20px;
-  max-width: 600px; /* Optional: Limit the width of the content */
+  max-width: 600px;
+  /* Optional: Limit the width of the content */
 }
 
 video {
   width: 100%;
-  height: 100vh; /* Full viewport height */
-  object-fit: cover; /* Ensures the video covers the entire area */
+  height: 100vh;
+  /* Full viewport height */
+  object-fit: cover;
+  /* Ensures the video covers the entire area */
 }
 </style>

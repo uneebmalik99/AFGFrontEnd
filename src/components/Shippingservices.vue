@@ -1,7 +1,10 @@
 <template>
-    <div class="gallery">
-        <div class="hero-section">
-            <div class="overlay"></div>
+    <div class="gallery ">
+        <div class="image-container0">
+            <div class="d-flex justify-content-end" style="margin-right: 15%;">
+                <img src="../assets/container_ship-heading.png" alt="Gallery Image" class="shipping-image" />
+            </div>
+            <!-- <div class="overlay"></div> -->
             <div class="breadcrumbs">
                 <h1>Shipping Services</h1>
                 <div class="breadcrumb_des">
@@ -11,42 +14,35 @@
             </div>
         </div>
     </div>
-
     <div class="container-fluid p-0" style="background-color:#f4fffd;">
         <div class="container-fluid">
             <div class="support-buttons-container my-4">
                 <div class="support-buttons d-flex justify-content-start py-3">
                     <button @click="setActive(0)" class="btn" :class="{ 'active': activeButton === 0 }">Shipping
                         Services</button>
-                    <button @click="setActive(1)" class="btn "
-                        :class="{ 'active': activeButton === 1 }">Global Reach</button>
-                    <button @click="setActive(2)" class="btn"
-                        :class="{ 'active': activeButton === 2 }">Direct Ship Line Partnerships</button>
+                    <button @click="setActive(1)" class="btn " :class="{ 'active': activeButton === 1 }">Global
+                        Reach</button>
+                    <button @click="setActive(2)" class="btn" :class="{ 'active': activeButton === 2 }">Direct Ship Line
+                        Partnerships</button>
                 </div>
                 <div class="progress-container">
                     <div class="progress-bar" :style="progressBarStyle"></div>
                 </div>
             </div>
         </div>
-        <div class="container mb-4">
+        <div class="container ">
             <div class="row align-items-center">
                 <div class="col-12 col-md-6 mb-4 mb-md-0">
                     <h2 class="call-heading mt-4">Shipping Services</h2>
-                    <p class="call-subtitle">
-                        Lorem ipsum dolor sit amet consectetur. Nisi diam est fermentum tortor tincidunt congue viverra.
-                        Pulvinar elit ipsum ut fermentum eget. Non egestas pellentesque tristique turpis tortor
-                        habitasse ac vel enim. Pretium et sit lobortis enim est nunc ultrices mi quam.
-                    </p>
-                    <p class="call-subtitle">
-                        Lorem ipsum dolor sit amet consectetur. Nisi diam est fermentum tortor tincidunt congue viverra.
-                        Pulvinar elit ipsum ut fermentum eget. Non egestas pellentesque tristique turpis tortor
-                        habitasse ac vel enim. Pretium et sit lobortis enim est nunc ultrices mi quam.
-                    </p>
-                    <p class="call-subtitle">
-                        Lorem ipsum dolor sit amet consectetur. Nisi diam est fermentum tortor tincidunt congue viverra.
-                        Pulvinar elit ipsum ut fermentum eget. Non egestas pellentesque tristique turpis tortor
-                        habitasse ac vel enim. Pretium et sit lobortis enim est nunc ultrices mi quam.
-                    </p>
+                    <p class="call-subtitle"> Lorem ipsum dolor sit amet consectetur. Nisi diam est fermentum tortor
+                        tincidunt congue viverra. Pulvinar elit ipsum ut fermentum eget. Non egestas pellentesque tristique
+                        turpis tortor habitasse ac vel enim. Pretium et sit lobortis enim est nunc ultrices mi quam. </p>
+                    <p class="call-subtitle"> Lorem ipsum dolor sit amet consectetur. Nisi diam est fermentum tortor
+                        tincidunt congue viverra. Pulvinar elit ipsum ut fermentum eget. Non egestas pellentesque tristique
+                        turpis tortor habitasse ac vel enim. Pretium et sit lobortis enim est nunc ultrices mi quam. </p>
+                    <p class="call-subtitle"> Lorem ipsum dolor sit amet consectetur. Nisi diam est fermentum tortor
+                        tincidunt congue viverra. Pulvinar elit ipsum ut fermentum eget. Non egestas pellentesque tristique
+                        turpis tortor habitasse ac vel enim. Pretium et sit lobortis enim est nunc ultrices mi quam. </p>
                 </div>
                 <div class="col-12 col-md-6 text-center">
                     <div class="image-container">
@@ -110,20 +106,29 @@ export default {
 }
 
 .breadcrumb_des {
+    color: #011936;
     display: flex;
     flex-direction: row;
 }
 
-.breadcrumb_name {
+.breadcrumbs h1 {
     color: #011936;
-    font-weight: 900;
 }
 
-.hero-section {
+.breadcrumb_name {
+    color: #011936;
+    font-weight: 700;
+}
+
+.image-container0 {
     position: relative;
     width: 100%;
     height: 400px;
     overflow: hidden;
+}
+
+.shipping-image {
+    width: 400px;
 }
 
 .customer-support {
@@ -132,7 +137,7 @@ export default {
 
 .support-buttons-container {
     text-align: left;
-    margin-top: 20px;
+    margin-top: 0px !important;
     margin-left: 10%;
 }
 
@@ -233,15 +238,15 @@ export default {
 
 @media (max-width: 767.98px) {
     .breadcrumb_des {
-    display: flex;
-    flex-direction: row;
-    font-size: 14px;
-}
+        display: flex;
+        flex-direction: row;
+        font-size: 14px;
+    }
 
-.breadcrumb_name {
-    color: #011936;
-    font-weight: 700;
-}
+    .breadcrumb_name {
+        color: #011936;
+        font-weight: 700;
+    }
 
     .support-buttons .btn {
         font-size: 10px;
@@ -278,6 +283,7 @@ export default {
         width: 100%;
     }
 }
+
 @media (min-width: 768px) and (max-width: 1024px) {
     .support-buttons-container {
         margin-left: 7%;
@@ -286,7 +292,7 @@ export default {
     .support-buttons .btn {
         font-size: 12px;
         width: 280px;
-    height: 46px;
+        height: 46px;
     }
 
     .call-heading {
@@ -309,8 +315,7 @@ export default {
     }
 
     .service-top {
-        width
-        : 80%;
+        width: 80%;
         max-width: 300px;
     }
 

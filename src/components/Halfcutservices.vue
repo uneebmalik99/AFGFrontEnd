@@ -28,7 +28,7 @@
             </div>
         </div>
     </div>
-    <div class="container mb-4">
+    <div class="container ">
         <div class="row align-items-center">
             <div class="col-12 col-md-6 mb-4 mb-md-0">
                 <h2 class="call-heading mt-4">Half-Cut and Dismantling</h2>
@@ -132,7 +132,7 @@ export default {
 
 .support-buttons-container {
     text-align: left;
-    margin-top: 20px;
+    margin-top: 0px !important;
     margin-left: 10%;
 }
 
