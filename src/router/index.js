@@ -23,7 +23,7 @@ const routes = [
   { path: '/gallery', component: Gallery, meta: { title: 'Gallery | AFG Global Shipping Inc.' } },
   { path: '/contact-us', component: ContactUs, meta: { title: 'Contact Us | AFG Global Shipping Inc.' } },
   { path: '/about', component: About, meta: { title: 'About | AFG Global Shipping Inc.' } },
-  { path: '/tracking', component: Tracking, meta: { title: 'Tracking | AFG Global Shipping Inc.' } },
+  { path: '/tracking', name:'Tracking', component: Tracking, meta: { title: 'Tracking | AFG Global Shipping Inc.' } },
   { path: '/services', component: Services, meta: { title: 'Services | AFG Global Shipping Inc.' } },
   { path: '/customersupport', component: Customersupport, meta: { title: 'Customer Support | AFG Global Shipping Inc.' } },
   { path: '/announcements', component: Announcements, meta: { title: 'Announcements | AFG Global Shipping Inc.' } },
@@ -34,7 +34,7 @@ const routes = [
   { path: '/halfcutservices', component: Halfcutservices, meta: { title: 'Half-Cut Services | AFG Global Shipping Inc.' } },
   { path: '/warehousingservices', component: Warehousingservices, meta: { title: 'Warehousing Services | AFG Global Shipping Inc.' } },
   { path: '/clearinserviceuae', component: Clearinserviceuae, meta: { title: 'Clearance Services in UAE | AFG Global Shipping Inc.' } },
-  { path: '/blog', component: Blog, meta: { title: 'Blog | AFG Global Shipping Inc.' } }
+  { path: '/blog/:slug', name: 'BlogDetails', component: Blog, meta: { title: 'Blog | AFG Global Shipping Inc.' }, props: true }
 ];
 
 const router = createRouter({

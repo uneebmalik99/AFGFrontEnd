@@ -1,17 +1,19 @@
 <template>
-    <div class="gallery ">
-        <div class="image-container0">
-            <img src="../assets/customersupport.webp" alt="Gallery Image" class="customersuport-image" />
-            <div class="overlay"></div>
-
-            <div class="breadcrumbs">
+    <div class="gallery">
+        <!-- <div class="image-container0"> -->
+            <!-- <img src="../assets/customersupport.webp" alt="Gallery Image" class="customersuport-image" /> -->
+            <!-- <div class="overlay"></div> -->
+            <div class="content-container" style="color: #011936;">
                 <h1>24/7 Customer Support</h1>
                 <div class="breadcrumb_des">
                     <p>HOME &nbsp > Services > &nbsp </p>
                     <p class="breadcrumb_name"> 24/7 Customer Support</p>
                 </div>
             </div>
-        </div>
+            <div>
+                <Vue3Lottie :animationData="CutomerSupportJSON2" :height="400" :width="800" />
+            </div>
+        <!-- </div> -->
     </div>
     <div class="container-fluid p-0" style="background-color:#f4fffd;">
         <div class="container-fluid">
@@ -19,8 +21,10 @@
                 <div class="support-buttons d-flex justify-content-start py-3">
                     <button @click="setActive(0)" class="btn" :class="{ 'active': activeButton === 0 }">Call center
                         support</button>
-                    <button @click="setActive(1)" class="btn" :class="{ 'active': activeButton === 1 }">Message Support</button>
-                    <button @click="setActive(2)" class="btn" :class="{ 'active': activeButton === 2 }">Email Support</button>
+                    <button @click="setActive(1)" class="btn" :class="{ 'active': activeButton === 1 }">Message
+                        Support</button>
+                    <button @click="setActive(2)" class="btn" :class="{ 'active': activeButton === 2 }">Email
+                        Support</button>
                 </div>
                 <div class="progress-container mt-2">
                     <div class="progress-bar" :style="progressBarStyle"></div>
@@ -31,26 +35,21 @@
             <div class="row align-items-center">
                 <div class="col-12 col-md-6 mb-4 mb-md-0">
                     <h2 class="call-heading">Call Center Support</h2>
-                    <p class="call-subtitle">
-                        Lorem ipsum dolor sit amet consectetur. Nisi diam est fermentum tortor tincidunt congue viverra.
-                        Pulvinar elit ipsum ut fermentum eget. Non egestas pellentesque tristique turpis tortor
-                        habitasse ac vel enim. Pretium et sit lobortis enim est nunc ultrices mi quam.
-                    </p>
-                    <p class="call-subtitle">
-                        Lorem ipsum dolor sit amet consectetur. Nisi diam est fermentum tortor tincidunt congue viverra.
-                        Pulvinar elit ipsum ut fermentum eget. Non egestas pellentesque tristique turpis tortor
-                        habitasse ac vel enim. Pretium et sit lobortis enim est nunc ultrices mi quam.
-                    </p>
-                    <p class="call-subtitle">
-                        Lorem ipsum dolor sit amet consectetur. Nisi diam est fermentum tortor tincidunt congue viverra.
-                        Pulvinar elit ipsum ut fermentum eget. Non egestas pellentesque tristique turpis tortor
-                        habitasse ac vel enim. Pretium et sit lobortis enim est nunc ultrices mi quam.
-                    </p>
+                    <p class="call-subtitle"> Lorem ipsum dolor sit amet consectetur. Nisi diam est fermentum tortor
+                        tincidunt congue viverra. Pulvinar elit ipsum ut fermentum eget. Non egestas pellentesque tristique
+                        turpis tortor habitasse ac vel enim. Pretium et sit lobortis enim est nunc ultrices mi quam. </p>
+                    <p class="call-subtitle"> Lorem ipsum dolor sit amet consectetur. Nisi diam est fermentum tortor
+                        tincidunt congue viverra. Pulvinar elit ipsum ut fermentum eget. Non egestas pellentesque tristique
+                        turpis tortor habitasse ac vel enim. Pretium et sit lobortis enim est nunc ultrices mi quam. </p>
+                    <p class="call-subtitle"> Lorem ipsum dolor sit amet consectetur. Nisi diam est fermentum tortor
+                        tincidunt congue viverra. Pulvinar elit ipsum ut fermentum eget. Non egestas pellentesque tristique
+                        turpis tortor habitasse ac vel enim. Pretium et sit lobortis enim est nunc ultrices mi quam. </p>
                 </div>
                 <div class="col-12 col-md-6 text-center">
                     <div class="image-container position-relative">
                         <img src="../assets/serviceblue.webp" class="img-fluid custom-image service-blue">
-                        <img src="../assets/service.webp" class="img-fluid custom-image service-top">
+                        <!-- <img src="../assets/service.webp" class="img-fluid custom-image service-top"> -->
+                        <Vue3Lottie :animationData="CutomerSupportJSON1" :height="300" :width="100" class="img-fluid custom-image service-top" />
                     </div>
                 </div>
             </div>
@@ -59,12 +58,22 @@
 </template>
 
 <script>
+import { Vue3Lottie } from 'vue3-lottie'
+import CutomerSupportJSON1 from '../animations/customer_support_1.json'
+import CutomerSupportJSON2 from '../animations/customer_support_2.json'
+
+
 export default {
+    components: {
+        Vue3Lottie,
+    },
     data() {
         return {
             activeButton: 0,
-            buttonWidth: 220, 
-            buttonMargin: 10, 
+            buttonWidth: 220,
+            buttonMargin: 10,
+            CutomerSupportJSON1,
+            CutomerSupportJSON2
         };
     },
     computed: {
@@ -93,7 +102,7 @@ export default {
             // Adjust button margin based on screen size
             return window.innerWidth <= 767 ? 5 : this.buttonMargin;
         }
-       
+
     },
     mounted() {
         window.addEventListener('resize', this.updateProgressBar);
@@ -106,7 +115,11 @@ export default {
 
 <style scoped>
 .gallery {
-    width: 100%;
+    /* width: 100%; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .breadcrumb_des {
@@ -125,9 +138,10 @@ export default {
     height: 400px;
     overflow: hidden;
 }
-.customersuport-image{
+
+/* .customersuport-image {
     justify-content: center;
-}
+} */
 
 .customer-support {
     color: #011936;
@@ -239,16 +253,17 @@ export default {
         left: 20px;
         transform: translateY(-50%);
     }
-    .breadcrumb_des {
-    display: flex;
-    flex-direction: row;
-    font-size: 14px;
-}
 
-.breadcrumb_name {
-    color: #011936;
-    font-weight: 700;
-}
+    .breadcrumb_des {
+        display: flex;
+        flex-direction: row;
+        font-size: 14px;
+    }
+
+    .breadcrumb_name {
+        color: #011936;
+        font-weight: 700;
+    }
 
     .support-buttons-container {
         margin-left: 5%;
@@ -298,7 +313,7 @@ export default {
     .support-buttons .btn {
         font-size: 12px;
         width: 220px;
-    height: 46px;
+        height: 46px;
     }
 
     .call-heading {
@@ -321,8 +336,7 @@ export default {
     }
 
     .service-top {
-        width
-        : 80%;
+        width: 80%;
         max-width: 300px;
     }
 

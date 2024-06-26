@@ -153,7 +153,7 @@ export default {
 .contactus-subtitle {
     opacity: 0;
     /* Start with 0 opacity */
-    animation: fadeIn 1s forwards;
+    animation: fadeIn 3s forwards;
     /* Animation name, duration, and retain final state */
 }
 

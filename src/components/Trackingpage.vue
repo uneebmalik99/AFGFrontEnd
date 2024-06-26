@@ -2,7 +2,6 @@
     <div class="gallery ">
         <div class="image-container0">
             <img src="../assets/tracking.webp" alt="Gallery Image" class="tracking-image" />
-
             <div class="breadcrumbs">
                 <h1>Tracking</h1>
                 <div class="breadcrumb_des">
@@ -20,132 +19,136 @@
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <div class="tracking-form">
-                        <p class="tracking-instructions text-center">
-                            Enter your Vin No, Lot No, or Container No to track your shipments.
-                        </p>
+                        <p class="tracking-instructions text-center"> Enter your Vin No, Lot No, or Container No to track
+                            your shipments. </p>
                         <div class="input-group mb-3">
-                            <input
-                                v-model="trackingNumber"
-                                type="text"
-                                class="form-control"
-                                placeholder="Vin/Lot/Container number"
-                                aria-label="Vin/Lot/Container number"
-                            />
+                            <input v-model="trackingNumber" type="text" class="form-control"
+                                placeholder="Vin/Lot/Container number" aria-label="Vin/Lot/Container number" />
                         </div>
                         <div class="text-center">
-                            <button class="btn  btn-lg" type="button" @click="trackShipment">Track</button>
+                            <button class="btn" type="button" @click="trackShipment">Track</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
-        <div class="container" v-if="vehicleData.status == 'success'">
-            <h2 class="mt-4 mb-4">Vehicle Images</h2>
-           
-            <div class="row " style="background-color: #FFFFFF;" v-if="vehicleData.data.images" >
+        <div class="container mt-3" v-if="vehicleData.status == 'success'">
+            <div class="row rounded" style="background-color: #FFFFFF;" v-if="vehicleData.data.images">
+                <div class="col-md-12">
+                    <h2 class="mt-3 mb-3 text-left">Vehicle Images</h2>
+                </div>
                 <div class="col-12 col-md-4 mb-4" v-for="image in vehicleData.data.images" :key="image.id">
-                    <div class="image-container mt-4">
-                        <img :src="`https://admin.afgshipping.com/uploads/${image.thumbnail}`" alt="Vehicle Image" class="img-fluid">
+                    <div class="image-container">
+                        <img :src="`https://admin.afgshipping.com/uploads/${image.thumbnail}`" alt="Vehicle Image"
+                            class="img-fluid rounded">
                     </div>
                 </div>
-                
             </div>
         </div>
         <div class="container mt-5">
-            <!-- Vehicle Detail Section -->
-            <div class="row mt-4 mb-4" style="background-color:#FFFFFF;">
-                <div class="col-12">
-                    <h2 class="text-left" style="padding-top: 1%;">Vehicle Detail
-                        <span class="float-right vin-number">
-                            VIN No: {{ vehicleData && vehicleData.data ? vehicleData.data.vin : '' }}
-                        </span>
+            <div v-if="vehicleData && vehicleData.status == 'success'">
+                <!-- Vehicle Detail Section -->
+                <div class="row mt-4 mb-4 rounded" style="background-color:#FFFFFF;">
+                    <div class="col-12">
+                        <h2 class="text-left" style="padding-top: 1%;"> Vehicle Detail <span class="float-right vin-number">
+                                VIN No: {{ vehicleData && vehicleData.data ? vehicleData.data.vin : '' }} </span>
                         </h2>
-                </div>
-                <div class="line mt-2"></div>
-                <div class="col-11 col-md-6 col-lg-3 mb-3" style="padding-top: 2%">
-                    <div class="card">
-                        <div class="card-body" style="padding-top: 2%;">
-                            <h5 class="card-title" style="padding-top: 2%;">Customer:</h5>
-                            <p class="card-text">Werner Steuber <br> P. NO: 754-938-4255</p>
-
+                    </div>
+                    <div class="line mt-2"></div>
+                    <div class="col-11 col-md-6 col-lg-3 mb-3" style="padding-top: 2%">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Customer</h5>
+                                <p class="card-text">Werner Steuber <br> P. NO: 754-938-4255</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-11 col-md-6 col-lg-3 mb-3" style="padding-top: 2%">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Address</h5>
+                                <p class="card-text">644 Hazel Canyon Apt. 398,<br> Sawaynberg</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-11 col-md-6 col-lg-3 mb-3" style="padding-top: 2%">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Vehicle Info.</h5>
+                                <p class="card-text"> Year-Make-Model: <br> {{ vehicleData && vehicleData.data ?
+                                    vehicleData.data.year : '' }} -{{ vehicleData && vehicleData.data ?
+        vehicleData.data.make : '' }}-{{ vehicleData && vehicleData.data ?
+        vehicleData.data.model : '' }} <br>Vehicle Model: {{ vehicleData && vehicleData.data ?
+        vehicleData.data.model : '' }} <br>Shipping via: AFG Shipping </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-11 col-md-6 col-lg-3 mb-3" style="padding-top: 2%">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Order Date</h5>
+                                <p class="card-text" v-html="formatDateTime(vehicleData.data.created_at)"></p>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-11 col-md-6 col-lg-3 mb-3" style="padding-top: 2%">
-                    <div class="card">
-                        <div class="card-body" style="padding-top: 2%;">
-                            <h5 class="card-title" style="padding-top: 2%;">Address</h5>
-                            <p class="card-text">644 Hazel Canyon Apt. 398,<br> Sawaynberg</p>
+                <!-- Tracking Section -->
+                <div class="row mt-4" style="background-color:#FFFFFF;">
+                    <div class="col-12">
+                        <h3 class="text-center" style="padding-top: 2%;"> Tracking Order Number: <span
+                                class="num">012112334556</span>
+                        </h3>
+                        <div class="line mt-4"></div>
+                        <div class="status-section d-flex justify-content-between align-items-center mt-4">
+                            <span class="status-item shipping"><strong>Shipping Via:</strong> AFG</span>
+                            <span class="status-item status"><strong>Status:</strong> Product Dispatched</span>
+                            <span class="status-item date"><strong>Expected Date:</strong> 20 May, 2024</span>
                         </div>
-                    </div>
-                </div>
-                <div class="col-11 col-md-6 col-lg-3 mb-3" style="padding-top: 2%">
-                    <div class="card">
-                        <div class="card-body" style="padding-top: 2%;">
-                            <h5 class="card-title" style="padding-top: 2%;">Vehicle Information</h5>
-                            <p class="card-text">YearMakeModel: {{ vehicleData && vehicleData.data ? vehicleData.data.year : '' }}-{{ vehicleData && vehicleData.data ? vehicleData.data.make : '' }}-{{ vehicleData && vehicleData.data ? vehicleData.data.model : '' }}<br>vehicle model: {{ vehicleData && vehicleData.data ? vehicleData.data.model : '' }}<br>shipping via:
-                                AFG shipping</p>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-11 col-md-6 col-lg-3 mb-3" style="padding-top: 2%">
-                    <div class="card">
-                        <div class="card-body" style="padding-top: 2%;">
-                            <h5 class="card-title" style="padding-top: 2%;">Order Date</h5>
-                            <p class="card-text">4:43 PM<br> THU, 16 May 2024</p>
+                        <div class="tracking-container mt-5">
+                            <div class="tracking-step active">
+                                <div class="icon-container">
+                                    <img src="../assets/Confirmorder.webp" alt="Confirmed Order" />
+                                </div>
+                                <span>Confirmed Order</span>
+                            </div>
+                            <div class="tracking-step active">
+                                <div class="icon-container">
+                                    <img src="../assets/processingorder.webp" alt="Processing Order" />
+                                </div>
+                                <span>Processing Order</span>
+                            </div>
+                            <div class="tracking-step active">
+                                <div class="icon-container">
+                                    <img src="../assets/productdispatch.webp" alt="Product Dispatched" />
+                                </div>
+                                <span>Product Dispatched</span>
+                            </div>
+                            <div class="tracking-step">
+                                <div class="icon-container">
+                                    <img src="../assets/ondelivery.webp" alt="On Delivery" />
+                                </div>
+                                <span>On Delivery</span>
+                            </div>
+                            <div class="tracking-step">
+                                <div class="icon-container">
+                                    <img src="../assets/productdeliver.webp" alt="Product Delivered" />
+                                </div>
+                                <span>Product Delivered</span>
+                            </div>
+                            <div class="tracking-line"></div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- Tracking Section -->
-            <div class="row mt-4" style="background-color:#FFFFFF;">
-                <div class="col-12">
-                    <h3 class="text-center" style="padding-top: 2%;">Tracking Order Number:<span class="num">012112334556</span>
-                    </h3>
-                    <div class="line mt-4"></div>
-
-                    <div class="status-section d-flex justify-content-between align-items-center mt-4">
-                        <span class="status-item shipping"><strong>Shipping Via:</strong> AFG</span>
-                        <span class="status-item status"><strong>Status:</strong> Product Dispatched</span>
-                        <span class="status-item date"><strong>Expected Date:</strong> 20 May, 2024</span>
+            <div v-else-if="vehicleData && vehicleData.status == 'error'">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="alert alert-dismissible alert-danger text-center" role="alert"> {{ vehicleData.message }}
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
                     </div>
-
-                    <div class="tracking-container mt-5">
-                        <div class="tracking-step active">
-                            <div class="icon-container">
-                                <img src="../assets/Confirmorder.webp" alt="Confirmed Order" />
-                            </div>
-                            <span>Confirmed Order</span>
-                        </div>
-                        <div class="tracking-step active">
-                            <div class="icon-container">
-                                <img src="../assets/processingorder.webp" alt="Processing Order" />
-                            </div>
-                            <span>Processing Order</span>
-                        </div>
-                        <div class="tracking-step active">
-                            <div class="icon-container">
-                                <img src="../assets/productdispatch.webp" alt="Product Dispatched" />
-                            </div>
-                            <span>Product Dispatched</span>
-                        </div>
-                        <div class="tracking-step">
-                            <div class="icon-container">
-                                <img src="../assets/ondelivery.webp" alt="On Delivery" />
-                            </div>
-                            <span>On Delivery</span>
-                        </div>
-                        <div class="tracking-step">
-                            <div class="icon-container">
-                                <img src="../assets/productdeliver.webp" alt="Product Delivered" />
-                            </div>
-                            <span>Product Delivered</span>
-                        </div>
-                        <div class="tracking-line"></div>
-                    </div>
-
                 </div>
             </div>
         </div>
@@ -155,26 +158,34 @@
 import axios from 'axios';
 export default {
     data() {
-        return {    
+        return {
             trackingNumber: '',
-            vehicleData: [],
+            vehicleData: this.$route.query.vehicleData ? JSON.parse(this.$route.query.vehicleData) : {},
         };
     },
     methods: {
         async trackShipment() {
-        if (this.trackingNumber) {
-            try {
-                const response = await axios.get(`http://127.0.0.1:8000/api/vehicles/search/${this.trackingNumber}`);
-                console.log(response.data);
-                this.vehicleData = response.data;
-            } catch (error) {
-            console.error('Error tracking shipment:', error);
+            if (this.trackingNumber) {
+                try {
+                    const response = await axios.get(`http://trackvinapi.afgshipping.com/api.php?vin=${this.trackingNumber}`);
+                    console.log(response.data);
+                    this.vehicleData = response.data;
+                } catch (error) {
+                    console.error('Error tracking shipment:', error);
+                }
+            } else {
+                alert('Please enter a tracking number.');
             }
-        } else {
-            alert('Please enter a tracking number.');
+        },
+        formatDateTime(datetime) {
+            if (!datetime) return '';
+
+            const options = { weekday: 'short', day: '2-digit', month: 'long', year: 'numeric', hour: '2-digit', minute: '2-digit' };
+            const date = new Date(datetime);
+
+            return `${date.toLocaleDateString('en-US', options)}`;
         }
-        }
-  }
+    }
 };
 </script>
 
@@ -199,7 +210,8 @@ export default {
     height: 400px;
     overflow: hidden;
 }
-.tracking-image{
+
+.tracking-image {
     justify-content: center;
 }
 
@@ -246,9 +258,14 @@ export default {
 
 .btn {
     background-color: #ff4c60;
-    padding: 10px 20px;
+    padding: 5px 10px;
     border-radius: 8px;
     color: white;
+}
+
+.btn:hover {
+    color: white;
+    background-color: #eb3347;
 }
 
 @media (max-width: 767px) {
@@ -262,6 +279,7 @@ export default {
         margin-right: 0;
         margin-bottom: 10px;
     }
+
     .card-container {
         display: flex;
         flex-direction: column;
@@ -271,12 +289,12 @@ export default {
     .card-container .col-11 {
         display: flex;
         justify-content: center;
-        margin-bottom: 10px; 
+        margin-bottom: 10px;
     }
 
     .card-container .card {
-        width: 100%; 
-        max-width: 300px; 
+        width: 100%;
+        max-width: 300px;
     }
 
 }
@@ -310,26 +328,10 @@ h2 {
 
 }
 
-.img1-fluid {
-    width: 95%;
-    height: 474.23px;
-    gap: 0px;
-    border-radius: 10px 0px 0px 0px;
-    opacity: 0px;
-    box-shadow: -2px 2px 5px 0px #0000001A;
-    box-shadow: -7px 7px 10px 0px #00000017;
-    box-shadow: -16px 16px 13px 0px #0000000D;
-    box-shadow: -28px 28px 16px 0px #00000003;
-    box-shadow: -43px 43px 17px 0px #00000000;
-}
-
 .img-fluid {
     width: 338.19px;
     height: 474.23px;
     gap: 0px;
-    border-radius: 10px 0px 0px 0px;
-    opacity: 0px;
-
 }
 
 .card {
@@ -338,9 +340,7 @@ h2 {
     gap: 0px;
     border-radius: 12.76px;
     opacity: 0px;
-    box-shadow: 0px 0px 9.11px 0px #00000040;
     justify-content: center;
-
 }
 
 .text-left {
@@ -349,7 +349,6 @@ h2 {
     font-weight: 600;
     line-height: 24.34px;
     color: #333333;
-
 }
 
 .vin-number {
@@ -361,7 +360,7 @@ h2 {
     color: #333333;
 }
 
-.card-title {
+/* .card-title {
     width: 200px;
     height: 30px;
     opacity: 0px;
@@ -371,8 +370,7 @@ h2 {
     font-weight: 500;
     line-height: 17.78px;
     text-align: center;
-
-}
+} */
 
 .card-text {
     font-family: Montserrat;
@@ -453,24 +451,24 @@ h2 {
     .status {
         text-align: left;
     }
+
     .text-left {
-    font-family: Montserrat;
-    font-size: 17px;
-    font-weight: 600;
-    line-height: 24.34px;
-    color: #333333;
+        font-family: Montserrat;
+        font-size: 17px;
+        font-weight: 600;
+        line-height: 24.34px;
+        color: #333333;
+    }
 
-}
+    .vin-number {
+        font-family: Montserrat;
+        font-size: 17px;
+        font-weight: 500;
+        line-height: 24.34px;
+        text-align: right;
+        color: #333333;
+    }
 
-.vin-number {
-    font-family: Montserrat;
-    font-size: 17px;
-    font-weight: 500;
-    line-height: 24.34px;
-    text-align: right;
-    color: #333333;
-}
-    
 }
 
 .tracking-container {
@@ -544,6 +542,7 @@ h2 {
         display: none;
     }
 }
+
 @media (min-width: 1024px) {
     .col-11 {
         flex: 0 0 25%;
@@ -553,8 +552,9 @@ h2 {
     .card {
         width: 100%;
     }
-   .card-title{
-    width: 170px;
-   }
+
+    .card-title {
+        width: 170px;
+    }
 }
 </style>
