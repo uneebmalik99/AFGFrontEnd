@@ -61,6 +61,26 @@ export default {
 </script>
 
 <style>
+/* Animation Starts */
+.content {
+    opacity: 0; /* Start with 0 opacity */
+    transform: translateX(-100%); /* Start off-screen to the left */
+    animation: slideIn 2s forwards ease-out; /* Slide in animation */
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-100%); /* Start from off-screen left */
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0); /* End at its original position */
+    }
+}
+
+/* Animation Ends */
+
 html,
 body {
   margin: 0;

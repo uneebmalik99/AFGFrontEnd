@@ -1,12 +1,12 @@
 <template>
-  <div style="background-color: #F4FFFD;">
+  <div style="background-color: #F4FFFD;" ref="grid">
     <div class="container pt-5 ">
       <div style="display: flex; justify-content: center;" class="col-md-6 col-lg-6 col-sm-12">
-        <h1 class="works">How It Works</h1>
+        <h1 class="works fade-up">How It Works</h1>
       </div>
       <div class="row col-md-12 col-lg-12 col-sm-12" style="margin-top: 30px;">
         <!-- First box_grid -->
-        <div class="box_grid col-md-6 col-lg-6 col-sm-6" style="align-items:flex-start">
+        <div class="box_grid fade-up col-md-6 col-lg-6 col-sm-6" style="align-items:flex-start">
           <div class="row">
             <div class="box_first ">
               <img src="../assets/icon1.webp" class="icon">
@@ -23,7 +23,7 @@
           </div>
         </div>
         <!-- Second box_grid -->
-        <div class="box_grid col-md-6 col-lg-6 col-sm-6" style="align-items:center">
+        <div class="box_grid fade-up delay col-md-6 col-lg-6 col-sm-6" style="align-items:center">
           <div class="row">
             <div class="box_first " style="align-items: flex-end;">
               <img src="../assets/icon2.webp" class="icon">
@@ -42,7 +42,7 @@
       </div>
       <!-- Third box_grid -->
       <div class="row col-md-12 col-lg-12 col-sm-12">
-        <div class="box_grid col-md-6 col-lg-6 col-sm-6 col-xs-6">
+        <div class="box_grid fade-up delay-1 col-md-6 col-lg-6 col-sm-6 col-xs-6">
           <div class="row">
             <div class="box_first " style="align-items: center;">
               <img src="../assets/delivery_man.png" class="icon">
@@ -59,7 +59,7 @@
           </div>
         </div>
         <!-- Fourth box_grid -->
-        <div class="box_grid col-md-6 col-lg-6 col-sm-6" style="align-items:center">
+        <div class="box_grid fade-up delay-2 col-md-6 col-lg-6 col-sm-6" style="align-items:center">
           <div class="row">
             <div class="box_first " style="align-items: center;">
               <img src="../assets/icon4.webp" class="icon">
@@ -78,7 +78,7 @@
       </div>
       <!-- fifth box_grid -->
       <div class="row col-md-12 col-lg-12 col-sm-12">
-        <div class="box_grid col-md-6 col-lg-6 col-sm-6 col-xs-6">
+        <div class="box_grid fade-up delay-3 col-md-6 col-lg-6 col-sm-6 col-xs-6">
           <div class="row">
             <div class="box_first " style="align-items: center;">
               <img src="../assets/icon3.webp" class="icon">
@@ -95,7 +95,7 @@
           </div>
         </div>
         <!-- sixth box_grid -->
-        <div class="box_grid col-md-6 col-lg-6 col-sm-6" style="align-items:center">
+        <div class="box_grid fade-up delay-4 col-md-6 col-lg-6 col-sm-6" style="align-items:center">
           <div class="row">
             <div class="box_first" style="align-items: center;">
               <img src="../assets/delivery.png" class="icon">
@@ -115,24 +115,75 @@
     </div>
   </div>
 </template>
-
 <script>
 export default {
   name: 'Grid',
-  data() {
-    return {
-      steps: [
-        { title: "Purchase", description: "Customer purchases product" },
-        { title: "Dispatch", description: "We dispatch and receive the product to one of our various warehouses" },
-        { title: "Loading Point Receives Vehicle", description: "The product is loaded" },
-        { title: "Clearance and Delivery", description: "The container is cleared and delivered to the customer" },
-      ],
-    };
+  mounted() {
+    this.createObserver();
   },
+  methods: {
+    createObserver() {
+      const options = {
+        threshold: 0.1, // Trigger when 10% of the component is in view
+      };
+      const observer = new IntersectionObserver(this.handleIntersect, options);
+      const elements = document.querySelectorAll('.fade-up');
+      elements.forEach(el => {
+        observer.observe(el);
+      });
+    },
+    handleIntersect(entries, observer) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.animationPlayState = 'running';
+          observer.unobserve(entry.target); // Unobserve the element once it has been animated
+        }
+      });
+    }
+  }
 };
 </script>
-
 <style scoped>
+.fade-up {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 1s forwards ease-out;
+  animation-play-state: paused;
+  /* Start paused */
+}
+
+.delay {
+  animation-delay: 0.2s;
+}
+
+.delay-1 {
+  animation-delay: 0.5s;
+}
+
+.delay-2 {
+  animation-delay: 0.8s;
+}
+
+.delay-3 {
+  animation-delay: 1s;
+}
+
+.delay-4 {
+  animation-delay: 1.2s;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .works {
   font-size: 30px;
   font-weight: 700;
@@ -168,13 +219,12 @@ export default {
 .icon {
   height: auto;
   width: 40%;
-
 }
 
 .box_head {
   font-weight: 600;
   font-size: 25px;
-  color: #011936
+  color: #011936;
 }
 
 .box_p {
@@ -183,12 +233,9 @@ export default {
 }
 
 .row1,
-
-
 .row2 {
   display: flex;
   flex-wrap: wrap;
-  /* Wrap child divs */
   gap: 10px;
 }
 
@@ -210,9 +257,7 @@ export default {
 .child-div-row2 {
   padding: 10px;
   width: 50px;
-  /* Default width */
 }
-
 
 /* Remove width constraints for smaller screens */
 @media screen and (max-width: 768px) {
@@ -220,7 +265,6 @@ export default {
   .child-div-row1,
   .child-div-row2 {
     flex: 1;
-    /* Allow flexible width */
     width: max-content;
   }
 }
@@ -249,15 +293,13 @@ body {
   .child-div-row1,
   .child-div-row2 {
     width: 100px;
-    /* Adjust width for smaller screens */
   }
 
   .box_head {
     font-weight: 600;
     font-size: 20px;
-    color: #011936
+    color: #011936;
   }
-
 }
 
 @media screen and (max-width: 480px) {
@@ -265,13 +307,12 @@ body {
   .child-div-row1,
   .child-div-row2 {
     width: 150px;
-    /* Adjust width for even smaller screens */
   }
 
   .box_head {
     font-weight: 600;
     font-size: 18px;
-    color: #011936
+    color: #011936;
   }
 }
 </style>

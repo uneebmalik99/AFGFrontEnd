@@ -1,24 +1,21 @@
 <template>
     <div class="tracking-section">
         <div class="container" style=" display: flex; align-items: center; flex-direction: column; ">
-            <div class="text-center col-12 mb-4" >
+            <div class="text-center col-12 mb-4">
                 <h2 class="tracking-title">Tracking</h2>
                 <h1 class="tracking-subtitle">Vehicle and Container Tracking</h1>
             </div>
             <div class="row col-12 justify-content-center">
-                <div class="col-sm-6 col-md-10 col-lg-10 justify-content-center" >
+                <div class="col-sm-6 col-md-10 col-lg-10 justify-content-center">
                     <div class="tracking-form">
-                        <p class="tracking-instructions text-center">
-                            Enter your Vin No, Lot No, or Container No to track your shipments.
-                        </p>
+                        <p class="tracking-instructions text-center"> Enter your Vin No, Lot No, or Container No to track
+                            your shipments. </p>
                         <div class="input-group mb-3">
-
                             <input v-model="trackingNumber" type="text" class="form-control"
                                 placeholder="Vin/Lot/Container number" aria-label="Vin/Lot/Container number" />
                             <div class="input-group-append">
-                                <button class="btn btn-lg" type="button">Track</button>
+                                <button class="btn" type="button" @click="trackShipment">Track</button>
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -28,13 +25,33 @@
 </template>
 
 <script>
+import axios from 'axios';
 export default {
     name: "VTracking",
     data() {
         return {
-            trackingNumber: ""
+            trackingNumber: ''
         };
     },
+    methods: {
+        async trackShipment() {
+            if (this.trackingNumber) {
+                try {
+                    const response = await axios.get(`http://trackvinapi.afgshipping.com/api.php?vin=${this.trackingNumber}`);
+                    console.log(response.data);
+                    const data = response.data;
+                    this.$router.push({
+                        name: 'Tracking', // Name of the route to navigate to
+                        query: { vehicleData: JSON.stringify(data) }
+                    });
+                } catch (error) {
+                    console.error('Error tracking shipment:', error);
+                }
+            } else {
+                alert('Please enter a tracking number.');
+            }
+        }
+    }
 };
 </script>
 
@@ -56,10 +73,13 @@ export default {
     font-weight: 700;
     color: #011936;
 }
+
 ::v-deep .form-control::placeholder {
-  color: #A6A6A6; /* Change this to your desired color */
-/* Optional: Ensures the color opacity is not altered */
+    color: #A6A6A6;
+    /* Change this to your desired color */
+    /* Optional: Ensures the color opacity is not altered */
 }
+
 .tracking-form .input-group {
     display: flex;
     align-items: center;
@@ -89,9 +109,11 @@ export default {
     display: inline-block;
     gap: 11.89px;
     border-radius: 9.51px;
-    opacity: 0px;
-   
+}
 
+.btn:hover {
+    color: white;
+    background-color: #eb3347;
 }
 
 @media (max-width: 767px) {

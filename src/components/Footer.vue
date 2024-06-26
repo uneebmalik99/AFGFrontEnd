@@ -4,10 +4,8 @@
       <div class="row mb-4">
         <div class="col-md-3">
           <h2 class="heading mb-3">AFG LOGO</h2>
-          <p class="text mt-4">
-            AFG Global was established with the sole aim of enabling growth, by providing
-            efficient and prompt logistics, freight forwarding & transportation solutions.
-          </p>
+          <p class="text mt-4"> AFG Global was established with the sole aim of enabling growth, by providing efficient
+            and prompt logistics, freight forwarding & transportation solutions. </p>
         </div>
         <div class="col-md-3">
           <h3 class="heading1">Get in Touch</h3>
@@ -41,7 +39,7 @@
           <h3 class="heading1">Join a Newsletter</h3>
           <label class="text2 mt-4">Your Email</label>
           <input v-model="email" type="email" class="form-control my-2" placeholder="Enter Your Email">
-          <button class="button mt-3" @click="subscribe">Subscribe</button>
+          <button class="btn mt-3" @click="subscribe">Subscribe</button>
         </div>
       </div>
     </div>
@@ -51,7 +49,7 @@
 <script>
 export default {
   name: "Footer",
-    
+
 };
 </script>
 
@@ -91,17 +89,30 @@ footer {
 
 .form-control {
   width: 80%;
-  font-size: 14px; /* Adjust input font size */
-  padding: 5px 10px; /* Adjust input padding */
+  font-size: 14px;
+  /* Adjust input font size */
+  padding: 5px 10px;
+  /* Adjust input padding */
 }
 
-.button {
+/* .button {
   background: #ED254E;
   color: white;
   border-radius: 8px;
   width: 60%;
-  height: 40px; /* Adjust button height */
-  font-size: 16px; /* Adjust button font size */
+  height: 40px;
+  font-size: 16px;
+} */
+
+.btn {
+  background-color: #ff4c60;
+  color: white;
+  border-radius: 8px;
+}
+
+.btn:hover {
+  color: white;
+  background-color: #eb3347;
 }
 
 .contact-item {
@@ -134,7 +145,12 @@ footer {
     width: 100%;
   }
 
-  .button {
+  /* .button {
+    width: 100%;
+    height: auto;
+  } */
+
+  .btn {
     width: 100%;
     height: auto;
   }

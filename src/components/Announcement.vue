@@ -12,13 +12,16 @@
         </div>
         <div class="row">
             <div class="col-12 mb-4">
-                <swiper :scrollbar="{ hide: false, draggable: true }" :modules="modules" :initial-slide="1" class="mySwiper mb-5">
-                    <swiper-slide v-for="(card, index) in cards" :key="index" class="swiper-slide-custom" style="background-color: #f4fffd;">
+                <swiper :scrollbar="{ hide: false, draggable: true }" :modules="modules" :initial-slide="1"
+                    class="mySwiper mb-5">
+                    <swiper-slide v-for="(card, index) in featuredPosts" :key="index" class="swiper-slide-custom"
+                        style="background-color: #f4fffd;">
                         <div class="card mb-5 swiper-card" style="background-color: #f4fffd;">
-                            <img :src="card.image" class="swiper-slide-img" alt="Card image cap">
+                            <img :src="'http://trackvinapi.afgshipping.com/' + card.image" class="swiper-slide-img"
+                                :alt="card.title">
                             <div class="overlay">
                                 <h5 class="card-title">{{ card.title }}</h5>
-                                <p class="card-text">{{ card.text }}</p>
+                                <p class="card-text">{{ card.description }}</p>
                             </div>
                         </div>
                     </swiper-slide>
@@ -32,16 +35,18 @@
             <div class="row">
                 <div class="col-12 col-md-6 col-lg-4" v-for="(post, index) in posts" :key="index">
                     <div class="card2 mb-4 mt-3 mx-auto">
-                        <img :src="post.image" class="card-img-top" alt="Card image cap">
+                        <img :src="'http://trackvinapi.afgshipping.com/' + post.image" class="card-img-top"
+                            :alt="post.title">
                         <div class="card-body">
-                            <h5 class="card-title2">{{ post.title }}</h5>
-                            <p class="card-text2">{{ post.text }}</p>
+                            <h5 class="card-title2">{{ post.type }}</h5>
+                            <!-- <a :href="'/blog/' + generateSlug(post.title)" class="card-text2">{{ post.title }}</a> -->
+                            <router-link :to="{ name: 'BlogDetails', params: { slug: generateSlug(post.title), props: { post: post } } }" class="card-text2">{{ post.title }}</router-link>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="d-flex justify-content-center ">
-                <button class="button mb-4">Load More</button>
+                <button class="button mb-4" @click="loadMore">Load More</button>
             </div>
         </div>
     </div>
@@ -52,13 +57,14 @@ import { Swiper, SwiperSlide } from 'swiper/vue';
 import 'swiper/css';
 import 'swiper/css/scrollbar';
 import { Scrollbar } from 'swiper/modules';
+import axios from 'axios';
 
 export default {
     components: {
         Swiper,
         SwiperSlide,
     },
-  
+
     setup() {
         return {
             modules: [Scrollbar],
@@ -66,33 +72,52 @@ export default {
     },
     data() {
         return {
-            cards: [
-                {
-                    image: require('../assets/Ann.webp'),
-                    title: 'Loading Containers in Ship',
-                    text: 'Loading of container in ship via lifter with ease safety',
-                },
-                {
-                    image: require('../assets/Ann.webp'),
-                    title: 'Loading Containers in Ship',
-                    text: 'Loading of container in ship via lifter with ease safety',
-                },
-                {
-                    image: require('../assets/Ann.webp'),
-                    title: 'Loading Containers in Ship',
-                    text: 'Loading of container in ship via lifter with ease safety',
-                },
-            ],
-            posts: [
-                { image: require('../assets/cardboat.webp'), title: 'Technology', text: 'Cargo ship going to deliver the containers.' },
-                { image: require('../assets/A-2.webp'), title: 'Technology', text: 'Cargo ship going to deliver the containers.' },
-                { image: require('../assets/A-3.webp'), title: 'Technology', text: 'Cargo ship going to deliver the containers.' },
-                { image: require('../assets/A-4.webp'), title: 'Technology', text: 'Cargo ship going to deliver the containers.' },
-                { image: require('../assets/A-5.webp'), title: 'Technology', text: 'Cargo ship going to deliver the containers.' },
-                { image: require('../assets/A-6.webp'), title: 'Technology', text: 'Cargo ship going to deliver the containers.' },
-            ],
+            featuredPosts: [],
+            posts: [],
+            currentPage: 1,
+            perPage: 6,
         };
     },
+    methods: {
+        fetchPosts() {
+            axios.get(`http://trackvinapi.afgshipping.com/blog_api.php?page=${this.currentPage}&limit=${this.perPage}`)
+                .then(response => {
+                    if (response.data.status === 'success') {
+                        const allPosts = response.data.data;
+                        this.posts = allPosts;
+                        this.featuredPosts = allPosts.filter(post => post.featured);
+                    } else {
+                        console.error('Error fetching posts:', response.data.message);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching posts:', error);
+                });
+        },
+        loadMore() {
+            this.currentPage++;
+            axios.get(`http://trackvinapi.afgshipping.com/blog_api.php?page=${this.currentPage}&limit=${this.perPage}`)
+                .then(response => {
+                    if (response.data.status === 'success') {
+                        const allPosts = response.data.data;
+                        this.posts = [...this.posts, ...allPosts.filter(post => !post.featured)];
+                        this.featuredPosts = [...this.featuredPosts, ...allPosts.filter(post => post.featured)];
+                    } else {
+                        console.error('Error fetching posts:', response.data.message);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching posts:', error);
+                });
+        },
+        generateSlug(title) {
+            // Function to generate a URL-friendly slug from the title
+            return title.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
+        }
+    },
+    mounted() {
+        this.fetchPosts();
+    }
 };
 </script>
 
@@ -189,7 +214,7 @@ export default {
     text-align: left;
     color: #FFFFFF;
     padding-top: 0.5%;
-   
+
 }
 
 .h4-title {
@@ -216,6 +241,7 @@ export default {
     font-weight: 600;
     text-align: left;
     color: #181A2A;
+    text-decoration: none;
 }
 
 .card2 {
@@ -245,6 +271,7 @@ export default {
         text-align: center;
         margin-right: 0;
     }
+
     .Heading {
         font-size: 36px;
         line-height: 44px;
@@ -265,7 +292,7 @@ export default {
         width: 100%;
         border-radius: 50px;
     }
-    
+
     .swiper-slide-img {
         width: 100%;
         height: auto;
@@ -276,7 +303,7 @@ export default {
         padding: 10px;
         border-radius: 10px;
     }
-    
+
     .button {
         font-size: 14px;
         padding: 10px 15px;
@@ -286,7 +313,7 @@ export default {
 @media (max-width: 767.98px) {
     .card-title {
         font-size: 18px;
-        
+
     }
 
     .card-text {
