@@ -339,7 +339,6 @@ h2 {
     height: 147.65px;
     gap: 0px;
     border-radius: 12.76px;
-    opacity: 0px;
     justify-content: center;
 }
 
