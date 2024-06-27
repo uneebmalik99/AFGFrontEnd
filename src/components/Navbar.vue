@@ -8,38 +8,38 @@
 
     <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
       <ul class="navbar-nav mx-auto">
-        <li class="nav-item" :class="{ active: isActive('/') }">
+        <li class="nav-item" :class="{ active: isActive('/') }" @click="collapseNavbar">
           <router-link class="nav-link" to="/">Home</router-link>
         </li>
-        <li class="nav-item" :class="{ active: isActive('/aboutus') }">
+        <li class="nav-item" :class="{ active: isActive('/aboutus') }" @click="collapseNavbar">
           <router-link class="nav-link" to="/aboutus">About Us</router-link>
         </li>
         
-        <li class="nav-item dropdown" :class="{ active: isActive('/services') }">
+        <li class="nav-item dropdown" :class="{ active: isActive('/services') }" @click="toggleServicesDropdown">
           <router-link class="nav-link dropdown-toggle" to="/services" id="navbarDropdown" role="button">
             Services
           </router-link>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <router-link class="dropdown-item" to="/customersupport">24/7 Customer Support</router-link>
-            <router-link class="dropdown-item" to="/towingservices">Towing Services</router-link>
-            <router-link class="dropdown-item" to="/loadingservices">Loading Services</router-link>
-            <router-link class="dropdown-item" to="/shippingservices">Shipping Services</router-link>
-            <router-link class="dropdown-item" to="/warehousingservices">Warehousing Services</router-link>
-            <router-link class="dropdown-item" to="/clearinserviceuae">Clearance Services in UAE</router-link>
-            <router-link class="dropdown-item" to="/bookingservices">Booking Services</router-link>
-            <router-link class="dropdown-item" to="/halfcutservices">Half-cut Services</router-link>
+            <router-link class="dropdown-item" to="/customersupport" @click="collapseNavbar">24/7 Customer Support</router-link>
+            <router-link class="dropdown-item" to="/towingservices" @click="collapseNavbar">Towing Services</router-link>
+            <router-link class="dropdown-item" to="/loadingservices" @click="collapseNavbar">Loading Services</router-link>
+            <router-link class="dropdown-item" to="/shippingservices" @click="collapseNavbar">Shipping Services</router-link>
+            <router-link class="dropdown-item" to="/warehousingservices" @click="collapseNavbar">Warehousing Services</router-link>
+            <router-link class="dropdown-item" to="/clearinserviceuae" @click="collapseNavbar">Clearance Services in UAE</router-link>
+            <router-link class="dropdown-item" to="/bookingservices" @click="collapseNavbar">Booking Services</router-link>
+            <router-link class="dropdown-item" to="/halfcutservices" @click="collapseNavbar">Half-cut Services</router-link>
           </div>
         </li>
-        <li class="nav-item" :class="{ active: isActive('/tracking') }">
+        <li class="nav-item" :class="{ active: isActive('/tracking') }" @click="collapseNavbar">
           <router-link class="nav-link" to="/tracking">Tracking</router-link>
         </li>
-        <li class="nav-item" :class="{ active: isActive('/gallery') }">
+        <li class="nav-item" :class="{ active: isActive('/gallery') }" @click="collapseNavbar">
           <router-link class="nav-link" to="/gallery">Gallery</router-link>
         </li>
-        <li class="nav-item" :class="{ active: isActive('/contact-us') }">
+        <li class="nav-item" :class="{ active: isActive('/contact-us') }" @click="collapseNavbar">
           <router-link class="nav-link" to="/contact-us">Contact Us</router-link>
         </li>
-        <li class="nav-item" :class="{ active: isActive('/announcements') }">
+        <li class="nav-item" :class="{ active: isActive('/announcements') }" @click="collapseNavbar">
           <router-link class="nav-link" to="/announcements" id="navbarAnnouncements" role="button">
             Announcements
           </router-link>
@@ -53,17 +53,52 @@
 <script>
 export default {
   name: 'Navbar',
+  data() {
+    return {
+      isDropdownOpen: false,
+    };
+  },
   methods: {
     isActive(route) {
       return this.$route.path === route || this.$route.path.startsWith(route + '/');
     },
     openLoginPage() {
       window.location.href = 'https://admin.afgshipping.com/';
+    },
+    collapseNavbar() {
+      if (window.innerWidth < 992) { // Adjust breakpoint as necessary
+        const navbarCollapse = document.getElementById('navbarSupportedContent');
+        if (navbarCollapse.classList.contains('show')) {
+          navbarCollapse.classList.remove('show');
+        }
+      }
+      this.closeDropdown(); // Close the dropdown menu
+    },
+    toggleServicesDropdown() {
+      if (window.innerWidth < 992) {
+        this.isDropdownOpen = !this.isDropdownOpen;
+        if (this.isDropdownOpen) {
+          this.closeNavbar();
+        }
+      }
+    },
+    closeNavbar() {
+      const navbarCollapse = document.getElementById('navbarSupportedContent');
+      if (navbarCollapse.classList.contains('show')) {
+        navbarCollapse.classList.remove('show');
+      }
+    },
+    closeDropdown() {
+      const dropdownMenus = document.querySelectorAll('.dropdown-menu');
+      dropdownMenus.forEach(menu => {
+        if (menu.classList.contains('show')) {
+          menu.classList.remove('show');
+        }
+      });
     }
   }
 };
 </script>
-
 <style scoped>
 .navbar {
   padding: 20px 0;
