@@ -2,9 +2,9 @@
   <div id="app">
     <Navbar />
     <router-view />
-    <div class="whatsapp-button" @click="openWhatsApp">
-      <img src="./../src/assets/whatsapp.jpg" alt="WhatsApp" />
-    </div>
+    <!-- <div class="whatsapp-div" @click="openWhatsApp"> -->
+    <font-awesome-icon :icon="['fab', 'whatsapp']" :size="'2x'" class="whatsapp-button" @click="openWhatsApp" />
+    <!-- </div> -->
     <Footer>
     </Footer>
   </div>
@@ -35,19 +35,20 @@ export default {
 </script>
 
 <style scoped>
+
 .whatsapp-button {
+  background-color: white;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 50%;
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background-color: #25D366;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  color: #3c9a3e;
   cursor: pointer;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1;
 }
 
 .whatsapp-button img {

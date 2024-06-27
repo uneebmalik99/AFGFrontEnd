@@ -1,19 +1,15 @@
 <template>
     <div class="gallery">
-        <!-- <div class="image-container0"> -->
-            <!-- <img src="../assets/customersupport.webp" alt="Gallery Image" class="customersuport-image" /> -->
-            <!-- <div class="overlay"></div> -->
-            <div class="content-container" style="color: #011936;">
-                <h1>24/7 Customer Support</h1>
-                <div class="breadcrumb_des">
-                    <p>HOME &nbsp > Services > &nbsp </p>
-                    <p class="breadcrumb_name"> 24/7 Customer Support</p>
-                </div>
+        <div class="content-container" style="color: #011936;">
+            <h1 class="text-center mt-5">24/7 Customer Support</h1>
+            <div class="breadcrumb_des text-center">
+                <p>HOME &nbsp > Services > &nbsp </p>
+                <p class="breadcrumb_name text-center"> 24/7 Customer Support</p>
             </div>
-            <div>
-                <Vue3Lottie :animationData="CutomerSupportJSON2" :height="400" :width="800" />
-            </div>
-        <!-- </div> -->
+        </div>
+        <div class="animation">
+            <Vue3Lottie :animationData="CutomerSupportJSON2" :height="400" :width="800" />
+        </div>
     </div>
     <div class="container-fluid p-0" style="background-color:#f4fffd;">
         <div class="container-fluid">
@@ -31,25 +27,84 @@
                 </div>
             </div>
         </div>
-        <div class="container ">
-            <div class="row align-items-center">
-                <div class="col-12 col-md-6 mb-4 mb-md-0">
-                    <h2 class="call-heading">Call Center Support</h2>
-                    <p class="call-subtitle"> Lorem ipsum dolor sit amet consectetur. Nisi diam est fermentum tortor
-                        tincidunt congue viverra. Pulvinar elit ipsum ut fermentum eget. Non egestas pellentesque tristique
-                        turpis tortor habitasse ac vel enim. Pretium et sit lobortis enim est nunc ultrices mi quam. </p>
-                    <p class="call-subtitle"> Lorem ipsum dolor sit amet consectetur. Nisi diam est fermentum tortor
-                        tincidunt congue viverra. Pulvinar elit ipsum ut fermentum eget. Non egestas pellentesque tristique
-                        turpis tortor habitasse ac vel enim. Pretium et sit lobortis enim est nunc ultrices mi quam. </p>
-                    <p class="call-subtitle"> Lorem ipsum dolor sit amet consectetur. Nisi diam est fermentum tortor
-                        tincidunt congue viverra. Pulvinar elit ipsum ut fermentum eget. Non egestas pellentesque tristique
-                        turpis tortor habitasse ac vel enim. Pretium et sit lobortis enim est nunc ultrices mi quam. </p>
+        <div class="container">
+            <!-- Support Details -->
+            <div v-show="activeButton === 0">
+                <div class="row align-items-center">
+                    <div class="col-12 col-md-6 mb-4 mb-md-4">
+                        <h2 class="call-heading">Call Center Support</h2>
+                        <p class="call-subtitle"> Call Center Support is a crucial function that provides customer service
+                            through various communication channels, including phone calls, emails, and live chats. Trained
+                            professionals handle customer inquiries, resolve issues, and offer technical assistance,
+                            ensuring that customers receive prompt and effective solutions. This support can range from
+                            answering questions about products and services to troubleshooting technical problems and
+                            processing orders. <br><br> The primary goal of call center support is to enhance customer
+                            satisfaction and loyalty by delivering high-quality service. By operating 24/7, call centers
+                            ensure that customers can get help whenever they need it, regardless of time zones. This
+                            continuous availability, combined with the expertise of dedicated agents, helps businesses
+                            maintain positive customer relationships and drive long-term success.</p>
+                    </div>
+                    <div class="col-12 col-md-6 text-center">
+                        <div class="image-container position-relative">
+                            <img src="../assets/serviceblue.webp" class="img-fluid custom-image service-blue">
+                            <Vue3Lottie :animationData="CutomerSupportJSON1" :height="300" :width="100"
+                                class="img-fluid custom-image service-top" />
+                        </div>
+                    </div>
                 </div>
-                <div class="col-12 col-md-6 text-center">
-                    <div class="image-container position-relative">
-                        <img src="../assets/serviceblue.webp" class="img-fluid custom-image service-blue">
-                        <!-- <img src="../assets/service.webp" class="img-fluid custom-image service-top"> -->
-                        <Vue3Lottie :animationData="CutomerSupportJSON1" :height="300" :width="100" class="img-fluid custom-image service-top" />
+            </div>
+            <div v-show="activeButton === 1">
+                <div class="row align-items-center">
+                    <div class="col-12 col-md-6 mb-4 mb-md-4">
+                        <h2 class="call-heading">Message Support</h2>
+                        <p class="call-subtitle"> Message Support involves providing customer assistance and resolving
+                            inquiries through written communication channels such as text messages, online chats, and
+                            messaging apps. This form of customer service allows individuals to interact conveniently and
+                            efficiently with businesses without the need for direct verbal communication. Message support
+                            agents are trained to handle various queries, ranging from product information requests to
+                            technical troubleshooting and order tracking. <br><br> The key advantage of message support lies
+                            in its flexibility and accessibility. Customers can initiate conversations at their convenience
+                            and receive responses in real-time or within a reasonable timeframe, depending on the service
+                            level agreements (SLAs) set by the company. This mode of support is particularly beneficial for
+                            businesses looking to cater to tech-savvy and mobile-oriented customers who prefer non-verbal
+                            communication channels. By offering reliable and responsive message support, businesses can
+                            enhance customer satisfaction, streamline operations, and strengthen their overall customer
+                            service strategy.</p>
+                    </div>
+                    <div class="col-12 col-md-6 text-center">
+                        <div class="image-container position-relative">
+                            <img src="../assets/serviceblue.webp" class="img-fluid custom-image service-blue">
+                            <Vue3Lottie :animationData="CutomerSupportJSON1" :height="300" :width="100"
+                                class="img-fluid custom-image service-top" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div v-show="activeButton === 2">
+                <div class="row align-items-center">
+                    <div class="col-12 col-md-6 mb-4 mb-md-4">
+                        <h2 class="call-heading">Email Support</h2>
+                        <p class="call-subtitle"> Email Support refers to a customer service approach where businesses
+                            interact with their customers and resolve queries through email correspondence. It plays a
+                            crucial role in providing efficient and documented solutions to customer inquiries, issues, and
+                            requests. Email support teams are equipped to handle a wide range of customer concerns,
+                            including product inquiries, technical assistance, billing inquiries, and more complex
+                            problem-solving.<br><br> One of the primary advantages of email support is its asynchronous
+                            nature, allowing customers to send queries at any time and receive responses within a reasonable
+                            timeframe. This flexibility accommodates customers across different time zones and schedules,
+                            enhancing accessibility and convenience. Moreover, email support enables businesses to maintain
+                            a record of interactions, which can aid in tracking customer issues, analyzing trends, and
+                            improving overall service quality.<br><br> Effective email support is characterized by prompt
+                            responses, clear communication, and personalized solutions tailored to each customer's needs. By
+                            leveraging email as a customer service channel, businesses can foster positive relationships,
+                            streamline communication, and uphold high standards of customer satisfaction.</p>
+                    </div>
+                    <div class="col-12 col-md-6 text-center">
+                        <div class="image-container position-relative">
+                            <img src="../assets/serviceblue.webp" class="img-fluid custom-image service-blue">
+                            <Vue3Lottie :animationData="CutomerSupportJSON1" :height="300" :width="100"
+                                class="img-fluid custom-image service-top" />
+                        </div>
                     </div>
                 </div>
             </div>
@@ -61,7 +116,6 @@
 import { Vue3Lottie } from 'vue3-lottie'
 import CutomerSupportJSON1 from '../animations/customer_support_1.json'
 import CutomerSupportJSON2 from '../animations/customer_support_2.json'
-
 
 export default {
     components: {
@@ -102,7 +156,6 @@ export default {
             // Adjust button margin based on screen size
             return window.innerWidth <= 767 ? 5 : this.buttonMargin;
         }
-
     },
     mounted() {
         window.addEventListener('resize', this.updateProgressBar);
@@ -112,8 +165,64 @@ export default {
     }
 };
 </script>
-
 <style scoped>
+.content-container {
+    opacity: 0;
+    /* Start with 0 opacity */
+    animation: fadeIn 1s forwards;
+    /* Animation name, duration, retain final state */
+}
+
+.content-container h1,
+.content-container .breadcrumb_des {
+    transform: translateX(-100%);
+    /* Start from outside the left of the viewport */
+}
+
+.content-container h1 {
+    animation: slideInLeft 1s forwards;
+    /* Slide in animation for h1 */
+    animation-delay: 0.6s;
+    /* Delay for animation to start after container animation */
+}
+
+.content-container .breadcrumb_des {
+    animation: slideInRight 1s forwards;
+    /* Slide in animation for breadcrumb_des */
+    animation-delay: 0.6s;
+    /* Delay for animation to start after container animation */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
 .gallery {
     /* width: 100%; */
     display: flex;
@@ -194,6 +303,14 @@ export default {
     background-color: #ff4a57;
     position: absolute;
     transition: left 0.3s;
+}
+
+.support-details {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .call-heading {
@@ -303,6 +420,18 @@ export default {
         left: 0;
         width: 100%;
     }
+
+    .support-details {
+        padding: 10px;
+    }
+
+    .animation {
+        display: none;
+    }
+
+    .text-center {
+        font-size: 16px;
+    }
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
@@ -344,5 +473,4 @@ export default {
         left: 10%;
         width: 90%;
     }
-}
-</style>
+}</style>

@@ -11,7 +11,6 @@
             </div>
         </div>
     </div>
-
     <div class="container-fluid p-0" style="background-color:#f4fffd;">
         <div class="container-fluid">
             <div class="support-buttons-container my-4">
@@ -29,38 +28,90 @@
                 </div>
             </div>
             <div class="container ">
-                <div class="row align-items-center">
-                    <div class="col-12 col-md-6 mb-4 mb-md-0">
-                        <h2 class="call-heading mt-4">Custom Clearance Services</h2>
-                        <p class="call-subtitle">
-                            Lorem ipsum dolor sit amet consectetur. Nisi diam est fermentum tortor tincidunt congue
-                            viverra.
-                            Pulvinar elit ipsum ut fermentum eget. Non egestas pellentesque tristique turpis tortor
-                            habitasse ac vel enim. Pretium et sit lobortis enim est nunc ultrices mi quam.
-                        </p>
-                        <p class="call-subtitle">
-                            Lorem ipsum dolor sit amet consectetur. Nisi diam est fermentum tortor tincidunt congue
-                            viverra.
-                            Pulvinar elit ipsum ut fermentum eget. Non egestas pellentesque tristique turpis tortor
-                            habitasse ac vel enim. Pretium et sit lobortis enim est nunc ultrices mi quam.
-                        </p>
-                        <p class="call-subtitle">
-                            Lorem ipsum dolor sit amet consectetur. Nisi diam est fermentum tortor tincidunt congue
-                            viverra.
-                            Pulvinar elit ipsum ut fermentum eget. Non egestas pellentesque tristique turpis tortor
-                            habitasse ac vel enim. Pretium et sit lobortis enim est nunc ultrices mi quam.
-                        </p>
+                <div v-show="activeButton === 0">
+                    <div class="row align-items-center">
+                        <div class="col-12 col-md-6 mb-4 mb-md-4">
+                            <h2 class="call-heading">Custom Clearance Service</h2>
+                            <p class="call-subtitle"> Customs clearance service refers to the process of complying with
+                                customs regulations and formalities for importing or exporting goods across international
+                                borders. It involves the submission of necessary documents, payment of duties and taxes, and
+                                inspection of goods by customs authorities to facilitate smooth and legal entry or exit of
+                                shipments.<br><br> This service is essential for ensuring compliance with local and
+                                international trade laws, as well as for avoiding delays or penalties associated with
+                                improper documentation or declaration of goods. Customs clearance agents or brokers
+                                specialize in navigating the complexities of customs procedures, representing importers and
+                                exporters to customs authorities, and ensuring that shipments move swiftly through the
+                                clearance process.<br><br> Efficient customs clearance services contribute to supply chain
+                                efficiency by reducing transit times, minimizing storage costs at ports or airports, and
+                                enabling timely delivery of goods to customers. Businesses often rely on experienced customs
+                                clearance providers to streamline their international trade operations, mitigate risks
+                                associated with customs compliance, and maintain seamless global supply chain management.
+                            </p>
+                        </div>
+                        <div class="col-12 col-md-6 text-center">
+                            <div class="image-container position-relative">
+                                <img src="../assets/serviceblue.webp" class="img-fluid custom-image service-blue">
+                                <img src="../assets/service.webp" class="img-fluid custom-image service-top">Shipping
+                                Services
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-12 col-md-6 text-center">
-                        <div class="image-container position-relative">
-                            <img src="../assets/serviceblue.webp" class="img-fluid custom-image service-blue">
-                            <img src="../assets/service.webp" class="img-fluid custom-image service-top">
+                </div>
+                <div v-show="activeButton === 1">
+                    <div class="row align-items-center">
+                        <div class="col-12 col-md-6 mb-4 mb-md-4">
+                            <h2 class="call-heading">Notice for Arrival</h2>
+                            <p class="call-subtitle"> A notice for arrival is a formal communication sent to inform
+                                recipients about the imminent arrival of a shipment, vehicle, or personnel at a designated
+                                location or facility. It serves as an advance notification that allows relevant parties to
+                                prepare for the arrival, coordinate logistics, and ensure timely reception and
+                                processing.<br><br> In logistics and transportation contexts, notices for arrival are
+                                crucial for planning and operational efficiency. They typically include essential details
+                                such as the estimated arrival date and time, the nature of the arrival (e.g., cargo
+                                shipment, passenger transport), and any specific instructions or requirements for handling
+                                the arrival.<br><br> This notification helps recipients anticipate and manage resources
+                                effectively, whether it involves arranging for personnel to be on-site, preparing storage or
+                                handling facilities, or ensuring compliance with regulatory or safety protocols associated
+                                with the arrival process.</p>
+                        </div>
+                        <div class="col-12 col-md-6 text-center">
+                            <div class="image-container position-relative">
+                                <img src="../assets/serviceblue.webp" class="img-fluid custom-image service-blue">
+                                <img src="../assets/service.webp" class="img-fluid custom-image service-top">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div v-show="activeButton === 2">
+                    <div class="row align-items-center">
+                        <div class="col-12 col-md-6 mb-4 mb-md-4">
+                            <h2 class="call-heading">Documentation & Attestation</h2>
+                            <p class="call-subtitle"> Documentation and attestation refer to the process of verifying,
+                                validating, and certifying official documents and records to ensure their authenticity and
+                                compliance with legal, regulatory, or organizational requirements. This process is essential
+                                in various industries, including legal, financial, international trade, and immigration,
+                                where accurate and verified documentation is crucial for transparency, legality, and
+                                accountability.<br><br> In business and legal contexts, documentation and attestation
+                                involve thorough review and validation of documents such as contracts, agreements,
+                                certifications, and financial statements. This verification ensures that all information
+                                presented is accurate, complete, and legally binding, thereby mitigating risks related to
+                                fraud, misrepresentation, or non-compliance.<br><br> Attestation, often performed by
+                                authorized individuals or entities, confirms the authenticity of documents through
+                                signatures, stamps, or official seals. This certification serves as a guarantee of the
+                                document's validity and reliability, providing confidence to stakeholders, clients, and
+                                regulatory bodies.</p>
+                        </div>
+                        <div class="col-12 col-md-6 text-center">
+                            <div class="image-container position-relative">
+                                <img src="../assets/serviceblue.webp" class="img-fluid custom-image service-blue">
+                                <img src="../assets/service.webp" class="img-fluid custom-image service-top">
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            </div>
         </div>
+    </div>
 </template>
 
 <script>
@@ -238,15 +289,15 @@ export default {
 
 @media (max-width: 767.98px) {
     .breadcrumb_des {
-    display: flex;
-    flex-direction: row;
-    font-size: 11px;
-}
+        display: flex;
+        flex-direction: row;
+        font-size: 11px;
+    }
 
-.breadcrumb_name {
-    color: #011936;
-    font-weight: 700;
-}
+    .breadcrumb_name {
+        color: #011936;
+        font-weight: 700;
+    }
 
     .support-buttons .btn {
         font-size: 9px;
@@ -283,6 +334,7 @@ export default {
         width: 100%;
     }
 }
+
 @media (min-width: 768px) and (max-width: 1024px) {
     .support-buttons-container {
         margin-left: 7%;
@@ -291,7 +343,7 @@ export default {
     .support-buttons .btn {
         font-size: 12px;
         width: 283px;
-    height: 46px;
+        height: 46px;
     }
 
     .call-heading {
@@ -314,8 +366,7 @@ export default {
     }
 
     .service-top {
-        width
-        : 80%;
+        width: 80%;
         max-width: 300px;
     }
 
@@ -323,5 +374,4 @@ export default {
         left: 10%;
         width: 90%;
     }
-}
-</style>
+}</style>

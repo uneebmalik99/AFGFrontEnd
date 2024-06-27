@@ -3,9 +3,9 @@
     <div class="col-sm-12 col-md-5 col-lg-5 inner_left">
       <div style="align-items: left; display: flex; justify-content: center; flex-direction: column;">
         <h2 class="title fade-up">What We Offer</h2>
-        <p class="des fade-up delay">Peace Global Logistics provides a wide array of services tailored to meet the diverse
-          needs of both car wholesalers and retailers. Whether you're looking for solutions in logistics, transportation,
-          or supply chain management, we have you covered.</p>
+        <p class="des fade-up delay">AFG Global Shipping offers a comprehensive range of services designed to cater to the
+          unique requirements of car wholesalers and retailers. From logistics and transportation to supply chain
+          management, we provide tailored solutions to ensure your business operates smoothly and efficiently.</p>
       </div>
     </div>
     <div class="col-sm-12 col-md-7 col-lg-7 inner_right">

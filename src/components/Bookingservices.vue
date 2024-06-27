@@ -3,7 +3,6 @@
         <div class="image-container0">
             <img src="../assets/Booking.webp" alt="Gallery Image" class="booking-image" />
             <div class="overlay"></div>
-
             <div class="breadcrumbs">
                 <h1>Booking Services</h1>
                 <div class="breadcrumb_des">
@@ -30,32 +29,74 @@
             </div>
         </div>
         <div class="container ">
-            <div class="row align-items-center">
-                <div class="col-12 col-md-6 mb-4 mb-md-0">
-                    <h2 class="call-heading mt-4">Container Booking</h2>
-                    <p class="call-subtitle">
-                        Lorem ipsum dolor sit amet consectetur. Nisi diam est fermentum tortor tincidunt congue viverra.
-                        Pulvinar elit ipsum ut fermentum eget. Non egestas pellentesque tristique turpis tortor
-                        habitasse
-                        ac vel enim. Pretium et sit lobortis enim est nunc ultrices mi quam.
-                    </p>
-                    <p class="call-subtitle">
-                        Lorem ipsum dolor sit amet consectetur. Nisi diam est fermentum tortor tincidunt congue viverra.
-                        Pulvinar elit ipsum ut fermentum eget. Non egestas pellentesque tristique turpis tortor
-                        habitasse
-                        ac vel enim. Pretium et sit lobortis enim est nunc ultrices mi quam.
-                    </p>
-                    <p class="call-subtitle">
-                        Lorem ipsum dolor sit amet consectetur. Nisi diam est fermentum tortor tincidunt congue viverra.
-                        Pulvinar elit ipsum ut fermentum eget. Non egestas pellentesque tristique turpis tortor
-                        habitasse
-                        ac vel enim. Pretium et sit lobortis enim est nunc ultrices mi quam.
-                    </p>
+            <div v-show="activeButton === 0">
+                <div class="row align-items-center">
+                    <div class="col-12 col-md-6 mb-4 mb-md-4">
+                        <h2 class="call-heading">Container Booking</h2>
+                        <p class="call-subtitle">Container booking is a critical aspect of logistics and international
+                            trade, involving the reservation and allocation of shipping containers for transporting goods
+                            across various distances, typically by sea or rail. This process ensures efficient planning and
+                            scheduling of cargo shipments, optimizing the use of container space and transportation
+                            routes.<br><br> In container booking, logistics providers or shippers reserve containers in
+                            advance to secure space on vessels or trains, ensuring timely and organized movement of goods
+                            from origin to destination. This advance booking helps in managing inventory, meeting delivery
+                            deadlines, and reducing transportation costs by avoiding last-minute rushes and potential
+                            delays.<br><br> Key elements of container booking include selecting the appropriate container
+                            size and type based on cargo specifications, determining shipping routes, and coordinating with
+                            shipping lines or carriers for availability and scheduling. This process is crucial for
+                            businesses involved in global trade, import-export operations, and supply chain management,
+                            ensuring smooth and seamless movement of goods while adhering to logistical timelines and
+                            regulatory requirements.</p>
+                    </div>
+                    <div class="col-12 col-md-6 text-center">
+                        <div class="image-container position-relative">
+                            <img src="../assets/serviceblue.webp" class="img-fluid custom-image service-blue">
+                            <img src="../assets/service.webp" class="img-fluid custom-image service-top">Shipping Services
+                        </div>
+                    </div>
                 </div>
-                <div class="col-12 col-md-6 text-center">
-                    <div class="image-container position-relative">
-                        <img src="../assets/serviceblue.webp" class="img-fluid custom-image service-blue">
-                        <img src="../assets/service.webp" class="img-fluid custom-image service-top">
+            </div>
+            <div v-show="activeButton === 1">
+                <div class="row align-items-center">
+                    <div class="col-12 col-md-6 mb-4 mb-md-4">
+                        <h2 class="call-heading">Booking Solution</h2>
+                        <p class="call-subtitle"> A booking solution refers to a comprehensive system or platform designed
+                            to streamline the process of reserving and managing various services or resources. In the
+                            context of logistics and transportation, a booking solution typically facilitates the
+                            reservation of transportation services, such as freight forwarding, shipping containers, or
+                            passenger travel, among others.<br><br> Booking solutions in logistics integrate digital
+                            platforms or software that enable users to efficiently book and manage logistics services
+                            online. These solutions often include features like real-time availability checking, price
+                            quoting, scheduling, and documentation management, ensuring smooth and organized operations.</p>
+                    </div>
+                    <div class="col-12 col-md-6 text-center">
+                        <div class="image-container position-relative">
+                            <img src="../assets/serviceblue.webp" class="img-fluid custom-image service-blue">
+                            <img src="../assets/service.webp" class="img-fluid custom-image service-top">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div v-show="activeButton === 2">
+                <div class="row align-items-center">
+                    <div class="col-12 col-md-6 mb-4 mb-md-4">
+                        <h2 class="call-heading">Customized Solutions</h2>
+                        <p class="call-subtitle"> Customized solutions refer to tailored strategies, services, or products
+                            designed to meet specific needs or requirements of individual clients or businesses. In the
+                            context of logistics and transportation, customized solutions involve crafting unique approaches
+                            to address complex logistical challenges, optimize operations, and enhance efficiency.<br><br>
+                            Logistics providers offering customized solutions collaborate closely with clients to understand
+                            their unique logistical requirements, challenges, and goals.<br><br> Customized solutions in
+                            logistics play a crucial role in enhancing customer satisfaction, operational agility, and
+                            competitive advantage. By offering tailored approaches, logistics providers can effectively
+                            address unique challenges and deliver value-added services that meet the evolving demands of
+                            global supply chains.</p>
+                    </div>
+                    <div class="col-12 col-md-6 text-center">
+                        <div class="image-container position-relative">
+                            <img src="../assets/serviceblue.webp" class="img-fluid custom-image service-blue">
+                            <img src="../assets/service.webp" class="img-fluid custom-image service-top">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -129,8 +170,9 @@ export default {
     height: 400px;
     overflow: hidden;
 }
-.booking-image{
-justify-content:center ;
+
+.booking-image {
+    justify-content: center;
 }
 
 .customer-support {
@@ -337,5 +379,4 @@ justify-content:center ;
         width: 90%;
         background-size: contain;
     }
-}
-</style>
+}</style>
