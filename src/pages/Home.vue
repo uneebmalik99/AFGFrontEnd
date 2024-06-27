@@ -25,6 +25,7 @@
   <Coverage />
   <VTracking />
   <Faq />
+  <Technology/>
   <Aboutus />
   <Contactus />
 </template>
