@@ -12,7 +12,7 @@
                 <h2 class="contactus-title">Contact us</h2>
                 <h3 class="contactus-subtitle">Get In Touch</h3>
                 <div>
-                    <p class="text">Feel free to contact us any time.</p>
+                    <p class="text" style="font-family: Montserrat">Feel free to contact us any time.</p>
                 </div>
             </div>
             <div class="row col-sm-12 col-md-12 col-lg-12">
@@ -204,7 +204,7 @@ export default {
 
 .contactus-subtitle {
     font-family: Montserrat;
-    font-size: 48px;
+    font-size: 40px;
     font-weight: 700;
     line-height: 58.51px;
     text-align: left;

@@ -31,23 +31,77 @@
             </div>
         </div>
         <div class="container ">
-            <div class="row align-items-center">
-                <div class="col-12 col-md-6 mb-4 mb-md-0">
-                    <h2 class="call-heading mt-4">Shipping Services</h2>
-                    <p class="call-subtitle"> Lorem ipsum dolor sit amet consectetur. Nisi diam est fermentum tortor
-                        tincidunt congue viverra. Pulvinar elit ipsum ut fermentum eget. Non egestas pellentesque tristique
-                        turpis tortor habitasse ac vel enim. Pretium et sit lobortis enim est nunc ultrices mi quam. </p>
-                    <p class="call-subtitle"> Lorem ipsum dolor sit amet consectetur. Nisi diam est fermentum tortor
-                        tincidunt congue viverra. Pulvinar elit ipsum ut fermentum eget. Non egestas pellentesque tristique
-                        turpis tortor habitasse ac vel enim. Pretium et sit lobortis enim est nunc ultrices mi quam. </p>
-                    <p class="call-subtitle"> Lorem ipsum dolor sit amet consectetur. Nisi diam est fermentum tortor
-                        tincidunt congue viverra. Pulvinar elit ipsum ut fermentum eget. Non egestas pellentesque tristique
-                        turpis tortor habitasse ac vel enim. Pretium et sit lobortis enim est nunc ultrices mi quam. </p>
+            <div v-show="activeButton === 0">
+                <div class="row align-items-center">
+                    <div class="col-12 col-md-6 mb-4 mb-md-4">
+                        <h2 class="call-heading">Shipping Services</h2>
+                        <p class="call-subtitle"> Shipping services encompass a range of logistical operations involved in
+                            transporting goods from one location to another. These services are crucial for businesses and
+                            individuals seeking to move products efficiently and reliably across local, national, or
+                            international borders.<br><br> Key components of shipping services typically include
+                            transportation planning, freight forwarding, warehousing, and distribution. Providers of
+                            shipping services manage the entire logistics chain, ensuring that goods are handled, stored,
+                            and delivered in a timely and secure manner.<br><br> Modern shipping services leverage advanced
+                            technologies and global networks to offer comprehensive solutions tailored to the specific needs
+                            of various industries. These may include sea freight, air freight, road transport, and
+                            multimodal transport options, each optimized for different types of cargo and destinations.</p>
+                    </div>
+                    <div class="col-12 col-md-6 text-center">
+                        <div class="image-container position-relative">
+                            <img src="../assets/serviceblue.webp" class="img-fluid custom-image service-blue">
+                            <img src="../assets/service.webp" class="img-fluid custom-image service-top">Shipping Services
+                        </div>
+                    </div>
                 </div>
-                <div class="col-12 col-md-6 text-center">
-                    <div class="image-container">
-                        <img src="../assets/serviceblue.webp" class="img-fluid custom-image service-blue">
-                        <img src="../assets/service.webp" class="img-fluid custom-image service-top">
+            </div>
+            <div v-show="activeButton === 1">
+                <div class="row align-items-center">
+                    <div class="col-12 col-md-6 mb-4 mb-md-4">
+                        <h2 class="call-heading">Global Reach</h2>
+                        <p class="call-subtitle">Global reach refers to the extensive geographic coverage and operational
+                            capabilities that enable businesses to operate and serve customers worldwide. It signifies the
+                            ability of an organization to expand its presence beyond local or regional boundaries, tapping
+                            into international markets and establishing a robust global footprint.<br><br> Achieving global
+                            reach involves strategic planning, market research, and logistical infrastructure to navigate
+                            diverse regulatory environments and cultural landscapes. It encompasses various aspects such as
+                            international sales and distribution networks, cross-border logistics, and localized customer
+                            support.<br><br> Businesses with global reach can leverage economies of scale, access new growth
+                            opportunities, and diversify revenue streams across different markets. They often employ
+                            sophisticated supply chain management strategies, utilize technology for real-time communication
+                            and data analytics, and adapt services to meet local market demands while maintaining global
+                            standards.</p>
+                    </div>
+                    <div class="col-12 col-md-6 text-center">
+                        <div class="image-container position-relative">
+                            <img src="../assets/serviceblue.webp" class="img-fluid custom-image service-blue">
+                            <img src="../assets/service.webp" class="img-fluid custom-image service-top">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div v-show="activeButton === 2">
+                <div class="row align-items-center">
+                    <div class="col-12 col-md-6 mb-4 mb-md-4">
+                        <h2 class="call-heading">Direct Ship Line Partnerships</h2>
+                        <p class="call-subtitle">Direct ship line partnerships refer to collaborative arrangements between
+                            shipping companies and logistics providers aimed at optimizing transport efficiencies and
+                            enhancing service offerings. These partnerships facilitate direct access to shipping routes and
+                            cargo capacity, reducing transit times and costs while ensuring reliable delivery
+                            schedules.<br><br> By forging direct ship line partnerships, organizations can streamline their
+                            supply chain operations, improve inventory management, and respond more flexibly to market
+                            demands. These collaborations often involve agreements for shared resources, joint investments
+                            in infrastructure, and coordinated logistics planning to meet the needs of global trade.<br><br>
+                            Direct ship line partnerships are pivotal in fostering strategic alliances within the shipping
+                            industry, enabling stakeholders to leverage combined expertise and resources for competitive
+                            advantage. They contribute to operational resilience, sustainability initiatives, and customer
+                            satisfaction by ensuring seamless and efficient movement of goods across international borders.
+                        </p>
+                    </div>
+                    <div class="col-12 col-md-6 text-center">
+                        <div class="image-container position-relative">
+                            <img src="../assets/serviceblue.webp" class="img-fluid custom-image service-blue">
+                            <img src="../assets/service.webp" class="img-fluid custom-image service-top">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -323,5 +377,4 @@ export default {
         left: 10%;
         width: 90%;
     }
-}
-</style>
+}</style>

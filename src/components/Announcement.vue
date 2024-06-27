@@ -40,7 +40,8 @@
                         <div class="card-body">
                             <h5 class="card-title2">{{ post.type }}</h5>
                             <!-- <a :href="'/blog/' + generateSlug(post.title)" class="card-text2">{{ post.title }}</a> -->
-                            <router-link :to="{ name: 'BlogDetails', params: { slug: generateSlug(post.title), props: { post: post } } }" class="card-text2">{{ post.title }}</router-link>
+                            <router-link :to="{ name: 'BlogDetails', params: { slug: generateSlug(post.title) } }"
+                                class="card-text2" @click.native="setPost(post)"> {{ post.title }} </router-link>
                         </div>
                     </div>
                 </div>
@@ -58,6 +59,7 @@ import 'swiper/css';
 import 'swiper/css/scrollbar';
 import { Scrollbar } from 'swiper/modules';
 import axios from 'axios';
+import { mapActions } from 'vuex';
 
 export default {
     components: {
@@ -113,6 +115,10 @@ export default {
         generateSlug(title) {
             // Function to generate a URL-friendly slug from the title
             return title.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
+        },
+        ...mapActions(['updatePost']),
+        setPost(post) {
+            this.updatePost(post);
         }
     },
     mounted() {

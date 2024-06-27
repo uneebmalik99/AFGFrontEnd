@@ -1,7 +1,6 @@
 <template>
     <div class="image-container">
-        <!-- <img src="../assets/contactus.webp" alt="Gallery Image" class="gallery-image" />
-        <div class="overlay"></div> -->
+
         <div class="content-container" style="color: #011936;">
             <h1 class="">Contact Us</h1>
             <div class="breadcrumb_des">
@@ -9,7 +8,7 @@
                 <p class="breadcrumb_name"> CONTACT US</p>
             </div>
         </div>
-        <div>
+        <div class="vue-animation">
             <Vue3Lottie :animationData="ContactUsJSON" :height="400" :width="800" />
         </div>
     </div>
@@ -22,7 +21,7 @@
             <div class="py-0 col-sm-12 col-md-12 col-lg-12 mt-5 main_header">
                 <h3 class="contactus-subtitle">Get In <span class="touch">Touch</span></h3>
                 <div>
-                    <p class="text">Feel free to contact us any time.</p>
+                    <p class="text" style="font-family: Montserrat">Feel free to contact us any time.</p>
                 </div>
             </div>
             <div class="row col-sm-12 col-md-12 col-lg-12" style="display: flex; justify-content: center;">
@@ -151,10 +150,8 @@ export default {
   
 <style scoped>
 .contactus-subtitle {
-    opacity: 0;
     /* Start with 0 opacity */
     animation: fadeIn 3s forwards;
-    /* Animation name, duration, and retain final state */
 }
 
 @keyframes fadeIn {
@@ -261,12 +258,13 @@ export default {
     justify-content: flex-start;
     align-self: flex-start;
     flex-direction: row;
+    align-items: center;
 }
 
 .touch {
     color: #ed254e;
     font-family: Montserrat;
-    font-size: 54px;
+    font-size: 46px;
     font-weight: 700;
     line-height: 65.83px;
 }
@@ -278,7 +276,13 @@ export default {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-self: center;
+        align-items: center;
+    }
+    .contactus-subtitle{
+            font-size: 40px;
+    }
+    .touch {
+        font-size: 40px;
     }
 
     .box_details_2 {
@@ -303,6 +307,9 @@ export default {
         flex-direction: column;
         align-items: center;
     }
+    .vue-animation{
+        display: none;
+    }
 }
 
 .contact_home_right {
@@ -316,7 +323,7 @@ export default {
 .touch {
     color: #ed254e;
     font-family: Montserrat;
-    font-size: 54px;
+    font-size: 40px;
     font-weight: 700;
     line-height: 65.83px;
 
@@ -408,7 +415,7 @@ export default {
 
 .contactus-subtitle {
     font-family: Montserrat;
-    font-size: 48px;
+    font-size: 40px;
     font-weight: 700;
     line-height: 58.51px;
     text-align: left;

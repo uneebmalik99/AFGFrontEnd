@@ -11,10 +11,16 @@
         </div>
         <div class="row justify-content-center">
             <div class="col-12 col-md-11 col-lg-10">
-                <img src="../../assets/blogboat.webp" class="img-fluid w-100 hero-image mb-4 mt-3">
+                <img :src="'http://trackvinapi.afgshipping.com/' + post.image" class="img-fluid w-100 hero-image mb-4 mt-3">
             </div>
         </div>
+
         <div class="row justify-content-center">
+            <div class="col-12 col-md-11 col-lg-10">
+                <p class="text">{{ post.description }}</p>
+            </div>
+        </div>
+        <!-- <div class="row justify-content-center">
             <div class="col-12 col-md-11 col-lg-10">
                 <p class="text">Lorem ipsum dolor sit amet consectetur. Mauris pellentesque enim mollis amet magna. Vitae
                     hendrerit ultrices pellentesque commodo condimentum mauris sit. Donec mattis viverra proin vel bibendum
@@ -65,25 +71,19 @@
             <div class="col-12 col-md-11 col-lg-10">
                 <img src="../../assets/blog.webp" class="img-fluid w-100 hero-image mb-4 mt-3">
             </div>
-        </div>
+        </div> -->
     </div>
 </template>
 
 <script>
-export default {
-    props: {
-        post: {
-            type: Object,
-            required: true
-        }
-    },
-    setup(props) {
-        // Ensure props.post is not undefined or null before returning it
-        const post = props.post || {};
+import { mapGetters } from 'vuex';
 
-        return {
-            post
-        };
+export default {
+    computed: {
+        ...mapGetters(['post'])
+    },
+    created() {
+        console.log('Post:', this.post);
     }
 };
 </script>

@@ -37,10 +37,17 @@
                 <div class="col-md-12">
                     <h2 class="mt-3 mb-3 text-left">Vehicle Images</h2>
                 </div>
-                <div class="col-12 col-md-4 mb-4" v-for="image in vehicleData.data.images" :key="image.id">
-                    <div class="image-container">
-                        <img :src="`https://admin.afgshipping.com/uploads/${image.thumbnail}`" alt="Vehicle Image"
-                            class="img-fluid rounded">
+                <div v-if="vehicleData.data.images.lenght > 0">
+                    <div class="col-12 col-md-4 mb-4" v-for="image in vehicleData.data.images" :key="image.id">
+                        <div class="image-container">
+                            <img :src="`https://admin.afgshipping.com/uploads/${image.thumbnail}`" alt="Vehicle Image"
+                                class="img-fluid rounded">
+                        </div>
+                    </div>
+                </div>
+                <div v-else>
+                    <div class="col-md-12">
+                        <div class="alert alert-danger" role="alert"> No Vehicle Images found. </div>
                     </div>
                 </div>
             </div>
@@ -143,11 +150,7 @@
             <div v-else-if="vehicleData && vehicleData.status == 'error'">
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="alert alert-dismissible alert-danger text-center" role="alert"> {{ vehicleData.message }}
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
+                        <div class="alert alert-danger" role="alert"> {{ vehicleData.message }}</div>
                     </div>
                 </div>
             </div>

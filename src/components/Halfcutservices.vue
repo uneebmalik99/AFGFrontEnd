@@ -11,52 +11,98 @@
             </div>
         </div>
     </div>
-
     <div class="container-fluid p-0" style="background-color:#f4fffd;">
-    <div class="container-fluid">
-        <div class="support-buttons-container my-4">
-            <div class="support-buttons d-flex justify-content-start py-3">
-                <button @click="setActive(0)" class="btn" :class="{ 'active': activeButton === 0 }">Half-Cut and
-                    Dismantling</button>
-                <button @click="setActive(1)" class="btn "
-                    :class="{ 'active': activeButton === 1 }">Cost-Effective Solutions</button>
-                <button @click="setActive(2)" class="btn "
-                    :class="{ 'active': activeButton === 2 }">Accuracy & Skill</button>
-            </div>
-            <div class="progress-container mt-2">
-                <div class="progress-bar" :style="progressBarStyle"></div>
+        <div class="container-fluid">
+            <div class="support-buttons-container my-4">
+                <div class="support-buttons d-flex justify-content-start py-3">
+                    <button @click="setActive(0)" class="btn" :class="{ 'active': activeButton === 0 }">Half-Cut and
+                        Dismantling</button>
+                    <button @click="setActive(1)" class="btn " :class="{ 'active': activeButton === 1 }">Cost-Effective
+                        Solutions</button>
+                    <button @click="setActive(2)" class="btn " :class="{ 'active': activeButton === 2 }">Accuracy &
+                        Skill</button>
+                </div>
+                <div class="progress-container mt-2">
+                    <div class="progress-bar" :style="progressBarStyle"></div>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="container ">
-        <div class="row align-items-center">
-            <div class="col-12 col-md-6 mb-4 mb-md-0">
-                <h2 class="call-heading mt-4">Half-Cut and Dismantling</h2>
-                <p class="call-subtitle">
-                    Lorem ipsum dolor sit amet consectetur. Nisi diam est fermentum tortor tincidunt congue viverra.
-                    Pulvinar elit ipsum ut fermentum eget. Non egestas pellentesque tristique turpis tortor habitasse
-                    ac vel enim. Pretium et sit lobortis enim est nunc ultrices mi quam.
-                </p>
-                <p class="call-subtitle">
-                    Lorem ipsum dolor sit amet consectetur. Nisi diam est fermentum tortor tincidunt congue viverra.
-                    Pulvinar elit ipsum ut fermentum eget. Non egestas pellentesque tristique turpis tortor habitasse
-                    ac vel enim. Pretium et sit lobortis enim est nunc ultrices mi quam.
-                </p>
-                <p class="call-subtitle">
-                    Lorem ipsum dolor sit amet consectetur. Nisi diam est fermentum tortor tincidunt congue viverra.
-                    Pulvinar elit ipsum ut fermentum eget. Non egestas pellentesque tristique turpis tortor habitasse
-                    ac vel enim. Pretium et sit lobortis enim est nunc ultrices mi quam.
-                </p>
+        <div class="container ">
+            <div v-show="activeButton === 0">
+                <div class="row align-items-center">
+                    <div class="col-12 col-md-6 mb-4 mb-md-4">
+                        <h2 class="call-heading">Half-Cut and Dismantling</h2>
+                        <p class="call-subtitle">Half-cut and dismantling services involve the partial disassembly of
+                            vehicles or machinery for transportation or modification purposes. This process typically
+                            includes carefully separating components to facilitate easier handling, shipping, or reassembly
+                            at another location. In the automotive and industrial sectors, half-cut and dismantling services
+                            are crucial for transporting large or complex machinery efficiently.<br><br> Logistics providers
+                            specializing in half-cut and dismantling possess the expertise and equipment necessary to
+                            execute these tasks safely and efficiently. They ensure that components are carefully labeled,
+                            stored, and transported to minimize damage and ensure accurate reassembly. These services are
+                            particularly valuable in industries requiring precise engineering and logistical solutions for
+                            heavy or oversized equipment.</p>
+                    </div>
+                    <div class="col-12 col-md-6 text-center">
+                        <div class="image-container position-relative">
+                            <img src="../assets/serviceblue.webp" class="img-fluid custom-image service-blue">
+                            <img src="../assets/service.webp" class="img-fluid custom-image service-top">Shipping Services
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-12 col-md-6 text-center">
-                <div class="image-container position-relative">
-                    <img src="../assets/serviceblue.webp" class="img-fluid custom-image service-blue">
-                    <img src="../assets/service.webp" class="img-fluid custom-image service-top">
+            <div v-show="activeButton === 1">
+                <div class="row align-items-center">
+                    <div class="col-12 col-md-6 mb-4 mb-md-4">
+                        <h2 class="call-heading">Cost-Effective Solutions</h2>
+                        <p class="call-subtitle">Cost-effective solutions refer to strategies, services, or products that
+                            provide maximum value for money spent, minimizing expenses while achieving desired outcomes. In
+                            logistics and business operations, opting for cost-effective solutions involves careful
+                            consideration of factors such as efficiency, reliability, and affordability.<br><br> Logistics
+                            companies often offer cost-effective solutions by optimizing routes, consolidating shipments, or
+                            leveraging technology to streamline operations. This approach not only reduces direct costs but
+                            also enhances overall productivity and customer satisfaction. Cost-effective solutions are
+                            essential for businesses looking to maintain competitiveness and profitability in dynamic
+                            markets.<br><br> Choosing cost-effective logistics solutions involves assessing total cost of
+                            ownership, including initial expenses, operational costs, and long-term benefits. It requires
+                            balancing cost savings with quality and service levels to meet organizational goals effectively.
+                        </p>
+                    </div>
+                    <div class="col-12 col-md-6 text-center">
+                        <div class="image-container position-relative">
+                            <img src="../assets/serviceblue.webp" class="img-fluid custom-image service-blue">
+                            <img src="../assets/service.webp" class="img-fluid custom-image service-top">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div v-show="activeButton === 2">
+                <div class="row align-items-center">
+                    <div class="col-12 col-md-6 mb-4 mb-md-4">
+                        <h2 class="call-heading">Accuracy & Skill</h2>
+                        <p class="call-subtitle">Accuracy and skill are crucial attributes in logistics and service
+                            industries, emphasizing precision, proficiency, and expertise in delivering reliable outcomes.
+                            In logistics, accuracy entails meticulous attention to detail throughout processes like
+                            inventory management, order fulfillment, and shipment tracking. It ensures that goods are
+                            handled and delivered with precision, minimizing errors and delays.<br><br> Skill, on the other
+                            hand, encompasses the proficiency and competence of personnel involved in logistics operations.
+                            Skilled professionals possess the knowledge and capability to navigate complexities in
+                            transportation, warehousing, and supply chain management effectively. Their expertise
+                            contributes to operational efficiency, timely deliveries, and customer satisfaction.<br><br>
+                            Combining accuracy and skill in logistics operations enhances reliability, reduces operational
+                            costs, and strengthens competitive advantage. It fosters a culture of excellence where precision
+                            and proficiency drive organizational success and customer loyalty.</p>
+                    </div>
+                    <div class="col-12 col-md-6 text-center">
+                        <div class="image-container position-relative">
+                            <img src="../assets/serviceblue.webp" class="img-fluid custom-image service-blue">
+                            <img src="../assets/service.webp" class="img-fluid custom-image service-top">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 </template>
 
 <script>
@@ -64,8 +110,8 @@ export default {
     data() {
         return {
             activeButton: 0,
-            buttonWidth: 255, 
-            buttonMargin: 10, 
+            buttonWidth: 255,
+            buttonMargin: 10,
         };
     },
     computed: {
@@ -244,15 +290,15 @@ export default {
 
 @media (max-width: 767.98px) {
     .breadcrumb_des {
-    display: flex;
-    flex-direction: row;
-    font-size: 12px;
-}
+        display: flex;
+        flex-direction: row;
+        font-size: 12px;
+    }
 
-.breadcrumb_name {
-    color: #011936;
-    font-weight: 700;
-}
+    .breadcrumb_name {
+        color: #011936;
+        font-weight: 700;
+    }
 
     .support-buttons .btn {
         font-size: 9px;
@@ -289,6 +335,7 @@ export default {
         width: 100%;
     }
 }
+
 @media (min-width: 768px) and (max-width: 1024px) {
     .support-buttons-container {
         margin-left: 7%;
@@ -320,8 +367,7 @@ export default {
     }
 
     .service-top {
-        width
-        : 80%;
+        width: 80%;
         max-width: 300px;
     }
 
@@ -329,5 +375,4 @@ export default {
         left: 10%;
         width: 90%;
     }
-}
-</style>
+}</style>

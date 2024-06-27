@@ -1,5 +1,5 @@
 <template>
-     <div class="gallery">
+    <div class="gallery">
         <div class="hero-section">
             <div class="overlay"></div>
             <div class="breadcrumbs">
@@ -15,43 +15,101 @@
         <div class="container-fluid">
             <div class="support-buttons-container ">
                 <div class="support-buttons d-flex justify-content-start py-3">
-                    <button @click="setActive(0)" class="btn" :class="{ 'active': activeButton === 0 }">Towing Services</button>
-                    <button @click="setActive(1)" class="btn " :class="{ 'active': activeButton === 1 }">Quick Pickup</button>
-                    <button @click="setActive(2)" class="btn " :class="{ 'active': activeButton === 2 }">Towing Policy</button>
+                    <button @click="setActive(0)" class="btn" :class="{ 'active': activeButton === 0 }">Towing
+                        Services</button>
+                    <button @click="setActive(1)" class="btn " :class="{ 'active': activeButton === 1 }">Quick
+                        Pickup</button>
+                    <button @click="setActive(2)" class="btn " :class="{ 'active': activeButton === 2 }">Towing
+                        Policy</button>
                 </div>
                 <div class="progress-container">
                     <div class="progress-bar" :style="progressBarStyle">
-                </div>
-            </div>
-        </div>
-        <div class="container ">
-            <div class="row align-items-center">
-                <div class="col-12 col-md-6 mb-4 mb-md-0">
-                    <h2 class="call-heading mt-4">Towing Services</h2>
-                    <p class="call-subtitle">
-                        Lorem ipsum dolor sit amet consectetur. Nisi diam est fermentum tortor tincidunt congue viverra.
-                        Pulvinar elit ipsum ut fermentum eget. Non egestas pellentesque tristique turpis tortor
-                        habitasse ac vel enim. Pretium et sit lobortis enim est nunc ultrices mi quam.
-                    </p>
-                    <p class="call-subtitle">
-                        Lorem ipsum dolor sit amet consectetur. Nisi diam est fermentum tortor tincidunt congue viverra.
-                        Pulvinar elit ipsum ut fermentum eget. Non egestas pellentesque tristique turpis tortor
-                        habitasse ac vel enim. Pretium et sit lobortis enim est nunc ultrices mi quam.
-                    </p>
-                    <p class="call-subtitle">
-                        Lorem ipsum dolor sit amet consectetur. Nisi diam est fermentum tortor tincidunt congue viverra.
-                        Pulvinar elit ipsum ut fermentum eget. Non egestas pellentesque tristique turpis tortor
-                        habitasse ac vel enim. Pretium et sit lobortis enim est nunc ultrices mi quam.
-                    </p>
-                </div>
-                <div class="col-12 col-md-6 text-center">
-                    <div class="image-container">
-                        <img src="../assets/serviceblue.webp" class="img-fluid custom-image service-blue">
-                        <img src="../assets/service.webp" class="img-fluid custom-image service-top">
                     </div>
                 </div>
             </div>
-        </div>
+            <div class="container ">
+                <div v-show="activeButton === 0">
+                    <div class="row align-items-center">
+                        <div class="col-12 col-md-6 mb-4 mb-md-4">
+                            <h2 class="call-heading">Towing Services</h2>
+                            <p class="call-subtitle"> Towing services encompass a vital aspect of roadside assistance,
+                                providing essential support to motorists facing vehicle breakdowns or accidents. These
+                                services involve the transportation of vehicles that are immobilized due to mechanical
+                                failures, collisions, or other emergencies. Towing companies deploy specialized vehicles
+                                equipped to safely haul cars, trucks, motorcycles, and other vehicles to designated
+                                locations, such as repair shops or impound lots.<br><br> The primary function of towing
+                                services is to rescue stranded vehicles from inconvenient or hazardous locations and
+                                transport them to safety or repair facilities. They play a critical role in maintaining
+                                traffic flow, ensuring road safety, and assisting drivers in distress. Additionally, towing
+                                professionals are trained to handle various roadside situations, including jump-starts, tire
+                                changes, and lockouts, offering comprehensive assistance beyond mere towing.<br><br>
+                                Efficient towing services prioritize prompt response times and adhere to safety protocols to
+                                minimize risks during vehicle retrieval and transport. By providing reliable and expedient
+                                assistance, towing companies contribute significantly to the convenience, safety, and peace
+                                of mind of motorists navigating unforeseen road challenges.</p>
+                        </div>
+                        <div class="col-12 col-md-6 text-center">
+                            <div class="image-container position-relative">
+                                <img src="../assets/serviceblue.webp" class="img-fluid custom-image service-blue">
+                                <img src="../assets/service.webp" class="img-fluid custom-image service-top">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div v-show="activeButton === 1">
+                    <div class="row align-items-center">
+                        <div class="col-12 col-md-6 mb-4 mb-md-4">
+                            <h2 class="call-heading">Quick Pickup</h2>
+                            <p class="call-subtitle">Quick pickup services cater to the immediate retrieval and
+                                transportation needs of individuals and businesses alike. Whether it's parcels, groceries,
+                                or important documents, these services offer rapid collection and delivery solutions
+                                designed to streamline logistics and meet tight deadlines.<br><br> The hallmark of quick
+                                pickup services lies in their efficiency and responsiveness. They leverage modern technology
+                                and strategic operational planning to ensure swift turnaround times, enabling customers to
+                                schedule pickups at their convenience and receive timely deliveries. This agility makes
+                                quick pickup services indispensable for businesses requiring fast distribution channels and
+                                individuals seeking prompt and reliable transportation solutions.<br><br> By focusing on
+                                speed, reliability, and customer satisfaction, quick pickup services enhance operational
+                                efficiency, support time-sensitive deliveries, and contribute to seamless logistics
+                                management across various industries.</p>
+                        </div>
+                        <div class="col-12 col-md-6 text-center">
+                            <div class="image-container position-relative">
+                                <img src="../assets/serviceblue.webp" class="img-fluid custom-image service-blue">
+                                <img src="../assets/service.webp" class="img-fluid custom-image service-top">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div v-show="activeButton === 2">
+                    <div class="row align-items-center">
+                        <div class="col-12 col-md-6 mb-4 mb-md-4">
+                            <h2 class="call-heading">Towing Policy</h2>
+                            <p class="call-subtitle">A towing policy outlines the guidelines and procedures governing the
+                                towing of vehicles in specific situations, typically enforced by municipalities, property
+                                owners, or towing companies. This policy defines the circumstances under which vehicles may
+                                be towed, such as unauthorized parking, safety hazards, or legal violations. It also details
+                                the responsibilities of vehicle owners, procedures for notifying owners of towed vehicles,
+                                and the process for reclaiming impounded vehicles.<br><br> The primary objectives of a
+                                towing policy are to maintain order, ensure public safety, and protect private property
+                                rights. It provides clarity and transparency regarding towing practices, including fees and
+                                penalties associated with towing and impoundment. Effective towing policies aim to strike a
+                                balance between enforcing regulations and providing fair treatment to vehicle owners,
+                                thereby contributing to safer and more orderly communities.<br><br> By establishing clear
+                                guidelines and procedures, a towing policy helps mitigate disputes, promote compliance with
+                                regulations, and uphold standards of safety and accessibility on public and private
+                                properties. It serves as a crucial tool for managing parking and traffic issues while
+                                safeguarding the interests of both vehicle owners and the community at large.</p>
+                        </div>
+                        <div class="col-12 col-md-6 text-center">
+                            <div class="image-container position-relative">
+                                <img src="../assets/serviceblue.webp" class="img-fluid custom-image service-blue">
+                                <img src="../assets/service.webp" class="img-fluid custom-image service-top">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </template>
@@ -229,11 +287,11 @@ export default {
 }
 
 @media (max-width: 767.98px) {
-    
+
     .support-buttons .btn {
         font-size: 10px;
-        width: 100px; 
-        height: 40px; 
+        width: 100px;
+        height: 40px;
     }
 
     .call-heading {
@@ -264,17 +322,19 @@ export default {
         left: 0;
         width: 100%;
     }
+
     .breadcrumb_des {
-    display: flex;
-    flex-direction: row;
-    font-size: 12px;
+        display: flex;
+        flex-direction: row;
+        font-size: 12px;
+    }
+
+    .breadcrumb_name {
+        color: #011936;
+        font-weight: 700;
+    }
 }
 
-.breadcrumb_name {
-    color: #011936;
-    font-weight: 700;
-}
-}
 @media (min-width: 768px) and (max-width: 1024px) {
     .support-buttons-container {
         margin-left: 7%;
@@ -283,7 +343,7 @@ export default {
     .support-buttons .btn {
         font-size: 12px;
         width: 200px;
-    height: 46px;
+        height: 46px;
     }
 
     .call-heading {
@@ -306,8 +366,7 @@ export default {
     }
 
     .service-top {
-        width
-        : 80%;
+        width: 80%;
         max-width: 300px;
     }
 
@@ -315,5 +374,4 @@ export default {
         left: 10%;
         width: 90%;
     }
-}
-</style>
+}</style>

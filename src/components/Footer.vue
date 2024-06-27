@@ -90,19 +90,8 @@ footer {
 .form-control {
   width: 80%;
   font-size: 14px;
-  /* Adjust input font size */
   padding: 5px 10px;
-  /* Adjust input padding */
 }
-
-/* .button {
-  background: #ED254E;
-  color: white;
-  border-radius: 8px;
-  width: 60%;
-  height: 40px;
-  font-size: 16px;
-} */
 
 .btn {
   background-color: #ff4c60;
@@ -145,18 +134,13 @@ footer {
     width: 100%;
   }
 
-  /* .button {
-    width: 100%;
-    height: auto;
-  } */
-
   .btn {
     width: 100%;
     height: auto;
   }
 
   .contact-item {
-    flex-direction: column;
+    flex-direction: row;
     align-items: flex-start;
   }
 

@@ -41,16 +41,19 @@ export default {
       activeIndex: 0, // Set the first item as active by default
       faqs: [
         {
-          question: 'How much does it cost to transport a vehicle?',
-          answer: 'The cost of transporting your vehicle depends on several factors...'
+          question: 'What is the cheapest way to ship a car?',
+          answer: 'Ocean freight Container transport is roughly 50% cheaper than the RoRo.\
+          About 90% of all vehicle shipments go by Container shipping from United States, which is actually very safe.'
         },
         {
-          question: 'Can I load personal items in my vehicle during transport?',
-          answer: 'It is not recommended to load personal items...'
+          question: 'Can I track the progress of my shipment online?',
+          answer: 'Yes, online tracking is available to you 24 hours a day and is updated regularly.\
+          Upon scheduling your shipment, you will receive an email from us that will allow you to track the status of your shipment online.'
         },
         {
-          question: 'How long does it take to transport a vehicle?',
-          answer: 'The transportation time can vary based on...'
+          question: 'How do I pay for my auto shipping?',
+          answer: 'We accept all major credit cards, electronic transfer, postal money order, and bank/certified check for the deposit or full pre-payment of your shipment.\
+          If a balance is due upon delivery, it can be paid directly in bank/certified check, or postal money order.'
         },
         {
           question: 'Can I transport a non-operational vehicle?',
@@ -264,7 +267,7 @@ export default {
 
 @media (max-width: 768px) {
   .faq-container {
-    flex-direction: column;
+    flex-direction: row;
   }
 
   .faq-content {
