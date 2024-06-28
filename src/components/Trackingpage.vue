@@ -14,16 +14,16 @@
     <div class="tracking-section py-5">
         <div class="container">
             <div class="text-center mb-4">
-                <h1 class="tracking-subtitle">Vehicle and Container Tracking</h1>
+                <h1 class="tracking-subtitle">Track Your Vehicle</h1>
             </div>
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <div class="tracking-form">
-                        <p class="tracking-instructions text-center"> Enter your Vin No, Lot No, or Container No to track
+                        <p class="tracking-instructions text-center"> Enter your Vin No or Lot No to track
                             your shipments. </p>
                         <div class="input-group mb-3">
                             <input v-model="trackingNumber" type="text" class="form-control"
-                                placeholder="Vin/Lot/Container number" aria-label="Vin/Lot/Container number" />
+                                placeholder="Vin/Lot" aria-label="Vin/Lot" />
                         </div>
                         <div class="text-center">
                             <button class="btn" type="button" @click="trackShipment">Track</button>
@@ -170,7 +170,7 @@ export default {
         async trackShipment() {
             if (this.trackingNumber) {
                 try {
-                    const response = await axios.get(`http://trackvinapi.afgshipping.com/api.php?vin=${this.trackingNumber}`);
+                    const response = await axios.get(`http://trackvinapi.afgshipping.com/api.php?trackingNumber=${this.trackingNumber}`);
                     console.log(response.data);
                     this.vehicleData = response.data;
                 } catch (error) {
