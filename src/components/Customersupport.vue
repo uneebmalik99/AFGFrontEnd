@@ -432,6 +432,9 @@ export default {
     .text-center {
         font-size: 16px;
     }
+    .content-container h1{
+        font-size: 30px;
+    }
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {

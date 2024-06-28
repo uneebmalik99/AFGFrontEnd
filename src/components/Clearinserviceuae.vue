@@ -297,21 +297,22 @@ export default {
     .breadcrumb_name {
         color: #011936;
         font-weight: 700;
+        font-size: 11px;
     }
 
     .support-buttons .btn {
-        font-size: 9px;
-        width: 115px;
+        font-size: 8px;
+        width: 99px;
         height: 50px;
     }
 
     .call-heading {
-        font-size: 28px;
+        font-size: 18px;
         line-height: 35px;
     }
 
     .call-subtitle {
-        font-size: 16px;
+        font-size: 14px;
         line-height: 20px;
     }
 
@@ -332,6 +333,9 @@ export default {
     .image-container {
         left: 0;
         width: 100%;
+    }
+    .breadcrumbs h1{
+        font-size: 21px;
     }
 }
 

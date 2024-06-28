@@ -326,12 +326,16 @@ export default {
     .breadcrumb_des {
         display: flex;
         flex-direction: row;
-        font-size: 12px;
+        font-size: 14px;
     }
 
     .breadcrumb_name {
         color: #011936;
         font-weight: 700;
+        font-size: 14px;
+    }
+    .breadcrumbs h1{
+        font-size: 30px;
     }
 }
 

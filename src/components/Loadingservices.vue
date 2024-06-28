@@ -307,7 +307,7 @@ export default {
   }
 
   .call-heading {
-    font-size: 28px;
+    font-size: 22px;
     line-height: 35px;
   }
 

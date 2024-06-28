@@ -282,7 +282,6 @@ export default {
     height: Hug (457px)px;
     top: 636px;
     left: 122px;
-    padding: 9px 0px 9px 0px;
     gap: 0px;
     justify-content: space-between;
 }
@@ -291,12 +290,13 @@ export default {
     .breadcrumb_des {
         display: flex;
         flex-direction: row;
-        font-size: 12px;
+        font-size: 13px;
     }
 
     .breadcrumb_name {
         color: #011936;
         font-weight: 700;
+        font-size: 13px;
     }
 
     .support-buttons .btn {
@@ -306,7 +306,7 @@ export default {
     }
 
     .call-heading {
-        font-size: 28px;
+        font-size: 25px;
         line-height: 35px;
     }
 
@@ -332,6 +332,9 @@ export default {
     .image-container {
         left: 0;
         width: 100%;
+    }
+    .breadcrumbs h1{
+        font-size: 28px;
     }
 }
 
