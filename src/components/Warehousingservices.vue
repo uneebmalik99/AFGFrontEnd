@@ -259,6 +259,7 @@ export default {
   .breadcrumb_name {
     color: #011936;
     font-weight: 700;
+    font-size: 14px;
   }
 
   .support-buttons .btn {
@@ -294,6 +295,9 @@ export default {
   .image-container {
     left: 0;
     width: 100%;
+  }
+  .breadcrumbs h1{
+    font-size: 30px;
   }
 }
 

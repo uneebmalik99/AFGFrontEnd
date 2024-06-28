@@ -151,6 +151,9 @@ export default {
   .btn {
     width: 100%;
   }
+  .navbar-brand{
+    font-size: 28px;
+  }
 }
 
 .dropdown-menu {

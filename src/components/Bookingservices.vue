@@ -285,7 +285,6 @@ export default {
     height: Hug (457px)px;
     top: 636px;
     left: 122px;
-    padding: 9px 0px 9px 0px;
     gap: 0px;
     justify-content: space-between;
 }
@@ -376,6 +375,5 @@ export default {
     .image-container {
         left: 10%;
         width: 90%;
-        background-size: contain;
     }
 }</style>

@@ -4,12 +4,11 @@
             <div class="d-flex justify-content-end" style="margin-right: 15%;">
                 <img src="../assets/container_ship-heading.png" alt="Gallery Image" class="shipping-image" />
             </div>
-            <!-- <div class="overlay"></div> -->
             <div class="breadcrumbs">
-                <h1>Shipping Services</h1>
-                <div class="breadcrumb_des">
+                <h1 class="text-center">Shipping Services</h1>
+                <div class="breadcrumb_des text-center">
                     <p>HOME &nbsp > SERVICES > &nbsp </p>
-                    <p class="breadcrumb_name"> SHIPPING SERVICES</p>
+                    <p class="breadcrumb_name text-center"> SHIPPING SERVICES</p>
                 </div>
             </div>
         </div>
@@ -49,7 +48,7 @@
                     <div class="col-12 col-md-6 text-center">
                         <div class="image-container position-relative">
                             <img src="../assets/serviceblue.webp" class="img-fluid custom-image service-blue">
-                            <img src="../assets/service.webp" class="img-fluid custom-image service-top">Shipping Services
+                            <img src="../assets/service.webp" class="img-fluid custom-image service-top">
                         </div>
                     </div>
                 </div>
@@ -300,16 +299,17 @@ export default {
     .breadcrumb_name {
         color: #011936;
         font-weight: 700;
+        font-size: 14px;
     }
 
     .support-buttons .btn {
-        font-size: 10px;
-        width: 110px;
-        height: 59px;
+        font-size: 9px;
+        width: 94px;
+        height: 56px;
     }
 
     .call-heading {
-        font-size: 28px;
+        font-size: 20px;
         line-height: 35px;
     }
 
@@ -336,6 +336,13 @@ export default {
         left: 0;
         width: 100%;
     }
+    .shipping-image{
+        display: none;
+    }
+    .breadcrumbs h1{
+        font-size: 30px;
+    }
+   
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
