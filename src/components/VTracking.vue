@@ -3,16 +3,16 @@
         <div class="container" style=" display: flex; align-items: center; flex-direction: column; ">
             <div class="text-center col-12 mb-4">
                 <h2 class="tracking-title">Tracking</h2>
-                <h1 class="tracking-subtitle">Vehicle and Container Tracking</h1>
+                <h1 class="tracking-subtitle">Track Your Vehicle</h1>
             </div>
             <div class="row col-12 justify-content-center">
                 <div class="col-sm-6 col-md-10 col-lg-10 justify-content-center">
                     <div class="tracking-form">
-                        <p class="tracking-instructions text-center"> Enter your Vin No, Lot No, or Container No to track
-                            your shipments. </p>
+                        <p class="tracking-instructions text-center"> Enter your Vin No or Lot No to track your shipments.
+                        </p>
                         <div class="input-group mb-3">
-                            <input v-model="trackingNumber" type="text" class="form-control"
-                                placeholder="Vin/Lot/Container number" aria-label="Vin/Lot/Container number" />
+                            <input v-model="trackingNumber" type="text" class="form-control" placeholder="Vin/Lot"
+                                aria-label="Vin/Lot" />
                             <div class="input-group-append">
                                 <button class="btn" type="button" @click="trackShipment">Track</button>
                             </div>
@@ -37,7 +37,7 @@ export default {
         async trackShipment() {
             if (this.trackingNumber) {
                 try {
-                    const response = await axios.get(`http://trackvinapi.afgshipping.com/api.php?vin=${this.trackingNumber}`);
+                    const response = await axios.get(`http://trackvinapi.afgshipping.com/api.php?trackingNumber=${this.trackingNumber}`);
                     console.log(response.data);
                     const data = response.data;
                     this.$router.push({

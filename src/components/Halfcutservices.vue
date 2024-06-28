@@ -46,7 +46,7 @@
                     <div class="col-12 col-md-6 text-center">
                         <div class="image-container position-relative">
                             <img src="../assets/serviceblue.webp" class="img-fluid custom-image service-blue">
-                            <img src="../assets/service.webp" class="img-fluid custom-image service-top">Shipping Services
+                            <img src="../assets/service.webp" class="img-fluid custom-image service-top">
                         </div>
                     </div>
                 </div>
@@ -285,7 +285,6 @@ export default {
     padding: 9px 0px 9px 0px;
     gap: 0px;
     justify-content: space-between;
-    opacity: 0px;
 }
 
 @media (max-width: 767.98px) {
