@@ -30,14 +30,14 @@ export default {
   data() {
     return {
       cards: [     
-        { title: "24/7 Customer Support",des:'We provide 24/7 customer support to our client via email, calls, and website', image: require('../assets/customersupport_small.png') },
-        { title: "HalfCut Service",des:'We provide 24/7 customer support to our client via email, calls, and website', image: require('../assets/halfcut_small.png') },
-        { title: "Booking Service",des:'We provide 24/7 customer support to our client via email, calls, and website', image: require('../assets/loading_small.png') },
-        { title: "Towing Service", des:'We provide 24/7 customer support to our client via email, calls, and website',image: require('../assets/towing_small.png') },
-        { title: "Shipping Service", des:'We provide 24/7 customer support to our client via email, calls, and website',image: require('../assets/shipping_small.png') },
-        { title: "Warehousing Service",des:'We provide 24/7 customer support to our client via email, calls, and website', image: require('../assets/warehousing_small.png') },
-        { title: "Clearence Service",des:'We provide 24/7 customer support to our client via email, calls, and website', image: require('../assets/clearence_small.png') },
-        { title: "Loading Service", des:'We provide 24/7 customer support to our client via email, calls, and website',image: require('../assets/container_loading_small.png') },
+        { title: "24/7 Customer Support",des:'We provide 24/7 customer support to our client via email, calls, and website.', image: require('../assets/customersupport_small.png') },
+        { title: "HalfCut Service",des:'Half-cut service provides cost-effective vehicle parts by cutting cars in half.', image: require('../assets/halfcut_small.png') },
+        { title: "Booking Service",des:'Booking service facilitates hassle-free reservations for transportation.', image: require('../assets/loading_small.png') },
+        { title: "Towing Service", des:'Towing service transports vehicles unable to move independently.',image: require('../assets/towing_small.png') },
+        { title: "Shipping Service", des:'Shipping service securely transports goods over long distances',image: require('../assets/shipping_small.png') },
+        { title: "Warehousing Service",des:'Warehouse service offers secure storage solutions for goods.', image: require('../assets/warehousing_small.png') },
+        { title: "Clearence Service",des:'Clearance Service ensures efficient customs processing.', image: require('../assets/clearence_small.png') },
+        { title: "Loading Service", des:'Loading Service ensures goods are safely and efficiently loaded.',image: require('../assets/container_loading_small.png') },
       ],
       currentIndex: 0,
       cardWidth: 0

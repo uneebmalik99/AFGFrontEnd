@@ -9,9 +9,9 @@
       <div>
         <div style="display: flex; flex-direction: row; justify-content: flex-start; align-items: center;">
           <button class="let_btn">
-            <img style="height: 15px; width: 15px;object-fit: contain;" src="../assets/Arrow_right.webp" />
+            <img style="height: 15px; width: 15px; object-fit: contain;" src="../assets/Arrow_right.webp" />
           </button>
-          <h6 style="margin-left: 10px;font-weight: 300; text-align: center; align-self:center;"> LET’S TALK </h6>
+          <h6 style="margin-left: 10px; font-weight: 300; text-align: center; align-self: center;"> LET’S TALK </h6>
         </div>
       </div>
     </div>
@@ -25,7 +25,7 @@
   <Coverage />
   <VTracking />
   <Faq />
-  <Technology/>
+  <Technology />
   <Aboutus />
   <Contactus />
 </template>
@@ -145,5 +145,36 @@ video {
   /* Full viewport height */
   object-fit: cover;
   /* Ensures the video covers the entire area */
+}
+
+/* Responsive Styles */
+@media (max-width: 767px) {
+  .content {
+    left: 5%;
+    padding: 10px;
+    max-width: 90%;
+    /* Adjust the width for small screens */
+  }
+
+  .big {
+    font-size: 24px;
+    /* Smaller font size for headings */
+  }
+
+  .let_btn {
+    height: 40px;
+    width: 40px;
+    /* Adjust button size for small screens */
+  }
+
+  h6 {
+    font-size: 14px;
+    /* Adjust text size */
+  }
+
+  video {
+    height: 100vh;
+    /* Adjust video height for small screens */
+  }
 }
 </style>

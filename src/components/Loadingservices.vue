@@ -333,7 +333,6 @@ export default {
   .image-container {
     left: 0;
     width: 100%;
-    height: auto;
     /* Ensure the height adjusts automatically */
   }
 }
@@ -376,7 +375,6 @@ export default {
   .image-container {
     left: 10%;
     width: 90%;
-    height: auto;
     /* Ensure the height adjusts automatically */
   }
 }</style>
